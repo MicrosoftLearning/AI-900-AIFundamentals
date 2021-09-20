@@ -1,4 +1,6 @@
-# INF99X: Sample Course
+# Microsoft Azure AI Fundamentals Exercises
+
+This repository contains the hands-on lab exercises for Microsoft course [AI-900 *Microsoft Azure AI Fundamentals*](https://docs.microsoft.com/en-us/learn/certifications/courses/ai-900t00) and the [self-paced modules on Microsoft Learn](https://docs.microsoft.com/learn/certifications/azure-ai-fundamentals). The labs are designed to accompany the learning materials and enable you to practice using the technologies they describe. 
 
 - **[Download Latest Student Handbook and AllFiles Content](../../releases/latest)**
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
@@ -24,11 +26,11 @@
 
 ## How do I contribute?
 
-- Any MCT can submit a pull request to the code or content in the GitHub repro, Microsoft and the course author will triage and include content and lab code changes as needed.
+- Any MCT can submit a pull request to the code or content in the GitHub repo, Microsoft and the course author will triage and include content and lab code changes as needed.
 
-- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
+- If you have suggestions or spot any errors, please [report it](https://docs.microsoft.com/learn/support/troubleshooting#report-feedback).
 
-## Notes
+## Notes 
 
 ### Classroom Materials
 
