@@ -68,26 +68,11 @@ Now that you have a knowledge base, you can test it in the QnA Maker portal.
 
 The knowledge base provides a back-end service that client applications can use to answer questions through some sort of user interface. Commonly, these client applications are bots. To make the knowledge base available to a bot, you must publish it as a service that can be accessed over HTTP. You can then use the Azure Bot Service to create and host a bot that uses the knowledge base to answer user questions.
 
-The sandbox environment you are using does not support creating a Web App Bot in the subscription. 
+>Important: The sandbox environment you are using does not support creating a Web App Bot in the subscription. In the future if you wanted to publish a bot in your personal subscription, you can follow these steps.
 
-1. At the top of the QnA Make page, click **Publish**. Then in the **Margies Travel KB** page, click **Publish**.
-<!-- It's worth trying the rest of this in a Sandbox now that we're using sa Managed QnA KB; though I suspect it still won't be supported!
-If not, we should create a psuedo-bot app that uses a PowerShell script in the Cloud Shell; and we should also include the a page describing the process of publishing a QnA KB as a bot and discussing the Bot Service and channels; but explicitly state that if you're using a sandbox subscription, you won't be able to complete these steps.
-In the ILT - we should include a demo (on the assumption that the trainer has an unrestricted Azure subscription) -->
-2. After the service has been deployed, click **Create Bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
-3. In the Azure portal, create a Web App Bot with the following settings (most of these will be pre-populated for you):
-    - **Bot handle**: *A unique name for your bot*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *The resource group containing your QnA Maker resource*
-    - **Location**: *The same location as your QnA Maker service*.
-    - **Pricing tier**: Free F0
-    - **App name**: *Same as the **Bot handle** with **.azurewebsites.net** appended automatically*
-    - **SDK language**: *Choose either C# or Node.js*
-    - **QnA Auth Key**: *This should automatically be set to the authentication key for your QnA knowledge base*
-    - **App service plan/location**: *This should be set automatically to a suitable plan and location. If not, create a new plan.*
-    - **Application Insights**: Off
-    - **Microsoft App ID and password**: Auto create App ID and password.
-4. Wait for your bot to be created (the notification icon at the top right, which looks like a bell, will be animated while you wait). Then in the notification that deployment has completed, click **Go to resource** (or alternatively, on the home page, click **Resource groups**, open the resource group where you created the web app bot, and click it.)
-5. In the left-hand pane of your bot look for **Settings**, click on **Test in Web Chat**, and wait until the bot displays the message **Hello and welcome!** (it may take a few seconds to initialize).
-6. Use the test chat interface to ensure your bot answers questions from your knowledge base as expected. For example, try submitting *I need to cancel my hotel*.
+- Publish the Knowledge Base from the QnA Make page. 
+
+- After the service has been deployed, create a bot in the Azure portal. 
+
+- Test your client. Once your bot is created, go back to the resource. In the left-hand pane of your bot look for **Settings**, click on **Test in Web Chat**, and wait until the bot displays the message **Hello and welcome!** (it may take a few seconds to initialize). Use the test chat interface to ensure your bot answers questions from your knowledge base as expected. For example, try submitting *I need to cancel my hotel*.
 
