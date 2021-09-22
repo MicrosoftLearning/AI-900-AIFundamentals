@@ -38,8 +38,6 @@ To test the capabilities of the Custom Vision service to detect objects in image
 
 1. Click the **Activate Sandbox** button at the top of the page. This starts a Cloud Shell instance to your right, as shown here. You may be prompted to review permissions. Click **Accept**. 
 
-    ![Azure cloud shell pane](./media/cloud-shell.png)
-
 2. When you open the cloud shell, you will need to change the type of shell you are using from *Bash* to *PowerShell*. Type in pwsh and press enter. 
 
     ```
