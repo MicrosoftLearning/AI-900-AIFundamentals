@@ -68,6 +68,8 @@ Now that you have a knowledge base, you can test it in the QnA Maker portal.
 
 The knowledge base provides a back-end service that client applications can use to answer questions through some sort of user interface. Commonly, these client applications are bots. To make the knowledge base available to a bot, you must publish it as a service that can be accessed over HTTP. You can then use the Azure Bot Service to create and host a bot that uses the knowledge base to answer user questions.
 
+<!-- Include demo  -->
+
 >Important: The sandbox environment you are using does not support creating a Web App Bot in the subscription. In the future if you wanted to publish a bot in your personal subscription, you can follow these steps.
 
 - Publish the Knowledge Base from the QnA Make page. 
