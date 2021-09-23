@@ -40,10 +40,10 @@ To test the capabilities of the Custom Vision service to detect objects in image
 
 Now that you have a cloud shell environment, you can run a simple client application that uses the Computer Vision service to analyze an image.
 
-1. In the command shell, enter the following command to download the sample application.
+1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
 
     ```
-    git clone https://github.com/GraemeMalcolm/ai-stuff ai-900
+    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
 2. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your cloud shell storage and work with them. Type the following command into the shell: 
