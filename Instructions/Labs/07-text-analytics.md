@@ -85,7 +85,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\analyze-text.ps1 review1.txt 
+    .\Allfiles\Labs\analyze-text.ps1 review1.txt 
     ```
     You will be reviewing this text: 
 
@@ -100,7 +100,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\analyze-text.ps1 review2.txt 
+    .\Allfiles\Labs\analyze-text.ps1 review2.txt 
     ```
     
     You will be reviewing this text: 
@@ -116,7 +116,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\analyze-text.ps1 review3.txt 
+    .\Allfiles\Labs\analyze-text.ps1 review3.txt 
     ```
 
     You will be reviewing this text: 
@@ -132,7 +132,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\analyze-text.ps1 review4.txt 
+    .\Allfiles\Labs\analyze-text.ps1 review4.txt 
     ```
     You will be reviewing this text: 
     

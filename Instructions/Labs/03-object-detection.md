@@ -160,7 +160,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\detect-objects.ps1 
+    .\Allfiles\Labs\detect-objects.ps1 
     ```
 
 7. Review the prediction, which should be *apple orange banana**.

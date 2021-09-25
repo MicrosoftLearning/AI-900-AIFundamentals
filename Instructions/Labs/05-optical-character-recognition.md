@@ -92,7 +92,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\ocr.ps1 advert.jpg
+    .\Allfiles\Labs\ocr.ps1 advert.jpg
     ```
 
 7. Review the details found in the image. The text found in the image is organized into a hierarchical structure of regions, lines, and words, and the code reads these to retrieve the results.
@@ -108,7 +108,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
     To analyze the second image, enter the following command:
 
     ```
-    .\ocr.ps1 letter.jpg
+    .\Allfiles\Labs\ocr.ps1 letter.jpg
     ```
 
 9. Review the results of the analysis for the second image.
@@ -120,7 +120,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
     To analyze the third image, enter the following command:
 
     ```
-    .\ocr.ps1 note.jpg
+    .\Allfiles\Labs\ocr.ps1 note.jpg
     ```
 
 11. Review the results of the analysis for the third image.

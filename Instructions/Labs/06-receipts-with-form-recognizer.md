@@ -90,7 +90,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\form-recognizer.ps1 
+    .\Allfiles\Labs\form-recognizer.ps1 
     ```
 
 7. Review the returned results. See that Form Recognizer is able to interpret the data in the form, correctly identifying the merchant address and phone number, and the transaction date and time, as well as the line items, subtotal, tax, and total amounts.

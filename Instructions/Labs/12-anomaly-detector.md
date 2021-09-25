@@ -77,7 +77,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\detect-anomalies.ps1
+    .\Allfiles\Labs\detect-anomalies.ps1
     ```
 
 7. Review the results, noting that the final column in the results is True or False to indicate if the value is considered an anomaly. 

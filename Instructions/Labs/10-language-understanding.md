@@ -132,14 +132,14 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\understand.ps1 "Turn on the light"
+    .\Allfiles\Labs\understand.ps1 "Turn on the light"
     ```
 
 7. Review the results - the app should have predicted that the intended action is to switch on the light.
 8. Now try another command:
 
     ```
-    .\understand.ps1 "Switch the fan off"
+    .\Allfiles\Labs\understand.ps1 "Switch the fan off"
     ```
 
 9. Review the results from this command- the app should have predicted that the intended action is to switch off the fan.

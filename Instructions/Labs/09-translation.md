@@ -100,7 +100,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\translator.ps1
+    .\Allfiles\Labs\translator.ps1
     ```
 
 7. Review the output. 

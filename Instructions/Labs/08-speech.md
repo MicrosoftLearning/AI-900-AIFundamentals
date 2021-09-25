@@ -86,7 +86,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\speaking-clock.ps1
+    .\Allfiles\Labs\speaking-clock.ps1
     ```
 
 7. Review the output, which should have successfully recognized the text "What time is it?" and saved an appropriate response in a file named *output.wav*.

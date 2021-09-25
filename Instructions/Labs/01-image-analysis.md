@@ -82,7 +82,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
 
     ```
     cd ai-900
-    .\analyze-image.ps1 store-cam1.jpg
+    .\Allfiles\Labs\analyze-image.ps1 store-cam1.jpg
     ```
 
 7. Review the results of the image analysis, which include:
@@ -97,7 +97,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
     To analyze the second image, enter the following command:
 
     ```
-    .\analyze-image.ps1 store-cam2.jpg
+    .\Allfiles\Labs\analyze-image.ps1 store-cam2.jpg
     ```
 
 9. Review the results of the image analysis for the second image.
@@ -109,7 +109,7 @@ Now that you have a cloud shell environment, you can run a simple client applica
     To analyze the third image, enter the following command:
 
     ```
-    .\analyze-image.ps1 store-cam3.jpg
+    .\Allfiles\Labs\analyze-image.ps1 store-cam3.jpg
     ```
 
 11. Review the results of the image analysis for the third image.
