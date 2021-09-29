@@ -4,7 +4,7 @@ $key="YOUR_KEY"
 #You need to add your resource location if you use a Cognitive Services resource
 $location="YOUR_LOCATION"
 
-#The endpoint is global for the Translator service, do not change it 
+#The endpoint is global for the Translator service, DO NOT change it 
 $endpoint="https://api.cognitive.microsofttranslator.com/"
 
 #Text to be translated 

@@ -7,7 +7,7 @@ if ($args.count -gt 0 -And $args[0] -in ("review1.txt", "review2.txt", "review3.
 {
     $txt_file = $args[0]
 }
-$url = "https://raw.githubusercontent.com/GraemeMalcolm/ai-stuff/main/data/text/reviews/$txt_file"
+$url = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/text/reviews/$txt_file"
 
 $txt =  (Invoke-webrequest -URI $url).Content
 

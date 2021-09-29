@@ -2,7 +2,7 @@ $endpoint="YOUR_ENDPOINT"
 $key="YOUR_KEY"
 
 # Create the URL where the raw receipt image can be found
-$img = "https://raw.githubusercontent.com/GraemeMalcolm/ai-stuff/main/data/vision/receipt.jpg"
+$img = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/vision/receipt.jpg"
 
 # Create the header for the REST POST with the subscription key
 # In this example, the URL of the image will be sent instead of 

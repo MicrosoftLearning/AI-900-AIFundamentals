@@ -11,7 +11,7 @@ if ($args.count -gt 0 -And $args[0] -in (1..3))
     $img_num = $args[0]
 }
 
-$img = "https://github.com/GraemeMalcolm/ai-stuff/raw/main/data/vision/fruit-$($img_num).jpg"
+$img = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/vision/fruit-$($img_num).jpg"
 
 $headers = @{}
 $headers.Add( "Prediction-Key", $predictionKey )

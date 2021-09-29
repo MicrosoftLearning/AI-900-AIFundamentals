@@ -5,7 +5,7 @@ $predictionKey = "YOUR_PREDITION_KEY"
 
 # Code to call Custom Vision service for image detection
 
-$img = "https://github.com/GraemeMalcolm/ai-stuff/raw/main/data/vision/produce.jpg"
+$img = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/vision/produce.jpg"
 
 $headers = @{}
 $headers.Add( "Prediction-Key", $predictionKey )
