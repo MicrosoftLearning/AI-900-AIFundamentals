@@ -44,17 +44,17 @@ Do {
 Write-Host "...Done`n"
 
 # Access the relevant fields from the analysis 
-$analysisFields = $analysis.analyzeResult.documentResults
+$analysisFields = $analysis.analyzeResult.documentResults.fields
 
 # Print out all of the properties of the receipt analysis
-Write-Host ("Receipt Type: ", $($analysisFields.fields.ReceiptType.valueString))
-Write-Host ("Merchant Address: ", $($analysisFields.fields.MerchantAddress.valueString))
-Write-Host ("Merchant Phone: ", $($analysisFields.MerchantPhoneNumber.valueString))
-Write-Host ("Transaction Date: ", $($analysisFields.TransactionDate.valueString))
+Write-Host ("Receipt Type: ", $($analysisFields.ReceiptType.valueString))
+Write-Host ("Merchant Address: ", $($analysisFields.MerchantAddress.text))
+Write-Host ("Merchant Phone: ", $($analysisFields.MerchantPhoneNumber.text))
+Write-Host ("Transaction Date: ", $($analysisFields.TransactionDate.valueDate))
 Write-Host ("Receipt Items: ")
 
 # Access the individual items from the analysis
-$receiptItems = $($analysisFields.fields.Items.valueArray)
+$receiptItems = $($analysisFields.Items.valueArray)
 
 for (($idx = 0); $idx -lt $receiptItems.Length; $idx++) {
     $item = $receiptItems[$idx] 
@@ -63,6 +63,6 @@ for (($idx = 0); $idx -lt $receiptItems.Length; $idx++) {
     Write-Host ("  - Price: ",$($item.valueObject.TotalPrice.valueNumber))
 }
 
-Write-Host ("Subtotal: ", $($analysisFields.Subtotal.valueNumber))
-Write-Host ("Tax: ", $($analysisFields.Tax.valueNumber))
-Write-Host ("Total: ", $($analysisFields.Total.valueNumber))
+Write-Host ("Subtotal: ", $($analysisFields.Subtotal.text))
+Write-Host ("Tax: ", $($analysisFields.Tax.text))
+Write-Host ("Total: ", $($analysisFields.Total.text))
