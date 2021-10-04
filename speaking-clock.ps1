@@ -1,6 +1,5 @@
-$region="YOUR_LOCATION"
 $key="YOUR_KEY"
-
+$region="YOUR_LOCATION"
 
 
 # Code to call Speech to Text API

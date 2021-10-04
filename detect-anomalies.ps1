@@ -1,6 +1,5 @@
-$endpoint="YOUR_ENDPOINT"
 $key="YOUR_KEY"
-
+$endpoint="YOUR_ENDPOINT"
 
 
 # Code to call Anomaly Detector

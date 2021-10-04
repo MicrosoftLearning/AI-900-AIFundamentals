@@ -1,5 +1,5 @@
-$endpoint="YOUR_ENDPOINT"
 $key="YOUR_KEY"
+$endpoint="YOUR_ENDPOINT"
 
 # Code to call Text Analytics service to analyze sentiment in text
 $txt_file = "review1.txt"

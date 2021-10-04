@@ -1,5 +1,6 @@
-$endpoint="YOUR_ENDPOINT"
 $key="YOUR_KEY"
+$endpoint="YOUR_ENDPOINT"
+
 
 # Code to call OCR service for text in image analysis
 $img_file = "advert.jpg"

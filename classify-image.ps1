@@ -2,7 +2,6 @@ $predictionUrl="YOUR_PREDICTION_URL"
 $predictionKey = "YOUR_PREDITION_KEY"
 
 
-
 # Code to call Custom Vision service for image classification
 
 $img_num = 1
