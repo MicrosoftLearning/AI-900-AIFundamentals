@@ -44,7 +44,7 @@ Do {
 Write-Host "...Done`n"
 
 # Access the relevant fields from the analysis 
-$analysisFields = $analysis.analyzeResult.documentResults.fields
+$analysisFields = $analysis.analyzeResult.documentResults
 
 # Print out all of the properties of the receipt analysis
 Write-Host ("Receipt Type: ", $($analysisFields.fields.ReceiptType.valueString))
