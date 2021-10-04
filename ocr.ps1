@@ -29,6 +29,6 @@ foreach ($listofdict in $analysis.regions.lines.words)
 {
     foreach($dict in $listofdict)
     {
-        Write-Host ("$dict, `n")
+        Write-Host ("Text:", $($dict.text), "Bounding Box:", $($dict.boundingBox))
     }
 }
