@@ -6,15 +6,11 @@ For example, suppose the fictional *Margie's Travel* organization encourages cus
 
 To test the capabilities of the Text Analytics service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-1. Click the **Activate Sandbox** button at the top of the page. This starts a Cloud Shell instance. 
+## Create a *Cognitive Services* resource
 
-2. If you are prompted to review permissions, click **Accept**.
+You can use the Text Analytics service by creating either a **Text Analytics** resource or a **Cognitive Services** resource.
 
-## Create a Cognitive Services Resource
-
-To analyze the text in these reviews, you can use the **Text Analytics** cognitive service. To use this, you need to provision either a **Text Analytics** or **Cognitive Services** resource in your Azure subscription (Use a Text Analytics resource if this is the only service you plan to use or you want to track its usage separately; otherwise you can use a Cognitive Services resource to combine the Text Analytics service with other cognitive services - enabling developers to use a single endpoint and key to access them.)
-
-If you don't already have one, use the following steps to create a **Cognitive Services** resource in your Azure subscription:
+If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
@@ -25,11 +21,29 @@ If you don't already have one, use the following steps to create a **Cognitive S
     - **Pricing tier**: S0
     - **I confirm I have read and understood the notices**: Selected.
 
-3. Wait for deployment to complete. Then go to your cognitive services resource, and on the **Overview** page, click the link to manage the keys for the service. You will need the endpoint and keys to connect to your cognitive services resource from client applications.
+3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+
+## Run Cloud Shell 
+
+To test the capabilities of the Text Analytics service, we'll use a simple command-line application that runs in the Cloud Shell on Azure. 
+
+1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the left of the search box. This opens a Cloud Shell pane at the bottom of the portal, as shown here.
+
+    ![Azure cloud shell pane](./media/cloud-shell.png)
+
+2. The first time you open the cloud shell, you will be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**.
+
+3. If you are prompted to create storage for your cloud shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. Eventually, the cloud shell pane will display a command prompt like this:
+
+    ![Azure cloud shell PowerShell prompt](./media/powershell-prompt.png)
+
+    > **Note**: If you selected *Bash*, or you had previously opened a Bash cloud shell, you can switch to PowerShell by using the drop-down menu at the top left of the cloud shell pane.
+
 
 ## Configure and run a client application
 
-Now that you have a resource, you can run a simple client application that uses the Text Analytics service to analyze reviews.
+Now that you have a custom model, you can run a simple client application that uses the Text Analytics service.
 
 1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
 
@@ -49,7 +63,17 @@ Now that you have a resource, you can run a simple client application that uses 
 
     ![The editor containing code to use the Text Analytics service](../media/analyze-text-code.png)
 
-4. Don't worry too much about the details of the code, the important thing is that it needs the region/location and either of the keys for your Speech resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_LOCATION** and **YOUR_KEY** placeholder values respectively.
+4. Don't worry too much about the details of the code, the important thing is that it needs the region/location and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_LOCATION** and **YOUR_KEY** placeholder values respectively.
+
+    > [!TIP]
+    > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
+
+    After pasting the endpoint and key values, the first two lines of code should look similar to this:
+
+    ```PowerShell
+    $endpoint="https://resource.cognitiveservices.azure.com/"
+    $key="1a2b3c4d5e6f7g8h9i0j...."
+    ```
 
 5. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 

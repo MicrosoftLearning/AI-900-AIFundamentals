@@ -2,10 +2,6 @@ Increasingly, we expect computers to be able to use AI in order to understand sp
 
 To test the capabilities of the Language Understanding service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-1. Click the **Activate Sandbox** button at the top of the page. This starts a Cloud Shell instance. 
-
-2. If you are prompted to review permissions, click **Accept**.
-
 ## Create *Language Understanding* Resources
 
 Microsoft Cognitive Services includes the Language Understanding service, which enables you to define *intents* that are applied to *entities* based on *utterances*. You can use either a **Language Understanding** or  **Cognitive Services** resource to *publish* a Language Understanding app, but you must create a separate **Language Understanding** resource for *authoring* the app.
@@ -80,9 +76,26 @@ To use your trained model in a client application, you must publish it as an end
 
 To consume your language model from a client, we'll use a simple command-line application that runs in the Cloud Shell provided with your Azure subscription.
 
+## Run Cloud Shell 
+
+To test the capabilities of the Language Understanding service, we'll use a simple command-line application that runs in the Cloud Shell on Azure. 
+
+1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the left of the search box. This opens a Cloud Shell pane at the bottom of the portal, as shown here.
+
+    ![Azure cloud shell pane](./media/cloud-shell.png)
+
+2. The first time you open the cloud shell, you will be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**.
+
+3. If you are prompted to create storage for your cloud shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. Eventually, the cloud shell pane will display a command prompt like this:
+
+    ![Azure cloud shell PowerShell prompt](./media/powershell-prompt.png)
+
+    > **Note**: If you selected *Bash*, or you had previously opened a Bash cloud shell, you can switch to PowerShell by using the drop-down menu at the top left of the cloud shell pane.
+
+
 ## Configure and run a client application
 
-Now that you have a language model, you can run a simple client application that uses the Language Understanding service.
+Now that you have a custom model, you can run a simple client application that uses the Language Understanding service.
 
 1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
 

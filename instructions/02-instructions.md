@@ -4,31 +4,23 @@ In Azure, you can use the ***Custom Vision*** cognitive service to train an imag
 
 To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-1. Click the **Activate Sandbox** button at the top of the page. This starts a Cloud Shell instance. 
+## Create a *Cognitive Services* resource
 
-2. If you are prompted to review permissions, click **Accept**. 
+You can use the Custom Vision service by creating either a **Custom Vision** resource or a **Cognitive Services** resource.
 
-## Create a Custom Vision resource
+If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
-To use the Custom Vision service, you need an Azure resource that you can use to *train* a model, and a resource with which you can *publish* it for applications to use. The resource for either (or both) tasks can be a general **Cognitive Services** resource, or a specific **Custom Vision** resource. You can use the same Cognitive Services resource for each of these tasks, or you can use different resources (in the same region) for each task to manage costs separately.
+1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
+2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: *Your Azure subscription*.
+    - **Resource group**: *Select or create a resource group with a unique name*.
+    - **Region**: *Choose any available region*:
+    - **Name**: *Enter a unique name*.
+    - **Pricing tier**: S0
+    - **I confirm I have read and understood the notices**: Selected.
 
-Use the following instructions to create a new **Custom Vision** resource.
-
-1. In a new browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), and sign in using the Microsoft account associated with your Azure subscription.
-2. Select the **&#65291;Create a resource** button, search for *custom vision*, and create a **Custom Vision** resource with the following settings:
-    - **Create options**: Both
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create a new resource group with a unique name*
-    - **Name**: *Enter a unique name*
-    - **Training location**: *Choose any available region*
-    - **Training pricing tier**: Free F0
-    - **Prediction location**: *The same region as the training resource*
-    - **Prediction pricing tier**: Free F0
-
-    > [!NOTE]
-    > If you already have an F0 custom vision service in your subscription, select **S0** for this one.
-
-3. Wait for the resources to be created, and note that two Custom Vision resources are provisioned; one for training, and another for prediction. You can view these by navigating to the resource group where you created them.
+3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Create a Custom Vision project
 
@@ -76,9 +68,26 @@ Now you're ready to publish your trained model and use it from a client applicat
     - **Prediction Resource**: *The prediction resource you created previously*.
 10. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task. 
 
+## Run Cloud Shell 
+
+To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
+
+1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the left of the search box. This opens a Cloud Shell pane at the bottom of the portal, as shown here.
+
+    ![Azure cloud shell pane](./media/cloud-shell.png)
+
+2. The first time you open the cloud shell, you will be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**.
+
+3. If you are prompted to create storage for your cloud shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. Eventually, the cloud shell pane will display a command prompt like this:
+
+    ![Azure cloud shell PowerShell prompt](./media/powershell-prompt.png)
+
+    > **Note**: If you selected *Bash*, or you had previously opened a Bash cloud shell, you can switch to PowerShell by using the drop-down menu at the top left of the cloud shell pane.
+
+
 ## Configure and run a client application
 
-Now that you have a custom model, you can run a simple client application that uses the Custom Vision service to classify images.
+Now that you have a Cloud Shell environment, you can run a simple application that uses the Custom Vision service to analyze an image.
 
 1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
 
