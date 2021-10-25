@@ -2,24 +2,23 @@ Increasingly, we expect computers to be able to use AI in order to understand sp
 
 To test the capabilities of the Language Understanding service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create *Language Understanding* Resources
+## Create a *Cognitive Services* resource
 
-Microsoft Cognitive Services includes the Language Understanding service, which enables you to define *intents* that are applied to *entities* based on *utterances*. You can use either a **Language Understanding** or  **Cognitive Services** resource to *publish* a Language Understanding app, but you must create a separate **Language Understanding** resource for *authoring* the app.
+You can use the Translation service by creating either a **Translator** resource or a **Cognitive Services** resource.
+
+If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-2. Click **+ Create a resource**, and search for *Language Understanding*.
-3. In the list of services, click **Language Understanding**.
-4. In the **Language Understanding** blade, click **Create**.
-5. In the **Create** blade, enter the following details and click **Create**
-    - **Create option**: Both
-    - **Subscription**: *Select your Azure subscription*
-    - **Resource Group**: *Select an existing resource group or create a new one*
-    - **Name**: *A unique name for your service*
-    - **Authoring location**: *Select any available location*
-    - **Authoring pricing tier**: Free F0
-    - **Runtime location**: *Same as authoring location*
-    - **Runtime pricing tier**: Free F0
-6. Wait for the resources to be created, and note that two Language Understanding resources are provisioned; one for authoring, and another for prediction. You can view these by navigating to the resource group where you created them.
+2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: *Your Azure subscription*.
+    - **Resource group**: *Select or create a resource group with a unique name*.
+    - **Region**: *Choose any available region*:
+    - **Name**: *Enter a unique name*.
+    - **Pricing tier**: S0
+    - **I confirm I have read and understood the notices**: Selected.
+
+3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
 ### Create a Language Understanding App
 
