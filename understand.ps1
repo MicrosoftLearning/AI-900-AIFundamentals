@@ -11,7 +11,7 @@ if ($args.count -gt 0){
     $url = "$($endpointUrl)/luis/prediction/v3.0/apps/$($appId)/slots/production/predict?subscription-key=$($key)&query=$($utterance)"
     $result = Invoke-RestMethod -Method Get -Uri $url
     $predictedIntent = $result.prediction.topIntent
-    $predictedDevice = $result.prediction.entities.device
+    $predictedDevice = $result.prediction.entities.device | Out-String
     Write-Host("Predicted intent: $predictedIntent")
     Write-Host("Predicted device: $predictedDevice")
 
