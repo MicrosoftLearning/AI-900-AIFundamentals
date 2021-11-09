@@ -27,8 +27,7 @@ $objectArray = [System.Collections.ArrayList]@()
 foreach ($item in $items) 
 {if ($item.probability -gt .9)
 {
-    $objectArray.Add($item.tagName)
+    Write-Host ("`n",$item.tagName, "`n")
 }
 }
 
-Write-Host ("`n",$objectArray, "`n")
