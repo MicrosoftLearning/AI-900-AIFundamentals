@@ -17,12 +17,12 @@ if ($args.count -gt 0){
 
     # Now perform the appropriate action if the request was understood
     if ($predictedIntent -in ("switch_on", "switch_off")){
-        if($predictedDevice -in ("light","fan")){
+        if($predictedDevice -like ("*light*") -or (-like ("*fan*"))){
             if($predictedIntent -eq "switch_on"){
-                Write-Host "$predictedDevice on" -ForegroundColor Yellow
+                Write-Host("The $predictedDevice is on.")
             }
             else {
-                Write-Host "$predictedDevice off" -ForegroundColor Gray
+                Write-Host("The $predictedDevice is off.")
             }
         }
         else{
