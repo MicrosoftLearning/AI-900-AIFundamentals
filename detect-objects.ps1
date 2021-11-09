@@ -23,7 +23,6 @@ $prediction = $result | ConvertFrom-Json
 
 $items = $prediction.predictions
 
-$objectArray = [System.Collections.ArrayList]@()
 foreach ($item in $items) 
 {if ($item.probability -gt .9)
 {
