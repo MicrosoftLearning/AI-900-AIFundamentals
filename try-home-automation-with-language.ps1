@@ -1,6 +1,6 @@
 # Paste in your Language resource key and endpoint 
-$key="YOUR_KEY_HERE"
-$endpointUrl="YOUR_ENDPOINT_HERE"
+$key="YOUR_PRIMARY_KEY"
+$endpointUrl="YOUR_ENDPOINT_URL"
 
 
 #This should be your project name 
