@@ -1,17 +1,30 @@
-$appId="YOUR_APP_ID"
-$key = "YOUR_PRIMARY_KEY"
-$endpointUrl="YOUR_ENDPOINT_URL"
+$endpointUrl="YOUR_ENDPOINT"
+$key = "YOUR_KEY"
 
 
 
-# Code to call Language Understanding service for intent prediction
 if ($args.count -gt 0){
-    # Get the predicted intent and entities from the user input
+    # Get the user input
     $utterance = $args[0].ToString()
-    $url = "$($endpointUrl)/luis/prediction/v3.0/apps/$($appId)/slots/production/predict?subscription-key=$($key)&query=$($utterance)"
-    $result = Invoke-RestMethod -Method Get -Uri $url
+
+   # Code to call Language service for intent prediction
+    $headers = @{}
+    $headers.Add( "Ocp-Apim-Subscription-Key", $key)
+    $headers.Add( "Content-Type","application/json")
+
+    $body = @{}
+    $body.Add("query", $utterance)
+    $body = $body | ConvertTo-Json
+
+    Write-Host "Calling Language model..."
+    $response = Invoke-WebRequest -Method Post `
+            -Uri $endpointUrl `
+            -Headers $headers `
+            -Body $body
+
+    $result = $response | ConvertFrom-Json
     $predictedIntent = $result.prediction.topIntent
-    $predictedDevice = $result.prediction.entities.device | Out-String
+    $predictedDevice = $result.prediction.entities[0].text
     Write-Host("Predicted intent: $predictedIntent")
     Write-Host("Predicted device: $predictedDevice")
 
