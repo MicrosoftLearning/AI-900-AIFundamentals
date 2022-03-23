@@ -1,15 +1,17 @@
 ---
 lab:
-    title: 'Use automated machine learning in Azure Machine Learning'
+    title: 'Explore Machine Learning'
 ---
 
-## Lab: Use automated machine learning in Azure Machine Learning
-Machine learning models are the basis for AI applications. In this lab you will take a look at Azure Machine Learning's studio portal and try out automated machine learning. Traditional machine learning model development can be complex and time-consuming. With automated machine learning, you'll accelerate the time it takes to get production-ready ML models.      
+## Explore Machine Learning
 
-1. Go to the Microsoft Learn module at https://docs.microsoft.com/learn/modules/use-automated-machine-learning and complete the following units in the browser: 
+Machine learning models are the basis for AI applications. In this lab you will explore Azure Machine Learning and use its automated machine learning feature to train a predictive model.
+
+This exercise is part of a module on Microsoft Learn, and requires an Azure subscription. You should use the Azure subscription provided as part of the class.
+
+1. Open the [Use automated machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/3-create-workspace) module on Microsoft Learn and complete the following units: 
     - Create an Azure Machine Learning workspace
     - Create compute resources
     - Explore data 
     - Train a machine learning model 
     - Deploy a model as a service 
-2. Once you complete the steps, you can close this window. 
