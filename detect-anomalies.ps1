@@ -1,5 +1,5 @@
-$key="YOUR_KEY"
-$endpoint="YOUR_ENDPOINT"
+$key="dc05fdb67e0442f78f1041280e126021"
+$endpoint="https://mynewtraining.cognitiveservices.azure.com/"
 
 
 # Code to call Anomaly Detector

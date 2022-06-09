@@ -1,5 +1,6 @@
 #Add your key here
-$key="YOUR_KEY"
+$key="dc05fdb67e0442f78f1041280e126021"
+
 
 #You need to add your resource location if you use a Cognitive Services resource
 $location="YOUR_LOCATION"
