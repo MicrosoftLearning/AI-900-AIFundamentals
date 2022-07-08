@@ -25,7 +25,7 @@ $result = Invoke-RestMethod -Method Post `
           -Body $body | ConvertTo-Json -Depth 5
 
 $analysis = ($result | ConvertFrom-Json)
-Write-Host ("`nFrom June 11th 2022, Face service capabilities that return personally identifiable features are restricted.`nSee https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/ for details.`nThis code is restricted to returning the location of any faces detected:`n")
+Write-Host ("`nFrom June 21st 2022, Face service capabilities that return personally identifiable features are restricted.`nSee https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/ for details.`nThis code is restricted to returning the location of any faces detected:`n")
 foreach ($face in $analysis)
 {
     Write-Host("Face location: $($face.faceRectangle)`n")
