@@ -134,6 +134,6 @@ Now that you have a custom model, you can run a simple client application that u
 
 11. Review the results of the face analysis for the third image.
 
-## Learn more
+## Learn more 
 
 This simple app shows only some of the capabilities of the Face service. To learn more about what you can do with this service, see the [Face page](https://azure.microsoft.com/services/cognitive-services/face/).
