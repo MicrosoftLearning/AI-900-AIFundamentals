@@ -5,7 +5,8 @@ lab:
 
 ## Analyze Images with Computer Vision​
 
-This exercise is part of a module on Microsoft Learn, and requires an Azure subscription. You should use the Azure subscription provided as part of the class.
+> **Note**
+> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
 The *Computer Vision* cognitive service uses pre-trained machine learning models to analyze images and extract information about them.
 
