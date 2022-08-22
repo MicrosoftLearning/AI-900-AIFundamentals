@@ -17,7 +17,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 You can use the Custom Vision service by creating either a **Custom Vision** resource or a **Cognitive Services** resource.
 
->[!NOTE]
+>**Note**
 >Not every resource is available in every region. Whether you create a Custom Vision or Cognitive Services resource, only resources created in [certain regions](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) can be used to access Custom Vision services. For simplicity, a region is pre-selected for you in the configuration instructions below.
 
 Create a **Cognitive Services** resource in your Azure subscription.
@@ -98,7 +98,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 4. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/create-image-classification-system/powershell-portal-guide-3.png) 
+    ![How to find the left hand drop down menu to switch to PowerShell](media/create-image-classification-system/powershell-portal-guide-3.png)
 
 5. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
@@ -114,7 +114,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
-    >[!TIP] If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
+    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 2. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -134,7 +134,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
    Get the *prediction URL* from the dialog box in your Custom Vision project. 
 
-   >[!NOTE]
+   >**Note**
    >Remember, you reviewed the *prediction URL* after you published the image classification model. To find the *prediction URL*, navigate to the **Performance** tab in your project, then click on **Prediction URL** (if the screen is compressed, you may just see a globe icon). A dialogue box will appear. Copy the url for **If you have an image URL**. Paste it into the code editor, replacing **YOUR_PREDICTION_URL**.
 
     Using the same dialog box, get the *prediction key*. Copy the prediction key displayed after *Set Prediction-Key Header to*. Paste it in the code editor, replacing the **YOUR_PREDICTION_KEY** placeholder value.
