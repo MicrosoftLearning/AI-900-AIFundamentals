@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Detect objects in images with the Custom Vision service​'
+    title: 'Detect Objects in Images with the Custom Vision Service​'
 ---
 
-## Detect objects in images with the Custom Vision service
+## Detect Objects in Images with the Custom Vision Service
 
 This exercise is part of a module on Microsoft Learn, and requires an Azure subscription. You should use the Azure subscription provided as part of the class.
 
@@ -20,7 +20,7 @@ To test the capabilities of the Custom Vision service to detect objects in image
 You can use the Custom Vision service by creating either a **Custom Vision** resource or a **Cognitive Services** resource.
 
 >**Note**
->Not every resource is available in every region. Whether you create a Custom Vision or Cognitive Services resource, only resources created in [certain regions](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) can be used to access Custom Vision services. For simplicity, a region is pre-selected for you in the configuration instructions below.   
+>Not every resource is available in every region. Whether you create a Custom Vision or Cognitive Services resource, only resources created in [certain regions](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) can be used to access Custom Vision services. For simplicity, a region is pre-selected for you in the configuration instructions below.
 
 Create a **Cognitive Services** resource in your Azure subscription.
 
