@@ -1,14 +1,14 @@
 ---
 lab:
-    title: 'Explore Regression with Azure Machine Learning designer'
+    title: 'Explore Regression with Azure Machine Learning Designer'
 ---
 
-## Explore Regression with Azure Machine Learning designer
+## Explore Regression with Azure Machine Learning Designer
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-In this exercise, you will train a regression model that predicts the price of an automobile based on its characteristics. 
+In this exercise, you will train a regression model that predicts the price of an automobile based on its characteristics.
 
 ## Create an Azure Machine Learning workspace  
 
@@ -198,9 +198,9 @@ Now you're ready to run the training pipeline and train the model.
 
 The model is predicting values for the **price** label, but how reliable are its predictions? To assess that, you need to evaluate the model.
 
-## Evaluate model 
+## Evaluate model
 
-One way to evaluate a regression model is to compare the predicted labels to the actual labels in the validation dataset to held back during training. Another way is to compare the performance of multiple models. 
+One way to evaluate a regression model is to compare the predicted labels to the actual labels in the validation dataset to held back during training. Another way is to compare the performance of multiple models.
 
 1. Open the **Auto Price Training** pipeline you created.
 2. In the **Asset Library**, search for and place an **Evaluate Model** module to the canvas, under the **Score Model** module, and connect the output of the **Score Model** module to the **Scored dataset** (left) input of the **Evaluate Model** module.
@@ -221,9 +221,9 @@ One way to evaluate a regression model is to compare the predicted labels to the
     - **Relative Squared Error (RSE)**
     - **Relative Absolute Error (RAE)**
     - **Coefficient of Determination (R<sup>2</sup>)**
-8. Close the *Evaluation_results* pane. 
+8. Close the *Evaluation_results* pane.
 
-When you've identified a model with evaluation metrics that meet your needs, you can prepare to use that model with new data. 
+When you've identified a model with evaluation metrics that meet your needs, you can prepare to use that model with new data.
 
 ## Create and run an inference pipeline
 
@@ -274,6 +274,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
         ```
 
     - Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
+
 10. Verify that your pipeline looks similar to the following image:
 
     ![Screenshot of the automobile inference pipeline.](media/create-regression-model/inference-pipeline-lab.png)
@@ -284,11 +285,11 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 Your inference pipeline predicts prices for cars based on their features. Now you're ready to publish the pipeline so that client applications can use it.
 
-## Deploy model 
+## Deploy model
 
 After you've created and tested an inference pipeline for real-time inferencing, you can publish it as a service for client applications to use.
 
-> **Note** 
+> **Note**
 > In this exercise, you'll deploy the web service to an Azure Container Instance (ACI). This type of compute is created dynamically, and is useful for development and testing. For production, you should create an *inference cluster*, which provides an Azure Kubernetes Service (AKS) cluster that provides better scalability and security.
 
 ## Deploy a service

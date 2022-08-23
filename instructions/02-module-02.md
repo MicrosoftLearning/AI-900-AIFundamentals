@@ -22,16 +22,16 @@ In this exercise, you will use a dataset of historical bicycle rental details to
     - **Key vault**: *Note the default new key vault that will be created for your workspace*
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
     - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
-3. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes).
+3. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes). 
 4. Launch Azure Machine Learning studio (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account.
-5. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new window.
+5. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new window. 
 
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page. 
 
 2. On the **Compute** page, select the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*
@@ -60,24 +60,24 @@ The compute cluster will take some time to be created. You can move onto the nex
 2. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
 3. Create a new dataset **from web files**, using the following settings:
-    - **Basic Info**:
-        - **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true)
-        - **Name**: bike-rentals
-        - **Dataset type**: Tabular
-        - **Description**: Bicycle rental data
-        - **Skip data validation**: *do not select*
-    - **Settings and preview**:
-        - **File format**: Delimited
-        - **Delimiter**: Comma
-        - **Encoding**: UTF-8
-        - **Column headers**: Only first file has headers
-        - **Skip rows**: None
-        - **Dataset contains multi-line data**: *do not select*
-    - **Schema**:
-        - Include all columns other than **Path**
-        - Review the automatically detected types
-    - **Confirm details**:
-        - Do not profile the dataset after creation
+    * **Basic Info**:
+        * **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true)
+        * **Name**: bike-rentals
+        * **Dataset type**: Tabular
+        * **Description**: Bicycle rental data
+        * **Skip data validation**: *do not select*
+    * **Settings and preview**:
+        * **File format**: Delimited
+        * **Delimiter**: Comma
+        * **Encoding**: UTF-8
+        * **Column headers**: Only first file has headers
+        * **Skip rows**: None
+        * **Dataset contains multi-line data**: *do not select*
+    * **Schema**:
+        * Include all columns other than **Path**
+        * Review the automatically detected types
+    * **Confirm details**:
+        * Do not profile the dataset after creation
 
 4. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data contains historical features and labels for bike rentals.
 
@@ -96,8 +96,8 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **New experiment name**: mslearn-bike-rental
         - **Target column**: rentals (*this is the label that the model is trained to predict)*
         - **Select compute cluster**: *the compute cluster that you created previously*
-    - **Select task and settings**:
-        - **Task type**: Regression *(the model predicts a numeric value)*
+    - **Select task and settings**: 
+        - **Task type**: Regression *(the model predicts a numeric value)* 
 
     ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/new-automated-ml-run-4.png)
 
@@ -109,7 +109,7 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **Use all supported models**: <u>Un</u>selected. *You'll restrict the job to try only a few specific algorithms.*
         - **Allowed models**: *Select only **RandomForest** and **LightGBM** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
 
-        ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)
+        ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)            
         - **Exit criterion**:
             - **Training job time (hours)**: 0.5 — *ends the job after a maximum of 30 minutes.*
             - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
@@ -117,11 +117,11 @@ Follow the next steps to run a job that uses automated machine learning to train
     - **Featurization settings:**
         - **Enable featurization**: Selected — *automatically preprocess the features before training.*
 
-    Click **Next** to go to the next selection pane.
+    Click **Next** to go to the next selection pane. 
 
     - **[Optional] Select the validation and test type**
         - **Validation type**: Auto
-        - **Test dataset (preview)**: No test dataset required
+        - **Test dataset (preview)**: No test dataset required 
 
 3. When you finish submitting the automated machine learning run details, it starts automatically. Wait for the run status to change from *Preparing* to *Running*.
 4. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
@@ -138,7 +138,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
     ![Screenshot of how to locate view all other metrics on the Model tab.](media/use-automated-machine-learning/review-run-1.png)
 
-4. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected.
+4. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
     ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/review-run-3.png)
 
     Review the charts which show the performance of the model. The first chart shows the *residuals*, the differences between predicted and actual values, as a histogram, the second chart compares the predicted values against the true values.
