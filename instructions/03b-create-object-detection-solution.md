@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Detect Objects in Images with the Custom Vision Service​'
+    title: 'Detect objects in images with the Custom Vision service​'
 ---
 
-## Detect Objects in Images with the Custom Vision Service
+## Detect objects in images with the Custom Vision service
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -26,7 +26,8 @@ You can use the Custom Vision service by creating either a **Custom Vision** res
 Create a **Cognitive Services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+
+1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US
@@ -34,50 +35,54 @@ Create a **Cognitive Services** resource in your Azure subscription.
     - **Pricing tier**: S0
     - **I confirm I have read and understood the notices**: Selected.
 
-3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
-4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+
+1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Create a Custom Vision project
 
 To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
 
 1. In a new browser tab, open the Custom Vision portal at [https://customvision.ai](https://customvision.ai?azure-portal=true), and sign in using the Microsoft account associated with your Azure subscription.
-2. Create a new project with the following settings:
+
+1. Create a new project with the following settings:
     - **Name**: Grocery Detection
     - **Description**: Object detection for groceries.
     - **Resource**: *The resource you created previously*
     - **Project Types**: Object Detection
     - **Domains**: General
-3. Wait for the project to be created and opened in the browser.
+
+1. Wait for the project to be created and opened in the browser.
 
 ## Add and tag images
 
 To train an object detection model, you need to upload images that contain the classes you want the model to identify, and tag them to indicate bounding boxes for each object instance.
 
 1. Download and extract the training images from https://aka.ms/fruit-objects. The extracted folder contains a collection of images of fruit.
-2. In the Custom Vision portal [https://customvision.ai](https://customvision.ai?azure-portal=true), make sure you are working in your object detection project _Grocery Detection_. Then select **Add images** and upload all of the images in the extracted folder.
+
+1. In the Custom Vision portal [https://customvision.ai](https://customvision.ai?azure-portal=true), make sure you are working in your object detection project _Grocery Detection_. Then select **Add images** and upload all of the images in the extracted folder.
 
     ![Upload downloaded images by clicking add images.](media/create-object-detection-solution/fruit-upload.jpg)
 
-3. After the images have been uploaded, select the first one to open it.
+1. After the images have been uploaded, select the first one to open it.
 
-4. Hold the mouse over any object in the image until an automatically detected region is displayed like the image below. Then select the object, and if necessary resize the region to surround it.
+1. Hold the mouse over any object in the image until an automatically detected region is displayed like the image below. Then select the object, and if necessary resize the region to surround it.
 
     ![The default region for an object](media/create-object-detection-solution/object-region.jpg)
 
     Alternatively, you can simply drag around the object to create a region.
 
-5. When the region surrounds the object, add a new tag with the appropriate object type (*apple*, *banana*, or *orange*) as shown here:
+1. When the region surrounds the object, add a new tag with the appropriate object type (*apple*, *banana*, or *orange*) as shown here:
 
     ![A tagged object in an image](media/create-object-detection-solution/object-tag.jpg)
 
-6. Select and tag each other object in the image, resizing the regions and adding new tags as required.
+1. Select and tag each other object in the image, resizing the regions and adding new tags as required.
 
     ![Two tagged objects in an image](media/create-object-detection-solution/object-tags.jpg)
 
-7. Use the **>** link on the right to go to the next image, and tag its objects. Then just keep working through the entire image collection, tagging each apple, banana, and orange.
+1. Use the **>** link on the right to go to the next image, and tag its objects. Then just keep working through the entire image collection, tagging each apple, banana, and orange.
 
-8. When you have finished tagging the last image, close the **Image Detail** editor and on the **Training Images** page, under **Tags**, select **Tagged** to see all of your tagged images:
+1. When you have finished tagging the last image, close the **Image Detail** editor and on the **Training Images** page, under **Tags**, select **Tagged** to see all of your tagged images:
 
     ![Tagged images in a project](media/create-object-detection-solution/tagged-images.jpg)
 
@@ -86,8 +91,10 @@ To train an object detection model, you need to upload images that contain the c
 Now that you've tagged the images in your project, you're ready to train a model.
 
 1. In the Custom Vision project, click **Train** to train an object detection model using the tagged images. Select the **Quick Training** option.
-2. Wait for training to complete (it might take ten minutes or so), and then review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction goodness of the object detection model, and should all be high.
-3. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, enter `https://aka.ms/apple-orange` and view the prediction that is generated. Then close the **Quick Test** window.
+
+1. Wait for training to complete (it might take ten minutes or so), and then review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction goodness of the object detection model, and should all be high.
+
+1. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, enter `https://aka.ms/apple-orange` and view the prediction that is generated. Then close the **Quick Test** window.
 
 ## Publish the object detection model
 
@@ -97,27 +104,27 @@ Now you're ready to publish your trained model and use it from a client applicat
     - **Model name**: detect-produce
     - **Prediction Resource**: *The resource you created previously*.
 
-2. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task.
+1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task.
 
-## Run Cloud Shell 
+## Run Cloud Shell
 
-To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure. 
+To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal. 
 
     ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/create-object-detection-solution/powershell-portal-guide-1.png)
 
-2. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-3. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. 
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
 
-    ![Create storage by clicking confirm.](media/create-object-detection-solution/powershell-portal-guide-2.png)       
+    ![Create storage by clicking confirm.](media/create-object-detection-solution/powershell-portal-guide-2.png)
 
-4. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu. 
-    
+1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+
     ![How to find the left hand drop down menu to switch to PowerShell](media/create-object-detection-solution/powershell-portal-guide-3.png) 
 
-5. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
+1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
     ![Wait for PowerShell to start.](media/create-object-detection-solution/powershell-prompt.png) 
 
@@ -127,36 +134,36 @@ Now that you have a custom model, you can run a simple client application that u
 
 1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
 
-    ```
+    ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-   
-    >**Note** 
+
+    >**Note**
     >If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
-2. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell: 
+1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
-     ```
+    ```PowerShell
     code .
     ```
 
     Notice how this opens up an editor like the one in the image below: 
- 
+
     ![The code editor.](media/create-object-detection-solution/powershell-portal-guide-4.png)
 
-3. In the **Files** pane on the left, expand **ai-900** and select **detect-objects.ps1**. This file contains some code that uses the Custom Vision service to detect objects an image, as shown here:
+1. In the **Files** pane on the left, expand **ai-900** and select **detect-objects.ps1**. This file contains some code that uses the Custom Vision service to detect objects an image, as shown here:
 
     ![The editor containing code to detect items in an image](media/create-object-detection-solution/detect-image-code.png)
 
-4. Don't worry too much about the details of the code, the important thing is that it needs the prediction URL and key for your Custom Vision model when using an image URL. 
+1. Don't worry too much about the details of the code, the important thing is that it needs the prediction URL and key for your Custom Vision model when using an image URL. 
 
     Get the *prediction URL* from the dialog box in your Custom Vision project. 
-    
+
     >**Note**
     >Remember, you reviewed the *prediction URL* after you published the image classification model. To find the *prediction URL*, navigate to the **Performance** tab in your project, then click on **Prediction URL** (if the screen is compressed, you may just see a globe icon). A dialogue box will appear. Copy the url for **If you have an image URL**. Paste it into the code editor, replacing **YOUR_PREDICTION_URL**. 
 
     Using the same dialog box, get the *prediction key*. Copy the prediction key displayed after *Set Prediction-Key Header to*. Paste it in the code editor, replacing the **YOUR_PREDICTION_KEY** placeholder value. 
-    
+
     ![Screenshot of the prediction URL.](media/create-object-detection-solution/find-prediction-url.png)
 
     After pasting the Prediction URL and Prediction Key values, the first two lines of code should look similar to this:
@@ -166,20 +173,20 @@ Now that you have a custom model, you can run a simple client application that u
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-5. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
+1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 
     You will use the sample client application to detect objects in this image:
 
     ![An image of an fruit](media/create-object-detection-solution/produce.jpg)
 
-6. In the PowerShell pane, enter the following command to run the code:
+1. In the PowerShell pane, enter the following command to run the code:
 
-    ```
+    ```PowerShell
     cd ai-900
     ./detect-objects.ps1 
     ```
 
-7. Review the prediction, which should be *apple orange banana**.
+1. Review the prediction, which should be *apple orange banana**.
 
 ## Learn more
 

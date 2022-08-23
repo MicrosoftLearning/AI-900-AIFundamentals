@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Create an Image Classification Solution​'
+    title: 'Create an image classification solution​'
 ---
 
-## Create an Image Classification Solution​
+## Create an image classification solution​
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -24,7 +24,8 @@ You can use the Custom Vision service by creating either a **Custom Vision** res
 Create a **Cognitive Services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+
+1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US
@@ -32,16 +33,19 @@ Create a **Cognitive Services** resource in your Azure subscription.
     - **Pricing tier**: S0
     - **I confirm I have read and understood the notices**: Selected.
 
-3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
-4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+
+1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Create a Custom Vision project
 
 To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
 
 1. Download and extract the training images from https://aka.ms/fruit-images. These images are provided in a zipped folder, which when extracted contains subfolders called **apple**, **banana**, and **orange**.
-2. In another browser tab, open the Custom Vision portal at [https://customvision.ai](https://customvision.ai?azure-portal=true). If prompted, sign in using the Microsoft account associated with your Azure subscription and agree to the terms of service.
-3. In the Custom Vision portal, create a new project with the following settings:
+
+1. In another browser tab, open the Custom Vision portal at [https://customvision.ai](https://customvision.ai?azure-portal=true). If prompted, sign in using the Microsoft account associated with your Azure subscription and agree to the terms of service.
+
+1. In the Custom Vision portal, create a new project with the following settings:
 
     - **Name**: Grocery Checkout
     - **Description**: Image classification for groceries
@@ -50,29 +54,33 @@ To train an object detection model, you need to create a Custom Vision project b
     - **Classification Types**: Multiclass (single tag per image)
     - **Domains**: Food
 
-4. Click **\[+\] Add images**, and select all of the files in the **apple** folder you extracted previously. Then upload the image files, specifying the tag *apple*, like this:
+1. Click **\[+\] Add images**, and select all of the files in the **apple** folder you extracted previously. Then upload the image files, specifying the tag *apple*, like this:
 
     ![Upload apple with apple tag](media/create-image-classification-system/upload-apples.jpg)
 
-5. Repeat the previous step to upload the images in the **banana** folder with the tag *banana*, and the images in the **orange** folder with the tag *orange*.
-6. Explore the images you have uploaded in the Custom Vision project - there should be 15 images of each class, like this:
+1. Repeat the previous step to upload the images in the **banana** folder with the tag *banana*, and the images in the **orange** folder with the tag *orange*.
+
+1. Explore the images you have uploaded in the Custom Vision project - there should be 15 images of each class, like this:
 
     ![Tagged images of fruit - 15 apples, 15 bananas, and 15 oranges](media/create-image-classification-system/fruit.jpg)
 
-7. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option, and then wait for the training iteration to complete (this may take a minute or so).
-8. When the model iteration has been trained, review the *Precision*, *Recall*, and *AP* performance metrics - these measure the prediction accuracy of the classification model, and should all be high.
+1. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option, and then wait for the training iteration to complete (this may take a minute or so).
+
+1. When the model iteration has been trained, review the *Precision*, *Recall*, and *AP* performance metrics - these measure the prediction accuracy of the classification model, and should all be high.
 
 ## Test the model
 
 Before publishing this iteration of the model for applications to use, you should test it.
 
 1. Above the performance metrics, click **Quick Test**.
-2. In the **Image URL** box, type `https://aka.ms/apple-image` and click &#10132;
-3. View the predictions returned by your model - the probability score for *apple* should be the highest, like this:
+
+1. In the **Image URL** box, type `https://aka.ms/apple-image` and click &#10132;
+
+1. View the predictions returned by your model - the probability score for *apple* should be the highest, like this:
 
     ![An image with a class prediction of apple](media/create-image-classification-system/test-apple.jpg)
 
-4. Close the **Quick Test** window.
+1. Close the **Quick Test** window.
 
 ## Publish the image classification model
 
@@ -81,7 +89,8 @@ Now you're ready to publish your trained model and use it from a client applicat
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: groceries
     - **Prediction Resource**: *The prediction resource you created previously*.
-2. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task. 
+
+1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task. 
 
 ## Run Cloud Shell
 
@@ -91,17 +100,17 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/create-image-classification-system/powershell-portal-guide-1.png)
 
-2. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-3. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
 
     [![Create storage by clicking confirm.](media/create-image-classification-system/powershell-portal-guide-2.png)](media/create-image-classification-system/powershell-portal-guide-2.png#lightbox)
 
-4. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
     ![How to find the left hand drop down menu to switch to PowerShell](media/create-image-classification-system/powershell-portal-guide-3.png)
 
-5. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
+1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
     ![Wait for PowerShell to start.](media/create-image-classification-system/powershell-prompt.png)
 
@@ -117,7 +126,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
-2. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
+1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
     ```PowerShell
     code .
@@ -127,11 +136,11 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     ![The code editor.](media/create-image-classification-system/powershell-portal-guide-4.png)
 
-3. In the **Files** pane on the left, expand **ai-900** and select **classify-image.ps1**. This file contains some code that uses the Custom Vision model to analyze an image, as shown here:
+1. In the **Files** pane on the left, expand **ai-900** and select **classify-image.ps1**. This file contains some code that uses the Custom Vision model to analyze an image, as shown here:
 
      ![The editor containing code to classify an image](media/create-image-classification-system/classify-image-code.png)
 
-4. Don't worry too much about the details of the code, the important thing is that it needs the prediction URL and key for your Custom Vision model when using an image URL. 
+1. Don't worry too much about the details of the code, the important thing is that it needs the prediction URL and key for your Custom Vision model when using an image URL. 
 
    Get the *prediction URL* from the dialog box in your Custom Vision project. 
 
@@ -149,11 +158,11 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-5. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
+1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 
     You will use the sample client application to classify several images into the apple, banana, or orange category.
 
-6. We will classify this image: 
+1. We will classify this image:
 
     ![An image of an apple](media/create-image-classification-system/fruit-1.jpg)
 
@@ -164,31 +173,31 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     ./classify-image.ps1 1
     ```
 
-7. Review the prediction, which should be **apple**.
+1. Review the prediction, which should be **apple**.
 
-8. Now let's try another image:
+1. Now let's try another image:
 
     ![An image of a banana](media/create-image-classification-system/fruit-2.jpg)
 
-    Please run this command:
+    Run this command:
 
     ```PowerShell
     ./classify-image.ps1 2
     ```
 
-9. Verify that the model classifies this image as **banana**.
+1. Verify that the model classifies this image as **banana**.
 
-10. Finally, let's try the third test image:
+1. Finally, let's try the third test image:
 
     ![An image of an orange](media/create-image-classification-system/fruit-3.jpg)
 
-    Please run this command:
+    Run this command:
 
     ```PowerShell
     ./classify-image.ps1 3
     ```
 
-11. Verify that the model classifies this image as **orange**.
+1. Verify that the model classifies this image as **orange**.
 
 ## Learn more
 

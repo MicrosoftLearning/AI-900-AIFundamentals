@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze Receipts with Form Recognizer​'
+    title: 'Analyze receipts with Form Recognizer​'
 ---
 
-## Analyze Receipts with Form Recognizer
+## Analyze receipts with Form Recognizer
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -23,7 +23,8 @@ You can use the Form Recognizer service by creating either a **Form Recognizer**
 If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-2. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+
+1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*:
@@ -31,8 +32,9 @@ If you haven't already done so, create a **Cognitive Services** resource in your
     - **Pricing tier**: S0
     - **I confirm I have read and understood the notices**: Selected.
 
-3. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
-4. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+
+1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
@@ -42,17 +44,17 @@ To test the capabilities of the Form Recognizer service, we'll use a simple comm
 
     ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/analyze-receipts/powershell-portal-guide-1.png)
 
-2. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-3. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. 
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
 
     ![Create storage by clicking confirm.](media/analyze-receipts/powershell-portal-guide-2.png)
 
-4. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
     ![How to find the left hand drop down menu to switch to PowerShell](media/analyze-receipts/powershell-portal-guide-3.png) 
 
-5. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
+1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
     ![Wait for PowerShell to start.](media/analyze-receipts/powershell-prompt.png) 
 
@@ -68,9 +70,9 @@ Now that you have a custom model, you can run a simple client application that u
 
     >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
-2. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
+1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
-     ```PowerShell
+    ```PowerShell
     code .
     ```
 
@@ -78,11 +80,11 @@ Now that you have a custom model, you can run a simple client application that u
 
     ![The code editor.](media/analyze-receipts/powershell-portal-guide-4.png)
 
-3. In the **Files** pane on the left, expand **ai-900** and select **form-recognizer.ps1**. This file contains some code that uses the Form Recognizer service to analyze the fields in a receipt, as shown here:
+1. In the **Files** pane on the left, expand **ai-900** and select **form-recognizer.ps1**. This file contains some code that uses the Form Recognizer service to analyze the fields in a receipt, as shown here:
 
     ![The editor containing code to analyze fields in a receipt.](media/analyze-receipts/recognize-receipt-code.png)
 
-4. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
+1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
@@ -94,20 +96,20 @@ Now that you have a custom model, you can run a simple client application that u
     $endpoint="https..."
     ```
 
-5. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your resource to analyze fields from a receipt. In this case, you'll use the Form Recognizer's built-in model to analyze a receipt for the fictional Northwind Traders retail company.
+1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your resource to analyze fields from a receipt. In this case, you'll use the Form Recognizer's built-in model to analyze a receipt for the fictional Northwind Traders retail company.
 
     The sample client application will analyze the following image:
 
     ![This is an image of a receipt.](media/analyze-receipts/receipt.jpg)
 
-6. In the PowerShell pane, enter the following commands to run the code to read the text:
+1. In the PowerShell pane, enter the following commands to run the code to read the text:
 
     ```PowerShell
     cd ai-900
     ./form-recognizer.ps1 
     ```
 
-7. Review the returned results. See that Form Recognizer is able to interpret the data in the form, correctly identifying the merchant address and phone number, and the transaction date and time, as well as the line items, subtotal, tax, and total amounts.
+1. Review the returned results. See that Form Recognizer is able to interpret the data in the form, correctly identifying the merchant address and phone number, and the transaction date and time, as well as the line items, subtotal, tax, and total amounts.
 
 ## Learn more
 

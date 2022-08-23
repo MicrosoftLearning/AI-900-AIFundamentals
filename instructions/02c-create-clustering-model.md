@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Explore Clustering with Azure Machine Learning Designer'
+    title: 'Explore clustering with Azure Machine Learning Designer'
 ---
 
-## Explore Clustering with Azure Machine Learning Designer
+## Explore clustering with Azure Machine Learning Designer
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

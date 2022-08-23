@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Use Automated Machine Learning in Azure Machine Learning'
+    title: 'Use automated machine learning in Azure Machine Learning'
 ---
 
-## Use Automated Machine Learning in Azure Machine Learning
+## Use automated machine learning in Azure Machine Learning
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -13,7 +13,8 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 ## Create an Azure Machine Learning workspace  
 
 1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
-2. Select **Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+
+1. Select **Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *Create or select a resource group*
     - **Workspace name**: *Enter a unique name for your workspace*
@@ -22,18 +23,21 @@ In this exercise, you will use a dataset of historical bicycle rental details to
     - **Key vault**: *Note the default new key vault that will be created for your workspace*
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
     - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
-3. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes). 
-4. Launch Azure Machine Learning studio (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account.
-5. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new window. 
+
+1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes).
+
+1. Launch Azure Machine Learning studio (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account.
+
+1. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new window. 
 
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page. 
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page.
 
-2. On the **Compute** page, select the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
+1. On the **Compute** page, select the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*
     - **Virtual Machine tier**: Dedicated
     - **Virtual Machine type**: CPU
@@ -57,9 +61,9 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 1. View the comma-separated data at [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) in your web browser.
 
-2. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-3. Create a new dataset **from web files**, using the following settings:
+1. Create a new dataset **from web files**, using the following settings:
     * **Basic Info**:
         * **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true)
         * **Name**: bike-rentals
@@ -79,7 +83,7 @@ The compute cluster will take some time to be created. You can move onto the nex
     * **Confirm details**:
         * Do not profile the dataset after creation
 
-4. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data contains historical features and labels for bike rentals.
+1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data contains historical features and labels for bike rentals.
 
 > **Citation**: *This data is derived from [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) and is used in accordance with the published data [license agreement](https://www.capitalbikeshare.com/data-license-agreement).*
 
@@ -89,7 +93,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
 
-2. Create an Automated ML run with the following settings:
+1. Create an Automated ML run with the following settings:
     - **Select data asset**:
         - **Dataset**: bike-rentals
     - **Configure job**:
@@ -109,7 +113,7 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **Use all supported models**: <u>Un</u>selected. *You'll restrict the job to try only a few specific algorithms.*
         - **Allowed models**: *Select only **RandomForest** and **LightGBM** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
 
-        ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)            
+        ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)
         - **Exit criterion**:
             - **Training job time (hours)**: 0.5 — *ends the job after a maximum of 30 minutes.*
             - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
@@ -117,33 +121,35 @@ Follow the next steps to run a job that uses automated machine learning to train
     - **Featurization settings:**
         - **Enable featurization**: Selected — *automatically preprocess the features before training.*
 
-    Click **Next** to go to the next selection pane. 
+    Click **Next** to go to the next selection pane.
 
     - **[Optional] Select the validation and test type**
         - **Validation type**: Auto
-        - **Test dataset (preview)**: No test dataset required 
+        - **Test dataset (preview)**: No test dataset required
 
-3. When you finish submitting the automated machine learning run details, it starts automatically. Wait for the run status to change from *Preparing* to *Running*.
-4. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
-5. Wait for the job to finish. It might take a while — now might be a good time for a coffee break!
+1. When you finish submitting the automated machine learning run details, it starts automatically. Wait for the run status to change from *Preparing* to *Running*.
+
+1. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
+
+1. Wait for the job to finish. It might take a while — now might be a good time for a coffee break!
 
 ## Review the best model
 
 1. On the **Overview** tab of the automated machine learning run, note the best model summary.
     ![Screenshot of the best model summary of the automated machine learning run with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
 
-2. Select the text under **Algorithm name** for the best model to view its details.
+1. Select the text under **Algorithm name** for the best model to view its details.
 
-3. Next to the *Normalized root mean squared error* value, select **View all other metrics** to see values of other possible evaluation metrics for a regression model.
+1. Next to the *Normalized root mean squared error* value, select **View all other metrics** to see values of other possible evaluation metrics for a regression model.
 
     ![Screenshot of how to locate view all other metrics on the Model tab.](media/use-automated-machine-learning/review-run-1.png)
 
-4. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
+1. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
     ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/review-run-3.png)
 
     Review the charts which show the performance of the model. The first chart shows the *residuals*, the differences between predicted and actual values, as a histogram, the second chart compares the predicted values against the true values.
 
-5. Select the **Explanations** tab. Select an explanation ID and then select **Aggregate feature importance**. This chart shows how much each feature in the dataset influences the label prediction, like this:
+1. Select the **Explanations** tab. Select an explanation ID and then select **Aggregate feature importance**. This chart shows how much each feature in the dataset influences the label prediction, like this:
 
     ![Screenshot of the feature importance chart on the Explanations tab.](media/use-automated-machine-learning/feature-importance.png)
 
@@ -151,18 +157,19 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Automated ML** page, select the run for your automated machine learning job.
 
-2. On the **Details** tab, select the algorithm name for the best model.
+1. On the **Details** tab, select the algorithm name for the best model.
 
     ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-3. on the **Model** tab, select the **Deploy** button and use the **Deploy to web service** option to deploy the model with the following settings:
+1. on the **Model** tab, select the **Deploy** button and use the **Deploy to web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
     - **Description**: Predict cycle rentals
     - **Compute type**: Azure Container Instance
     - **Enable authentication**: Selected
 
-4. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Successful**, which may take some time. You may need to select **Refresh** periodically.
-5. In Azure Machine Learning studio, on the left hand menu, select **Endpoints**.
+1. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Successful**, which may take some time. You may need to select **Refresh** periodically.
+
+1. In Azure Machine Learning studio, on the left hand menu, select **Endpoints**.
     ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/find-endpoints.png)
 
 ## Test the deployed service
@@ -170,8 +177,10 @@ Follow the next steps to run a job that uses automated machine learning to train
 Now you can test your deployed service.
 
 1. On the **Endpoints** page, open the **predict-rentals** real-time endpoint.
-2. When the **predict-rentals** endpoint opens, view the **Test** tab.
-3. In the input data pane, replace the template JSON with the following input data:
+
+1. When the **predict-rentals** endpoint opens, view the **Test** tab.
+
+1. In the input data pane, replace the template JSON with the following input data:
 
     ```JSON
     {
@@ -197,9 +206,9 @@ Now you can test your deployed service.
     }
     ```
 
-4. Click on the **Test** button.
+1. Click on the **Test** button.
 
-5. Review the test results, which include a predicted number of rentals based on the input features. The test pane took the input data and used the model you trained to return the predicted number of rentals.
+1. Review the test results, which include a predicted number of rentals based on the input features. The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
     ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test.png)
 
