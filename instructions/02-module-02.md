@@ -221,4 +221,4 @@ Let's review what you have done. You used a dataset of historical bicycle rental
 You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
 
 > **Tip**
-> After you finish the entire module, be sure to follow the **Clean Up** instructions at the end of the module to stop your compute resources. Stop your compute resources to ensure your subscription won't be charged.
+> After you finish the entire module, be sure to follow the **Clean-Up** instructions at the end of the module to stop your compute resources. Stop your compute resources to ensure your subscription won't be charged.
