@@ -407,7 +407,7 @@ The web service you created is hosted in an *Azure Container Instance*. If you d
 1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
 
 >**Note**
-> Deleting your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
+> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
 >
 > To delete your workspace:
 >
