@@ -18,30 +18,29 @@ The Language service's custom question answering feature enables you to quickly 
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings, and then click **Continue to create your resource**:
     **Select Additional Features**
-    - **Default features**: *Keep the default features*
-    - **Custom features**: *Select custom question answering*
+    - **Default features**: *Keep the default features*.
+    - **Custom features**: *Select custom question answering*.
 
     ![Creating a Language Service resource with custom question answering enabled.](media/create-a-bot/create-language-service-resource.png)
 
 1. On the **Create Language** page, specify the following settings:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Select an existing resource group or create a new one*
-    - **Name**: *A unique name for your Language resource*
-    - **Pricing tier**: Standard S
-    - **Azure Search location**: *Any available location*
-    - **Azure Search pricing tier**: Free F (*If this tier is not available, select Standard (S)*)
-    - **Legal Terms**: *Agree*
-    - **Responsible AI Notice**: *Agree*
+    - **Subscription**: *Your Azure subscription*.
+    - **Resource group**: *Select an existing resource group or create a new one*.
+    - **Name**: *A unique name for your Language resource*.
+    - **Pricing tier**: S (1K Calls per minute)
+    - **Azure search region**: *Any available location*.
+    - **Azure search pricing tier**: Free F (3 Indexes) - (*If this tier is not available, select Standard S (50 Indexes)*)
+    - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice**: *Selected*.
 
     > **Note**
-    > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **F**.
+    > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
 
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
 
 1. If prompted to choose a Language resource, select the following settings:
-    - **Azure Directory**: The Azure directory containing your subscription.
+    - **Azure directory**: The Azure directory containing your subscription.
     - **Azure subscription**: Your Azure subscription.
     - **Language resource**: The Language resource you created previously.
 
@@ -53,6 +52,8 @@ The Language service's custom question answering feature enables you to quickly 
 
 1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
 
+1. On the **Choose language setting for resource *your resource*** page, select **I want to select the language when I create a project in this resource** and click **Next**.
+
 1. On the **Enter basic information** page, enter the following details and click **Next**:
     - **Language resource**: *choose your language resource*.  
     - **Azure search resource**: *choose your Azure search resource*.
@@ -61,15 +62,14 @@ The Language service's custom question answering feature enables you to quickly 
     - **Source language**: English
     - **Default answer when no answer is returned**: No answer found
 
-1. On the *Review and finish* page, click **Create project**.
+1. On the **Review and finish** page, click **Create project**.
 
 1. You will be taken to the **Manage sources** page. Click **&#65291;Add source** and select **URLs**.
 
-1. In the **Add URLs** box, click **+ Add URL**. Type in the following:
+1. In the **Add URLs** box, click **+ Add url**. Type in the following and select **Add all**:
     - **URL name**: MargiesKB
     - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/qna/margies_faq.docx`
-    - **Classify file structure**: *Auto-detect*
-    Select **Add all**.  
+    - **Classify file structure**: *Auto-detect* 
 
 ## Edit the knowledge base
 
@@ -77,7 +77,9 @@ Your knowledge base is based on the details in the FAQ document and some pre-def
 
 1. Click **Edit knowledge base** on the left hand panel. Then click **+ Add question pair**.
 
-1. In the **Questions** box, type `Hello`. Then click **+ Add alternative phrasing** and type `Hi`.
+1. In the **Questions** box, type `Hello`, then click **Submit changes**.
+
+1. Click **+ Add alternate phrase** and type `Hi`, then click **Submit changes**.
 
 1. In the **Answer and prompts** box, type `Hello`. Keep the **Source**: Editorial.
 
@@ -104,9 +106,11 @@ Now that you have a knowledge base, you can test it.
 
 The knowledge base provides a back-end service that client applications can use to answer questions through some sort of user interface. Commonly, these client applications are bots. To make the knowledge base available to a bot, you must publish it as a service that can be accessed over HTTP. You can then use the Azure Bot Service to create and host a bot that uses the knowledge base to answer user questions.
 
-1. At the left of the Language Studio page, click **Deploy knowledge base**. Click **Deploy**.
+1. At the left of the Language Studio page, click **Deploy knowledge base**.
 
-1. After the service has been deployed, click **Create a Bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
+1. At the top of the page, click **Deploy**, and the click **Deploy** again.
+
+1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 
 1. In the Azure portal, create a Web App Bot with the following settings (most of these will be pre-populated for you):
     - **Bot handle**: *A unique name for your bot*
@@ -123,7 +127,7 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. Wait for your bot to be created (the notification icon at the top right, which looks like a bell, will be animated while you wait). Then in the notification that deployment has completed, click **Go to resource** (or alternatively, on the home page, click **Resource groups**, open the resource group where you created the web app bot, and click it.)
 
-1. In the left-hand pane of your bot look for **Settings**, click on **Test in Web Chat**, and wait until the bot displays the message **Hello and welcome!** (it may take a few seconds to initialize).
+1. In the left-hand pane of your bot look for **Settings**, click on **Test in Web Chat**, and wait until the bot displays the message **Hello and Welcome** (it may take a few seconds to initialize).
 
 1. Use the test chat interface to ensure your bot answers questions from your knowledge base as expected. For example, try submitting *I need to cancel my hotel*.
 
