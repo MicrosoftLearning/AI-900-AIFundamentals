@@ -12,42 +12,42 @@ lab:
 
 1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
 
-1. Select **Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Workspace name**: *Enter a unique name for your workspace*
-    - **Region**: *Select the closest geographical region*
-    - **Storage account**: *Note the default new storage account that will be created for your workspace*
-    - **Key vault**: *Note the default new key vault that will be created for your workspace*
-    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
+1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    - **Subscription**: *Your Azure subscription*.
+    - **Resource group**: *Create or select a resource group*.
+    - **Workspace name**: *Enter a unique name for your workspace*.
+    - **Region**: *Select the closest geographical region*.
+    - **Storage account**: *Note the default new storage account that will be created for your workspace*.
+    - **Key vault**: *Note the default new key vault that will be created for your workspace*.
+    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
     - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
 
-1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes).
+1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
 
-1. Launch Azure Machine Learning studio (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account.
+1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
-1. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new window.
+1. In Azure Machine Learning studio, in the menu on the left, select **Workspaces**. Select the workspace you created to open an instance of your workspace in a new tab.
 
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
-2. On the **Compute** page, select the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*
-    - **Virtual Machine tier**: Dedicated
-    - **Virtual Machine type**: CPU
-    - **Virtual Machine size**:
+2. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
+    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
+    - **Virtual machine tier**: Dedicated
+    - **Virtual machine type**: CPU
+    - **Virtual machine size**:
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**: *enter a unique name*
+    - **Compute name**: *enter a unique name*.
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Unselected
+    - **Enable SSH access**: Clear
     - Select **Create**
 
 > **Note**
@@ -63,11 +63,11 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
-1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML *compute-type***, select the compute cluster you created previously.
+1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously.
 
 1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date***) to **Train Penguin Clustering**.
 
-1. Select the *close icon* on the top right of the **Settings** pane to close the pane.
+1. Select the *close icon* on the top right of the **Settings** pane to close the pane, and then select **Save**.
 
     ![Screenshot of the Machine Learning Studio Settings pane.](media/create-clustering-model/create-pipeline-help.png)
 
@@ -108,11 +108,13 @@ Network](https://lternet.edu/).
 
 ### Load data to canvas
 
-1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset Library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Components**.
+1. Return to your pipeline by selecting **Designer** on the left-hand menu. On the **Designer** page, select the **Train Penguin Clustering**.
+
+1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
     ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-clustering-model/designer-asset-library-data.png)
 
-1. Click on **Data**. Search for and place the  **penguin-data** dataset onto the canvas.
+1. Click on **Data**. Search for and place the **penguin-data** dataset onto the canvas.
 
 1. Right-click (Ctrl+click on a Mac) the **penguin-data** dataset on the canvas, and click on **Preview data**.
 
@@ -135,7 +137,7 @@ Network](https://lternet.edu/).
 
 ## Apply transformations
 
-1. In the **Asset Library** pane on the left, click on **Components**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
+1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
     ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-clustering-model/designer-asset-library-components.png)
 
@@ -153,7 +155,7 @@ Network](https://lternet.edu/).
 
     ![Screenshot of how to connect the Select Columns in Dataset module to the Clean Missing Data module.](media/create-clustering-model/clean-missing-data.png)
 
-1. Double click the **Clean Missing Data** module, and in the settings pane on the right, click **Edit column**. Then in the **Select columns** window, select **With rules** and include **All columns**; like this:
+1. Double click the **Clean Missing Data** module, and in the settings pane on the right, click **Edit column**. Then in the **Columns to be cleaned** window, select **With rules** and include **All columns**; like this:
 
     ![Screenshot of how to use the with rules option to select all columns.](media/create-clustering-model/normalize-columns.png)
 
@@ -166,7 +168,7 @@ Network](https://lternet.edu/).
 
     ![Screenshot of the Clean Missing Data module connected to the Normalize Data module.](media/create-clustering-model/dataset-normalize.png)
 
-1. Double click the **Normalize Data** module, and in the pane on the right, set the **Transformation method** to **MinMax** and select **Edit column**. Then in the **Select columns** window, select **With rules** and include **All columns**; like this:
+1. Double click the **Normalize Data** module, and in the pane on the right, set the **Transformation method** to **MinMax** and select **Edit column**. Then in the **Columns to transform** window, select **With rules** and include **All columns**; like this:
 
     ![Screenshot of how to select all columns.](media/create-clustering-model/normalize-columns.png)
 
@@ -182,19 +184,19 @@ To apply your data transformations, you need to run the pipeline as an experimen
 
     ![Screenshot of designer asset library with the completed job and job details button below.](media/create-clustering-model/completed-job.png)
 
-    Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Complete**. 
+    Notice that the left hand panel is now on the **Submitted jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
 
 ## View the transformed data
 
-1. When the run has completed, the dataset is now prepared for model training. Click on **Job Details**. You will be taken to another window which will show the modules like this:
+1. When the run has completed, the dataset is now prepared for model training. Click on **Job detail**. You will be taken to another tab which will show the modules like this:
 
     ![Screenshot of the modules in a completed state with green bar on the left of each module.](media/create-clustering-model/normalize-complete.png)
 
-1. In the new window, right click on the **Normalize Data** module, select **Preview data**, then select **Transformed dataset** to view the results.
+1. In the new tab, right click on the **Normalize Data** module, select **Preview data**, then select **Transformed dataset** to view the results.
 
 1. View the data, noting that the **Species** column has been removed, there are no missing values, and the values for all four features have been normalized to a common scale.
 
-1. Close the normalized data result visualization. Return to the previous pipeline window.
+1. Close the normalized data result visualization. Return to the previous pipeline tab.
 
 Now that you have selected and prepared the features you want to use from the dataset, you're ready to use them to train a clustering model.
 
@@ -210,7 +212,7 @@ Follow the steps below, using the image above for reference as you add and confi
 
 1. Open the **Train Penguin Clustering** pipeline, if it's not already open.
 
-1. In the **Asset Library** pane on the left, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the left output of the **Normalize Data** module to the input of the **Split Data** module.
+1. In the **Asset library** pane on the left, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the left output of the **Normalize Data** module to the input of the **Split Data** module.
 
     >**Tip**
     > Use the search bar to quickly locate modules. 
@@ -222,9 +224,9 @@ Follow the steps below, using the image above for reference as you add and confi
     * **Random seed**: 123
     * **Stratified split**: False
 
-1. In the **Asset library**, search for and place a **Train Clustering Model** module to the canvas, under the **Split Data** module. Then connect the *Result dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Clustering Model** module.
+1. In the **Asset library**, search for and place a **Train Clustering Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Clustering Model** module.
 
-1. The clustering model should assign clusters to the data items by using all of the features you selected from the original dataset. Double click the **Train Clustering Model** module and in the right hand pane, select **Edit Columns**. Use the **With rules** option to include all columns; like this:
+1. The clustering model should assign clusters to the data items by using all of the features you selected from the original dataset. Double click the **Train Clustering Model** module and in the right hand pane, select **Edit column**. Use the **With rules** option to include all columns; like this:
 
     ![Screenshot of how to include all columns in the column set.](media/create-clustering-model/cluster-features.png)
 
@@ -240,7 +242,9 @@ Follow the steps below, using the image above for reference as you add and confi
     > 4. Reassigning the points to their closest centroid after the move.
     > 5. Repeating steps 3 and 4 until the cluster allocations stabilize or the specified number of iterations has completed.
 
-1. After using 70% of the data to train the clustering model, you can use the remaining 30% to test it by using the model to assign the data to clusters. In the **Asset library**, search for and place an **Assign Data to Clusters** module to the canvas, below the **Train Clustering Model** module. Then connect the **Trained model** (left) output of the **Train Clustering Model** module to the **Trained model** (left) input of the **Assign Data to Clusters** module; and connect the **Results dataset2** (right) output of the **Split Data** module to the **Dataset** (right) input of the **Assign Data to Clusters** module.
+   After using 70% of the data to train the clustering model, you can use the remaining 30% to test it by using the model to assign the data to clusters.
+
+1. In the **Asset library**, search for and place an **Assign Data to Clusters** module to the canvas, below the **Train Clustering Model** module. Then connect the **Trained model** (left) output of the **Train Clustering Model** module to the **Trained model** (left) input of the **Assign Data to Clusters** module; and connect the **Results dataset2** (right) output of the **Split Data** module to the **Dataset** (right) input of the **Assign Data to Clusters** module.
 
 ## Run the training pipeline
 
@@ -254,11 +258,11 @@ Now you're ready to run the training pipeline and train the model.
 
 1. Wait for the experiment run to finish. This may take 5 minutes or more.
 
-1. When the experiment run has finished, select **Job details**. In the new window, right click on the **Assign Data to Clusters** module, select **Preview data**, then select **Results dataset** to view the results.
+1. When the experiment run has finished, select **Job detail**. In the new tab, right click on the **Assign Data to Clusters** module, select **Preview data**, then select **Results dataset** to view the results.
 
 1. Scroll down, and note the **Assignments** column, which contains the cluster (0, 1, or 2) to which each row is assigned. There are also new columns indicating the distance from the point representing this row to the centers of each of the clusters - the cluster to which the point is closest is the one to which it is assigned.
 
-1. Close the **Assign Data to Clusters** visualization. Return to the pipeline window.
+1. Close the **Assign Data to Clusters** visualization. Return to the pipeline tab.
 
 The model is predicting clusters for the penguin observations, but how reliable are its predictions? To assess that, you need to evaluate the model.
 
@@ -278,13 +282,13 @@ Evaluating a clustering model is made difficult by the fact that there are no pr
 
 1. Wait for the experiment run to finish.
 
-1. When the experiment run has finished, select **Job details**. Right click on the **Evaluate Model** module and select **Preview data**, then select **Evaluation results**. Review the metrics in each row:
+1. When the experiment run has finished, select **Job detail**. Right click on the **Evaluate Model** module and select **Preview data**, then select **Evaluation results**. Review the metrics in each row:
     - **Average Distance to Other Center**
     - **Average Distance to Cluster Center**
     - **Number of Points**
     - **Maximal Distance to Cluster Center**
 
-1. Close the **Evaluate Model result visualization** window.
+1. Close the **Evaluate Model result visualization** tab.
 
 Now that you have a working clustering model, you can use it to assign new data to clusters in an *inference pipeline*.
 
@@ -292,7 +296,7 @@ After creating and running a pipeline to train the clustering model, you can cre
 
 ## Create an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the three lines at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-penguin-training**, then select the **mslearn-penguin-training** pipeline. 
+1. In Azure Machine Learning studio, expand the left-hand pane by selecting the three lines at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-penguin-training**, then select the **Train Penguin Clustering** pipeline. 
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
@@ -333,11 +337,9 @@ After creating and running a pipeline to train the clustering model, you can cre
 
 1. Submit the pipeline as a new experiment named **mslearn-penguin-inference** on your compute cluster. The experiment may take a while to run.
 
-1. When the pipeline has finished, select **Job details**. In the new window, right click on **Assign Data to Clusters** module and select **Preview data** to see the predicted cluster assignments and metrics for the three penguin observations in the input data.
+1. When the pipeline has finished, select **Job detail**. In the new tab, right click on **Assign Data to Clusters** module, select **Preview data** and select **Results dataset** to see the predicted cluster assignments and metrics for the three penguin observations in the input data.
 
 Your inference pipeline assigns penguin observations to clusters based on their features. Now you're ready to publish the pipeline so that client applications can use it.
-
-After you've created and tested an inference pipeline for real-time inferencing, you can publish it as a service for client applications to use.
 
 >**Note**
 >In this exercise, you'll deploy the web service to to an Azure Container Instance (ACI). This type of compute is created dynamically, and is useful for development and testing. For production, you should create an *inference cluster*, which provide an Azure Kubernetes Service (AKS) cluster that provides better scalability and security.
@@ -346,28 +348,30 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. View the **Predict Penguin Clusters** inference pipeline you created in the previous unit.
 
-1. Select **Job detail** on the left hand pane. This will open up another window. 
+1. Select **Job detail** on the left hand pane. This will open up another tab.
 
     ![Screenshot of job details next to the completed job. ](media/create-clustering-model/completed-job-inference.png)
 
-1. In the new window, select **Deploy**.
+1. In the new tab, select **Deploy**.
 
     ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-clustering-model/deploy-screenshot.png)
 
-1. At the top right, select **Deploy**, and deploy a new real-time endpoint, using the following settings:
+1. Deploy a new real-time endpoint, using the following settings:
     -  **Name**: predict-penguin-clusters
     -  **Description**: Cluster penguins.
     - **Compute type**: Azure Container Instance
 
-1. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the designer interface.
+1. Wait for the web service to be deployed - this can take several minutes. 
+
+1. To view the deployment status, expand the left pane by selecting the three lines at the top left of the screen. View the **Endpoints** page (under **Assets**) and select **predict-penguin-clusters**. When the deployment has finished, the **Deployment state** will change to **Healthy**.
 
 ## Test the service
 
-1. On the **Endpoints** page, open the **predict-penguin-clusters** real-time endpoint.
+1. On the **Endpoints** page, open the **predict-penguin-clusters** real-time endpoint, and select the **Test** tab.
 
     ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-clustering-model/endpoints-screenshot.png)
 
-1. When the **predict-penguin-clusters** endpoint opens, select the **Test** tab. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section: 
+1. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section: 
 
     ```JSON
     {
@@ -388,7 +392,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
     > **Note**
     > The JSON above defines features for a penguin, and uses the **predict-penguin-clusters** service you created to predict a cluster assignment.
 
-1. Select **Test**. On the right hand of the screen, you should see the output **'assignments'**. Notice how the assigned cluster is the one with the shortest distance to cluster center.
+1. Select **Test**. On the right hand of the screen, you should see the output **'Assignments'**. Notice how the assigned cluster is the one with the shortest distance to cluster center.
 
     ![Screenshot of the Test pane with sample test result.](media/create-clustering-model/test-interface.png)
 
@@ -400,7 +404,7 @@ The web service you created is hosted in an *Azure Container Instance*. If you d
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-penguin-clusters** endpoint. Then select **Delete** (&#128465;) and confirm that you want to delete the endpoint.
 
-1. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and then select **Stop**.
+1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
 
 >**Note**
 > Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.

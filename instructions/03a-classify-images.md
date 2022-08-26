@@ -30,8 +30,8 @@ Create a **Cognitive Services** resource in your Azure subscription.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S0
-    - **I confirm I have read and understood the notices**: Selected.
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
@@ -51,10 +51,10 @@ To train an object detection model, you need to create a Custom Vision project b
     - **Description**: Image classification for groceries
     - **Resource**: *The Custom Vision resource you created previously*
     - **Project Types**: Classification
-    - **Classification Types**: Multiclass (single tag per image)
+    - **Classification Types**: Multiclass (Single tag per image)
     - **Domains**: Food
 
-1. Click **\[+\] Add images**, and select all of the files in the **apple** folder you extracted previously. Then upload the image files, specifying the tag *apple*, like this:
+1. Click **Add images**, and select all of the files in the **apple** folder you extracted previously. Then upload the image files, specifying the tag *apple*, like this:
 
     ![Upload apple with apple tag](media/create-image-classification-system/upload-apples.jpg)
 
@@ -145,7 +145,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
    Get the *prediction URL* from the dialog box in your Custom Vision project. 
 
    >**Note**
-   >Remember, you reviewed the *prediction URL* after you published the image classification model. To find the *prediction URL*, navigate to the **Performance** tab in your project, then click on **Prediction URL** (if the screen is compressed, you may just see a globe icon). A dialogue box will appear. Copy the url for **If you have an image URL**. Paste it into the code editor, replacing **YOUR_PREDICTION_URL**.
+   >Remember, you reviewed the *prediction URL* after you published the image classification model. To find the *prediction URL*, navigate to the **Performance** tab in your project, then click on **Prediction URL** (if the screen is compressed, you may just see a globe icon). A dialog box will appear. Copy the url for **If you have an image URL**. Paste it into the code editor, replacing **YOUR_PREDICTION_URL**.
 
     Using the same dialog box, get the *prediction key*. Copy the prediction key displayed after *Set Prediction-Key Header to*. Paste it in the code editor, replacing the **YOUR_PREDICTION_KEY** placeholder value.
 

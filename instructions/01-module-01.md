@@ -14,7 +14,8 @@ The specific cognitive service you'll explore in this exercise is *Anomaly Detec
 
 To test the capabilities of the Anomaly Detection service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-> **Note**: The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
+> **Note**
+> The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
 
 ## Create an *Anomaly Detector* resource
 
@@ -25,11 +26,11 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 1. Click the **&#65291;Create a resource** button, search for *Anomaly Detector*, and create an **Anomaly Detector** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select an existing resource group or create a new one*.
-    - **Region**: *Choose any available region*
+    - **Region**: *Choose any available region*.
     - **Name**: *Enter a unique name*.
     - **Pricing tier**: Free F0
 
-1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+1. Review and create the resource. Wait for deployment to complete, and then go to the deployed resource.
 
 1. View the **Keys and Endpoint** page for your Anomaly Detector resource. You will need the endpoint and keys to connect from client applications.
 

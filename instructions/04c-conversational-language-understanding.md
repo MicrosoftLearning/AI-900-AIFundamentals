@@ -26,9 +26,8 @@ If you haven't already done so, create a **Language service** resource in your A
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US 2
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Standard (S)
-    - **Legal Terms**: *Agree*
-    - **Responsible AI Notice**: *Agree*
+    - **Pricing tier**: S (1K Calls per minute)
+    - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete.
 
@@ -39,16 +38,16 @@ To implement natural language understanding with Conversational Language Underst
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
 
 1. If prompted to choose a Language resource, select the following settings:
-    - **Azure Directory**: The Azure directory containing your subscription.
+    - **Azure directory**: The Azure directory containing your subscription.
     - **Azure subscription**: Your Azure subscription.
     - **Language resource**: The Language resource you created previously.
 
     >**Tip**
     >If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
-        1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
-        2. On the **Settings** page, view the **Resources** tab.
-        3. Select your language resource, and click **Switch resource**.
-        4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
+    >1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
+    >1. On the **Settings** page, view the **Resources** tab.
+    >1. Select your language resource, and click **Switch resource**.
+    >1. At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
 1. At the top of the portal, in the **Create new** menu, select **Conversational language understanding**.
 
@@ -74,7 +73,7 @@ An *intent* is an action you want to perform - for example, you might want to sw
     ![Click on add under Intents on the Build Schema pane.](media/conversational-language-understanding/build-schema.png)
     ![Add the switch_on intent then select Add intent.](media/conversational-language-understanding/add-intent.png)
 
-1. Select the **switch_on** intent. It will take you to the **Data labeling** page. Next to the **switch_on** intent, type the utterance ***turn the light on*** and press **Enter** to submit this utterance to the list.
+1. Select the **switch_on** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_on**. Next to the **switch_on** intent, type the utterance ***turn the light on*** and press **Enter** to submit this utterance to the list.
 
     ![Add an utterance to the training set by typing in "turn the light on" under Utterance.](media/conversational-language-understanding/add-utterance-on.png)
 
@@ -111,7 +110,7 @@ An *intent* is an action you want to perform - for example, you might want to sw
 
     ![Return to the Build Schema screen and add a switch_off intent.](media/conversational-language-understanding/add-switch-off.png) 
 
-1. Click on the **switch_off** intent. It will take you to the **Data labeling** page. Next to the **switch_off** intent, add the utterance ***turn the light off***.
+1. Click on the **switch_off** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_off**. Next to the **switch_off** intent, add the utterance ***turn the light off***.
 
 1. Add five more utterance examples to the **switch_off** intent.
     - ***switch off the fan***
@@ -150,12 +149,12 @@ To use your trained model in a client application, you must deploy it as an endp
 1. On the left-hand side of Language Studio, click **Deploying a model**.
 
 1. Select your model name and click **Add deployment**. Use these settings:
-    - **Create or select an existing deployment name**: *Select create a new deployment name. Add a unique name*
-    - **Assign trained model to your deployment name**: *Select the name of the trained model*
+    - **Create or select an existing deployment name**: *Select create a new deployment name. Add a unique name*.
+    - **Assign trained model to your deployment name**: *Select the name of the trained model*.
     - Click **Deploy**
 
->**Tip**
->Write down your *deployment name*, you will use it later. 
+    >**Tip**
+    >Write down your *deployment name*, you will use it later. 
 
 1. When the model is deployed, click **Testing deployments** on the left-hand side of the page, and then select your deployed model under **Deployment name**.
 
@@ -167,7 +166,7 @@ To use your trained model in a client application, you must deploy it as an endp
 
     Review the result that is returned, noting that it includes the predicted intent (which should be **switch_on**) and the predicted entity (**device**) with confidence scores that indicates the probability the model calculated for the predicted intent and entity. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
-1. Clear the text box and test the model with the following utterances under *Enter your own text*:
+1. Clear the text box and test the model with the following utterances under *Enter your own text, or upload a text document*:
     - *turn off the fan*
     - *put the light on*
     - *put the fan off*

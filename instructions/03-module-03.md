@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze images with Computer Vision​'
+    title: 'Analyze images with Computer Vision'
 ---
 
-## Analyze images with Computer Vision​
+## Analyze images with Computer Vision
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -25,10 +25,10 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*:
+    - **Region**: *Choose any available region*.
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S0
-    - **I confirm I have read and understood the notices**: Selected.
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
@@ -66,7 +66,8 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
+    > **Tip**
+    > If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -74,7 +75,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     code .
     ```
 
-    Notice how this opens up an editor like the one in the image below: 
+    Notice how this opens up an editor like the one in the image below:
 
     ![The code editor.](media/analyze-images-computer-vision-service/powershell-portal-guide-4.png)
 

@@ -32,8 +32,8 @@ Create a **Cognitive Services** resource in your Azure subscription.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S0
-    - **I confirm I have read and understood the notices**: Selected.
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
@@ -102,7 +102,7 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: detect-produce
-    - **Prediction Resource**: *The resource you created previously*.
+    - **Prediction resource**: *The resource you created previously*.
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model. Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task.
 
@@ -186,7 +186,7 @@ Now that you have a custom model, you can run a simple client application that u
     ./detect-objects.ps1 
     ```
 
-1. Review the prediction, which should be *apple orange banana**.
+1. Review the prediction, which should be *apple orange banana*.
 
 ## Learn more
 
