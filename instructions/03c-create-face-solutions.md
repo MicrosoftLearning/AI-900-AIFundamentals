@@ -25,8 +25,8 @@ If you haven't already done so, create a **Cognitive Services** resource in your
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*:
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S0
-    - **I confirm I have read and understood the notices**: Selected.
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
