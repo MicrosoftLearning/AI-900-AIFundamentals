@@ -27,10 +27,10 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 1. Select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*:
+    - **Region**: *Choose any available region*.
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S0
-    - **I confirm I have read and understood the notices**: Selected.
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource.
 
@@ -111,7 +111,7 @@ Now that you have a custom model, you can run a simple client application that u
 
     ```PowerShell
     cd ai-900
-    ./analyze-text.ps1 review1.txt 
+    ./analyze-text.ps1 review1.txt
     ```
 
     You will be reviewing this text:
@@ -126,7 +126,7 @@ Now that you have a custom model, you can run a simple client application that u
 1. In the PowerShell pane, enter the following command to run the code:
 
     ```PowerShell
-    ./analyze-text.ps1 review2.txt 
+    ./analyze-text.ps1 review2.txt
     ```
 
     You will be reviewing this text:
@@ -141,7 +141,7 @@ Now that you have a custom model, you can run a simple client application that u
 1. In the PowerShell pane, enter the following command to run the code:
 
     ```PowerShell
-    ./analyze-text.ps1 review3.txt 
+    ./analyze-text.ps1 review3.txt
     ```
 
     You will be reviewing this text:
@@ -157,7 +157,7 @@ Now that you have a custom model, you can run a simple client application that u
 1. In the PowerShell pane, enter the following command to run the code:
 
     ```PowerShell
-    ./analyze-text.ps1 review4.txt 
+    ./analyze-text.ps1 review4.txt
     ```
 
     You will be reviewing this text:
