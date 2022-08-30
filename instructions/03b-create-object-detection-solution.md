@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Detect objects in images with the Custom Vision service​'
+    title: 'Explore object detection​'
 ---
 
-## Detect objects in images with the Custom Vision service
+## Explore object detection
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Translate text and speech'
+    title: 'Explore translation'
 ---
 
-## Translate text and speech
+## Explore translation
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
@@ -108,7 +108,7 @@ Now that you have a custom model, you can run a simple client application that u
     - Translate audio from English into text in French
     - Use the video player below to hear the input audio the application will process:
 
-    <a href="https://www.microsoft.com/videoplayer/embed/RWORN0" title="Video player"><img src="media/recognize-synthesize-speech/video.png" alt="Video player" /></a>
+    <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWORN0" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
     > **Note**
     > A real application could accept the input from a microphone and send the response to a speaker, but in this simple example, we'll use pre-recorded input in an audio file.

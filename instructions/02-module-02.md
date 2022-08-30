@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Use automated machine learning in Azure Machine Learning'
+    title: 'Explore Automated Machine Learning in Azure ML'
 ---
 
-## Use automated machine learning in Azure Machine Learning
+## Explore Automated Machine Learning in Azure ML
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
