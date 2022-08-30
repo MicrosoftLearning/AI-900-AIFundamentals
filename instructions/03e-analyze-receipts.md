@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze receipts with Form Recognizer​'
+    title: 'Explore form recognition​'
 ---
 
-## Analyze receipts with Form Recognizer
+## Explore form recognition
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

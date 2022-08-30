@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze images with Computer Vision'
+    title: 'Explore Computer Vision'
 ---
 
-## Analyze images with Computer Vision
+## Explore Computer Vision
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

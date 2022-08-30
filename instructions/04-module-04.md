@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze text with the Language service'
+    title: 'Explore text analytics'
 ---
 
-## Analyze text with the Language service
+## Explore text analytics
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Create a Conversational Language Understanding application'
+    title: 'Explore language understanding'
 ---
 
-## Create a Conversational Language Understanding application
+## Explore language understanding
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

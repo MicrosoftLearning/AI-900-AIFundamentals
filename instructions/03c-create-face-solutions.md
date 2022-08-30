@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Detect and analyze faces with the Face service​'
+    title: 'Explore face recognition​'
 ---
 
-## Detect and analyze faces with the Face service
+## Explore face recognition
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

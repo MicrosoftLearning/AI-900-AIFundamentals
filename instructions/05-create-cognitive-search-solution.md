@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Create an Azure Cognitive Search solution'
+    title: 'Explore knowledge mining'
 ---
 
-## Create an Azure Cognitive Search solution
+## Explore knowledge mining
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.

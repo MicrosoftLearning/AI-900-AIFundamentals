@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Create a bot'
+    title: 'Explore question answering'
 ---
 
-## Create a bot
+## Explore question answering
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
