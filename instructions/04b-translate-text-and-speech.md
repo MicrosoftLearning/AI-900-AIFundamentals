@@ -111,6 +111,7 @@ Now that you have a custom model, you can run a simple client application that u
 
     <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWORN0" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
+
     > **Note**
     > A real application could accept the input from a microphone and send the response to a speaker, but in this simple example, we'll use pre-recorded input in an audio file.
 
@@ -126,4 +127,3 @@ Now that you have a custom model, you can run a simple client application that u
 ## Learn more
 
 This simple app shows only some of the capabilities of the Translator service. To learn more about what you can do with this service, see the [Translator page](https://docs.microsoft.com/azure/cognitive-services/translator/translator-overview).
-
