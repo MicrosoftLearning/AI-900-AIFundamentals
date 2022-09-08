@@ -3,7 +3,7 @@ lab:
     title: 'Explore regression with Azure Machine Learning Designer'
 ---
 
-## Explore regression with Azure Machine Learning Designer
+# Explore regression with Azure Machine Learning Designer
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
