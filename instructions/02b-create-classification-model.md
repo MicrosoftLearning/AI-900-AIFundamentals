@@ -300,17 +300,17 @@ The performance of this model isn't all that great, partly because we performed 
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module, replacing all of the default python script with the following code (which selects only the **PatientID**, **Scored Labels** and **Scored Probabilities** columns and renames them appropriately):
 
-    ```Python
-    import pandas as pd
-    
-    def azureml_main(dataframe1 = None, dataframe2 = None):
-    
-        scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
-        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                    'Scored Probabilities':'Probability'},
-                            inplace=True)
-        return scored_results
-    ```
+```Python
+import pandas as pd
+
+def azureml_main(dataframe1 = None, dataframe2 = None):
+
+    scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                'Scored Probabilities':'Probability'},
+                        inplace=True)
+    return scored_results
+```
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
 
