@@ -6,9 +6,9 @@ layout: home
 
 # Azure AI Fundamentals Exercises
 
-Use the links below to complete the hands-on lab exercises for Microsoft course [AI-900 *Microsoft Azure AI Fundamentals*](https://docs.microsoft.com/learn/certifications/courses/ai-900t00).
+These hands-on exercises are designed to support training content on [Microsoft Learn](https://docs.microsoft.com/training/).
 
-To complete these exercises, you'll need a Microsoft Azure subscription. If your instructor has not provided you with one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+To complete these exercises, you'll need a Microsoft Azure subscription. You can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
 | Exercises |
