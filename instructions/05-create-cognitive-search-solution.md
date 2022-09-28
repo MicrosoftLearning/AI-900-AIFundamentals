@@ -43,7 +43,7 @@ The solution you'll create for Fourth Coffee requires the following resources in
     - **Location**: *Choose any available region*.
     - **Pricing tier**: Basic
 
-1. Select **Review + create**, and after you see the response **Validation Passed**, select **Create**.
+1. Select **Review + create**, and after you see the response **Validation Success**, select **Create**.
 
 1. After deployment completes, select **Go to resource**. On the Azure Cognitive Search overview page, you can add indexes, import data, and search created indexes.
 
