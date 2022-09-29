@@ -85,7 +85,7 @@ The compute cluster will take some time to be created. You can move onto the nex
         * Include all columns other than **Path**
         * Review the automatically detected types
     * **Confirm details**:
-        * Do not profile the dataset after creation
+        * **Profile this dataset after creation**: *do not select*
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data contains historical features and labels for bike rentals.
 

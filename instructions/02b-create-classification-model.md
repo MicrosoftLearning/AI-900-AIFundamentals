@@ -93,7 +93,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
         * Include all columns other than **Path**
         * Review the automatically detected types
     * **Confirm details**:
-        * Do not profile the dataset after creation
+        * **Profile this dataset after creation**: *do not select*
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes.
 

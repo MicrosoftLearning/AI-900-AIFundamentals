@@ -95,7 +95,7 @@ In Azure Machine Learning, data for model training and other operations is usual
         * Include all columns other than **Path**
         * Review the automatically detected types
     * **Confirm details**:
-        * Do not profile the dataset after creation
+        * **Profile this dataset after creation**: *do not select*
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents measurements of the culmen (bill) length and depth, flipper length, and body mass for multiple observations of penguins. There are three species of penguin represented in the dataset: *Adelie*, *Gentoo*, and *Chinstrap*.
 
