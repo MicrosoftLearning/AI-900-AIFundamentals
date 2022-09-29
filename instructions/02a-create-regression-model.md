@@ -35,7 +35,7 @@ In this exercise, you will train a regression model that predicts the price of a
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface. You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 1. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
