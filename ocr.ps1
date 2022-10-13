@@ -19,13 +19,13 @@ $body = "{'url' : '$img'}"
 
 write-host "Analyzing image...`n"
 $result = Invoke-RestMethod -Method Post `
-          -Uri "$endpoint/vision/v3.2/ocr?language=en&detectOrientation=true&model-version=latest" `
+          -Uri "$endpoint/vision/v3.2/read/analyze?language=en" `
           -Headers $headers `
           -Body $body | ConvertTo-Json -Depth 6
 
 $analysis = ($result | ConvertFrom-Json)
 
-foreach ($listofdict in $analysis.regions.lines.words)
+foreach ($listofdict in $analyzeResult.readResults.lines.words)
 {
     foreach($dict in $listofdict)
     {
