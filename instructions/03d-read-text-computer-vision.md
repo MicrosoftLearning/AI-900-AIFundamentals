@@ -8,15 +8,14 @@ lab:
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-A common computer vision challenge is to detect and interpret text in an image. This kind of processing is often referred to as *optical character recognition* (OCR).
+A common computer vision challenge is to detect and interpret text in an image. This kind of processing is often referred to as *optical character recognition* (OCR). Microsoft's Read API provides access to OCR capabilities. 
 
-To test the capabilities of the OCR service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
+To test the capabilities of the Read API, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
 ## Use the Computer Vision Service to Read Text in an Image
 
 The **Computer Vision** cognitive service provides support for OCR tasks, including:
 
-- An **OCR** API that you can use to read text in multiple languages. This API can be used synchronously, and works well when you need to detect and read a small amount of text in an image.
 - A **Read** API that is optimized for larger documents. This API is used asynchronously, and can be used for both printed and handwritten text.
 
 ## Create a *Cognitive Services* resource
@@ -101,7 +100,7 @@ Now that you have a custom model, you can run a simple client application that u
 
 1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your Cognitive Services resource to extract text from an image.
 
-    Let's use the **OCR** API, which enables you to synchronously analyze an image and read any text it contains. In this case, you have an advertising image for the fictional Northwind Traders retail company that includes some text.
+    Let's use the **Read** API. In this case, you have an advertising image for the fictional Northwind Traders retail company that includes some text.
 
     The sample client application will analyze the following image:
 
