@@ -75,25 +75,27 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-1. Create a dataset **from web files**, using the following settings:
-    * **Basic Info**:
-        * **Web URL**: https://aka.ms/diabetes-data
+1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
+    * **Data type**:
         * **Name**: diabetes-data
-        * **Dataset type**: Tabular
         * **Description**: Diabetes data
-        * **Skip data validation**: *Do not select*
-    * **Settings and preview**:
+        * **Dataset type**: Tabular
+    * **Data source**: From Web Files
+    * **Web URL**:
+        * **Web URL**: https://aka.ms/diabetes-data
+        * **Skip data validation**: *do not select*
+    * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
         * **Encoding**: UTF-8
-        * **Column headers**:  Only first file has headers
+        * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
-    * **Confirm details**:
-        * **Profile this dataset after creation**: *do not select*
+    * **Review**
+        * Select **Create**
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes.
 

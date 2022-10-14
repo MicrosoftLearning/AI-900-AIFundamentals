@@ -77,25 +77,27 @@ In Azure Machine Learning, data for model training and other operations is usual
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-1. Create a dataset from web files, using the following settings:
-    * **Basic Info**:
-        * **Web URL**: https://aka.ms/penguin-data
+1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
+    * **Data type**:
         * **Name**: penguin-data
-        * **Dataset type**: Tabular
         * **Description**: Penguin data
-        * **Skip data validation**: *Do not select*
-    * **Settings and preview**:
+        * **Dataset type**: Tabular
+    * **Data source**: From Web Files
+    * **Web URL**:
+        * **Web URL**: https://aka.ms/penguin-data
+        * **Skip data validation**: *do not select*
+    * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
         * **Encoding**: UTF-8
-        * **Column headers**:  Only first file has headers
+        * **Column headers**: Only first file has headers
         * **Skip rows**: None
-        * **Dataset contains multi-line data**: *Do not select*
+        * **Dataset contains multi-line data**: *do not select*
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
-    * **Confirm details**:
-        * **Profile this dataset after creation**: *do not select*
+    * **Review**
+        * Select **Create**
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents measurements of the culmen (bill) length and depth, flipper length, and body mass for multiple observations of penguins. There are three species of penguin represented in the dataset: *Adelie*, *Gentoo*, and *Chinstrap*.
 
