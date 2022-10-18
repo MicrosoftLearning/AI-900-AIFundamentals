@@ -364,7 +364,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
     ```json
     {
     "Inputs": {
-                "WebServiceInput0":
+                "input1":
                 [
                     {
                         "symboling": 3,
