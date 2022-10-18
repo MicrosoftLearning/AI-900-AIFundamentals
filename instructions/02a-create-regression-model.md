@@ -77,9 +77,9 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. There is a search bar to locate assets on the pane and two buttons, **Data** and **Component**.
 
-    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-regression-model/designer-asset-library-data.png)
+    ![Screenshot of location of designer asset library, search bar, and component icon.](media/create-regression-model/designer-asset-library-components.png)
 
-1. Click on **Data**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
+1. Click on **Component**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
 
 1. Right-click (Ctrl+click on a Mac) the **Automobile price data (Raw)** dataset on the canvas, and click on **Preview data**.
 
@@ -98,8 +98,6 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 You typically apply data transformations to prepare the data for modeling. In the case of the automobile price data, you add transformations to address the issues you identified when you explored the data.
 
 1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
-
-    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-regression-model/designer-asset-library-components.png)
 
 1. Search for a **Select Columns in Dataset** module and place it to the canvas, below the **Automobile price data (Raw)** module. Then connect the output at the bottom of the **Automobile price data (Raw)** module to the input at the top of the **Select Columns in Dataset** module, like this:
 
