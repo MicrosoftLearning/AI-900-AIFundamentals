@@ -378,7 +378,7 @@ Your inference pipeline assigns penguin observations to clusters based on their 
     ```JSON
     {
         "Inputs": {
-            "input1": [
+            "WebServiceInput0": [
                 {
                     "CulmenLength": 49.1,
                     "CulmenDepth": 4.8,

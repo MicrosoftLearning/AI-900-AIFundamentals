@@ -361,7 +361,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
     ```JSON
     {
       "Inputs": {
-        "input1":
+        "WebServiceInput0":
           [
             { "PatientID": 1882185,
               "Pregnancies": 9,
