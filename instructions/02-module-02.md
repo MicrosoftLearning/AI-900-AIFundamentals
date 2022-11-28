@@ -99,7 +99,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
 
-1. Create an Automated ML run with the following settings:
+1. Create an Automated ML job with the following settings:
     - **Select data asset**:
         - **Dataset**: bike-rentals
     - **Configure job**:
@@ -133,16 +133,16 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **Validation type**: Auto
         - **Test data asset (preview)**: No test data asset required
 
-1. When you finish submitting the automated machine learning run details, it starts automatically. Wait for the run status to change from *Preparing* to *Running*.
+1. When you finish submitting the automated machine learning job details, it starts automatically. Wait for the status to change from *Preparing* to *Running*.
 
-1. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
+1. When the status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
 
 1. Wait for the job to finish. It might take a while — now might be a good time for a coffee break!
 
 ## Review the best model
 
-1. On the **Overview** tab of the automated machine learning run, note the best model summary.
-    ![Screenshot of the best model summary of the automated machine learning run with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
+1. On the **Overview** tab of the automated machine learning job, note the best model summary.
+    ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
 
 1. Select the text under **Algorithm name** for the best model to view its details.
 
@@ -161,7 +161,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 ## Deploy a predictive service
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Automated ML** page, select the run for your automated machine learning job.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Automated ML** page, select your automated machine learning job.
 
 1. On the **Overview** tab, select the algorithm name for the best model.
 
