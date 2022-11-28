@@ -111,3 +111,15 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 ## Learn more
 
 This simple app shows only some of the capabilities of the Anomaly Detector service. To learn more about what you can do with this service, see the [Anomaly Detector page](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
+
+## Clean-up
+
+It's a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. 
+
+If you are continuing on to other AI Fundamentals modules you can keep your resources for use in other labs.
+
+If you have finished learning, you can delete the resource group or individual resources from your Azure subscription:
+
+1. In the [Azure portal](https://portal.azure.com/), in the **Resource groups** page, open the resource group you specified when creating your resource.
+
+2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**. You can also choose to delete individual resources by selecting the resource(s), clicking on the three dots to see more options, and clicking **Delete**.
