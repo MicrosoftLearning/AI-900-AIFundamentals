@@ -144,6 +144,8 @@ Follow the next steps to run a job that uses automated machine learning to train
 1. On the **Overview** tab of the automated machine learning job, note the best model summary.
     ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
 
+    >[!NOTE]
+    > You may see a message under the status "Warning: User specified exit score reached...". This is an expected message. Please continue to the next step.  
 1. Select the text under **Algorithm name** for the best model to view its details.
 
 1. Next to the *Normalized root mean squared error* value, select **View all other metrics** to see values of other possible evaluation metrics for a regression model.
