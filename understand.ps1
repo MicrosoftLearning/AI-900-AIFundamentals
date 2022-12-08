@@ -1,3 +1,13 @@
+#############################
+# BEGIN COMPATIBILITY       #
+#############################
+# Brian Bagent, Arun Kumar, et al.
+# https://social.technet.microsoft.com/Forums/Windows/en-US/19b00212-52b7-4ed0-9444-15d6d461fc4f/invokerestmethod-issues
+# On older Windows Machines, you may need to uncomment the following line:
+# [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+#############################
+# END   COMPATIBILITY       #
+#############################
 $endpointUrl="YOUR_ENDPOINT"
 $key = "YOUR_KEY"
 $projectName = "YOUR_PROJECT_NAME"
