@@ -129,9 +129,11 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
     ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/designer-asset-library-components.png)
 
-1. Find the **Normalize Data** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Normalize Data** module, like this:
+1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
-    ![Screenshot of a pipeline with the dataset connected to a Normalize Data module.](media/create-classification-model/dataset-normalize.png)
+1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
+
+    ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize.png)
 
 1. Double-click the **Normalize Data** module to view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. 
 
@@ -281,6 +283,7 @@ The performance of this model isn't all that great, partly because we performed 
     
     - Add a **web service input** component for new data to be submitted.
     - Replace the **diabetes-data** dataset with an **Enter Data Manually** module that doesn't include the label column (**Diabetic**).
+    - Edit the columns selected in the **Select Columns in Dataset** module.
     - Remove the **Evaluate Model** module.
     - Insert an **Execute Python Script** module before the web service output to return only the patient ID, predicted label value, and probability.
 
@@ -297,6 +300,8 @@ The performance of this model isn't all that great, partly because we performed 
 
 1. Connect the new **Enter Data Manually** module to the same **Dataset** input of the **Apply Transformation** module as the **Web Service Input**.
 
+1. Edit the **Select Columns in Dataset** module. Remove **Diabetic** from the *Selected Columns*. 
+
 1. The inference pipeline includes the **Evaluate Model** module, which isn't useful when predicting from new data, so delete this module.
 
 1. The output from the **Score Model** module includes all of the input features and the predicted label and probability score. To limit the output to only the prediction and probability:
@@ -308,7 +313,7 @@ import pandas as pd
 
 def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
     scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
                                 'Scored Probabilities':'Probability'},
                         inplace=True)
