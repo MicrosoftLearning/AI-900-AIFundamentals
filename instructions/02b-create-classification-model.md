@@ -131,6 +131,8 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
+1. Double click on the **Select Columns in Dataset** module to access a settings pane on the right. Select **Edit column**. Then in the **Select columns** window, select **By name** and **Add all** to add all the columns.
+
 1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
 
     ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize.png)
