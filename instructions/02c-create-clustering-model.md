@@ -26,14 +26,14 @@ lab:
 
 1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
-1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, click on **Microsoft** on the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your subscription are listed. Choose the one you created for this exercise. 
+1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure tenant in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your tenant are listed, and select the one you created for this exercise.
 
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 2. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
@@ -59,7 +59,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 To get started with Azure Machine Learning designer, first you must create a pipeline.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines icon at the top left of the screen. View the **Designer** page (under **Author**), and select the plus sign to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the **&#8801;** icon at the top left of the screen. View the **Designer** page (under **Author**), and select the plus sign to create a new pipeline.
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -75,7 +75,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 In Azure Machine Learning, data for model training and other operations is usually encapsulated in an object called a *dataset*. In this module, you'll use a dataset that includes observations of three species of penguin.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the **&#8801;** icon at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
 1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
     * **Data type**:
@@ -298,9 +298,9 @@ After creating and running a pipeline to train the clustering model, you can cre
 
 ## Create an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the three lines at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-penguin-training**, then select the **Train Penguin Clustering** pipeline. 
+1. In Azure Machine Learning studio, expand the left-hand pane by selecting the **&#8801;** icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-penguin-training**, then select the **Train Penguin Clustering** pipeline. 
 
-1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
+1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the **...** icon on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
     ![Screenshot of location of create inference pipeline.](media/create-clustering-model/create-inference-pipeline.png) 
 
@@ -366,7 +366,7 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. Wait for the web service to be deployed - this can take several minutes. 
 
-1. To view the deployment status, expand the left pane by selecting the three lines at the top left of the screen. View the **Endpoints** page (under **Assets**) and select **predict-penguin-clusters**. When the deployment has finished, the **Deployment state** will change to **Healthy**.
+1. To view the deployment status, expand the left pane by selecting the **&#8801;** icon at the top left of the screen. View the **Endpoints** page (under **Assets**) and select **predict-penguin-clusters**. When the deployment has finished, the **Deployment state** will change to **Healthy**.
 
 ## Test the service
 
