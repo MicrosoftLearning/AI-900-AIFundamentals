@@ -28,14 +28,14 @@ In this exercise, you will train a regression model that predicts the price of a
 
 1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
-1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, click on **Microsoft** on the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your subscription are listed. Choose the one you created for this exercise. 
+1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
 
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the three lines at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 1. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
@@ -59,7 +59,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 ## Create a pipeline in Designer 
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the three lines icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the **&#8801;** icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -67,7 +67,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 1. In **Settings**, under **Draft details**, change the draft name (**Pipeline-Created-on-*date***) to **Auto Price Training**.
 
-1. Select the *close icon* on the top right of the **Settings** pane to close the pane. 
+1. Select the *close* icon on the top right of the **Settings** pane to close the pane. 
 
 ![Screenshot of the Machine Learning Studio Settings pane.](media/create-regression-model/create-pipeline-help.png)
 
@@ -261,7 +261,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 ## Create and run an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the three lines at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **mslearn-auto-training** pipeline. 
+1. In Azure Machine Learning studio, expand the left-hand pane by selecting the **&#8801;** icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **mslearn-auto-training** pipeline. 
 
     ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/create-regression-model/jobs-tab.png)
 
