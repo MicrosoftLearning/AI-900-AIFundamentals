@@ -2,10 +2,14 @@ $predictionUrl="YOUR_PREDICTION_URL"
 $predictionKey = "YOUR_PREDITION_KEY"
 
 
+# Code to call Custom Vision service for object detection
+$img_num = 1
+if ($args.count -gt 0 -And $args[0] -in (1..2))
+{
+    $img_num = $args[0]
+}
 
-# Code to call Custom Vision service for image detection
-
-$img = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/vision/produce.jpg"
+$img = "https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/vision/road-safety/road-safety-$($img_num).jpg"
 
 $headers = @{}
 $headers.Add( "Prediction-Key", $predictionKey )
@@ -13,7 +17,7 @@ $headers.Add( "Content-Type","application/json" )
 
 $body = "{'url' : '$img'}"
 
-write-host "Analyzing image..."
+write-host( "Analyzing image...", "`n")
 $result = Invoke-RestMethod -Method Post `
           -Uri $predictionUrl `
           -Headers $headers `
@@ -26,7 +30,8 @@ $items = $prediction.predictions
 foreach ($item in $items) 
 {if ($item.probability -gt .9)
 {
-    Write-Host ("`n",$item.tagName, "`n")
+    Write-Host ($item.tagName + " (" + $item.probability + "%)")
+    Write-Host ($item.boundingBox, "`n")
 }
 }
 
