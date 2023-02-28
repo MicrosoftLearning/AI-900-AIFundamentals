@@ -154,7 +154,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 Now you can use the sample client application to classify images based on the animal they contain.
 
-1. In the PowerShell pane, enter the following commands to run the code:
+1. In the PowerShell pane, enter the following command to run the code:
 
     ```PowerShell
     ./classify-image.ps1 1
