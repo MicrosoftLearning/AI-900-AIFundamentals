@@ -191,7 +191,7 @@ Now you can use the sample client application to detect cyclists and pedestrians
 
     ![Photograph of a pedestrian and a cyclist.](media/create-object-detection-solution/road-safety-1.jpg)
 
-1. Review the prediction, which lists any objects detected with a probability of 90% or more, along with the coordinates of a bounding box around their location
+1. Review the prediction, which lists any objects detected with a probability of 90% or more, along with the coordinates of a bounding box around their location.
 
 1. Now let's try another image. Run this command:
 
