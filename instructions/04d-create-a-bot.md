@@ -108,22 +108,42 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. At the left of the Language Studio page, click **Deploy knowledge base**.
 
-1. At the top of the page, click **Deploy**. Then you are asked if you want to deploy the project. Select **Deploy**.
+1. At the top of the page, click **Deploy**. A dialogue box will ask if you want to deploy the project. Select **Deploy**.
 
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 
-1. In the Azure portal, create a Web App Bot with the following settings (most of these will be pre-populated for you):
-    - **Bot handle**: *A unique name for your bot*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *The resource group containing your Language resource*
-    - **Location**: *The same location as your Language service*.
-    - **Pricing tier**: Free (F0)
-    - **App name**: *Same as the **Bot handle** with **.azurewebsites.net** appended automatically*
-    - **SDK language**: *Choose either C# or Node.js*
-    - **Language Resource Key**: *automatically generated, if you do not see it, you need to start by creating a question answering project in the Language Studio* 
-    - **App service plan/Location**: *Select the arrow to create a plan. Then create a unique App service plan name and choose a suitable location*
-    - **Application Insights**: Off
-    - **Microsoft App ID and password**: *Auto create App ID and password*
+1. In the Azure portal, create a Web App Bot with the following settings (some of these will be pre-populated for you):
+
+    - **Project Details**
+        - **Subscription**: *Your Azure subscription*
+        - **Resource group**: *The resource group containing your Language resource*
+    - **Instance details**
+        - **Resource group Location**: *The same location as your Language service*.
+    - **Azure Bot**
+        - **Bot handle**: *A unique name for your bot* (*pre-populated*)
+    - **Choose your pricing tier**
+        - **Pricing tier**: Free (F0) (You may need to select *Change plan*)
+    - **Microsoft App ID**
+        - **Creation type**: *Select Create new User-assigned managed identity* 
+>[!NOTE]
+>You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action. 
+
+5. Select **Next: Web App >** to continue updating the settings. 
+    - **App Service**
+        - **App name**: *Same as the **Bot handle** with **.azurewebsites.net** appended automatically*
+        - **SDK language**: *Choose either C# or Node.js*
+    - **App Service Plan**
+        - **Creation Type**: *Select Create new app service plan*
+    - **App Settings**
+        - **Language Resource Key**: *You will need to copy your Language resource key and paste it here.* 
+        - **Language project name**: MargiesTravel
+        - **Language service endpoint hostname**: *Pre-populated with your language service endpoint*
+    - **Language service details**
+        - **Subscription Id**: *Pre-populated with your subscription ID*
+        - **Resource Group Name**: *Pre-populated with your resource group name*
+        - **Account Name**: *Pre-populated with your resource name*
+
+1. Select **Review + Create**.
 
 1. Wait for your bot to be created (the notification icon at the top right, which looks like a bell, will be animated while you wait). Then in the notification that deployment has completed, click **Go to resource** (or alternatively, on the home page, click **Resource groups**, open the resource group where you created the web app bot, and click it.)
 
