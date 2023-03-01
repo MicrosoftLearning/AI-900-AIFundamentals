@@ -108,7 +108,7 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. At the left of the Language Studio page, click **Deploy knowledge base**.
 
-1. At the top of the page, click **Deploy**, and the click **Deploy** again.
+1. At the top of the page, click **Deploy**. Then you are asked if you want to deploy the project. Select **Deploy**.
 
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 
