@@ -136,7 +136,7 @@ The knowledge base provides a back-end service that client applications can use 
         - **Language Resource Key**: *You will need to copy your Language resource key and paste it here.* 
         
         > **Note**
-        > To navigate to your Language resource key, open [https://portal.azure.com](https://portal.azure.com?azure-portal=true). On the home page, click on *Resource Groups* and locate the resource group you created your Language resource in. Select your Language resource and navigate to its left-hand menu. Then select *Keys and Endpoint*. Copy and paste one of the keys. 
+        > To navigate to your Language resource key, open [https://portal.azure.com](https://portal.azure.com?azure-portal=true). On the home page, click on *Resource Groups* and locate the resource group you created your Language resource in. Select your Language resource and navigate to its left-hand menu. Then select *Keys and Endpoint*. Copy one of the keys. 
 
     -  
         - **Language project name**: MargiesTravel
