@@ -58,7 +58,7 @@ To train an object detection model, you need to create a Custom Vision project b
 
 To train an object detection model, you need to upload images that contain the classes you want the model to identify, and tag them to indicate bounding boxes for each object instance.
 
-1. Download and extract the training images from https://aka.ms/traffic-images. The extracted folder contains a collection of images of cyclists and pedestrians.
+1. Download and extract the training images from [https://aka.ms/traffic-images](https://aka.ms/traffic-images). The extracted folder contains a collection of images of cyclists and pedestrians.
 
 1. In the Custom Vision portal, in your **Traffic Safety** object detection project, select **Add images** and upload all of the images in the extracted folder.
 

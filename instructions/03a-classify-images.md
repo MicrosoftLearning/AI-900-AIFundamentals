@@ -42,7 +42,7 @@ Create a **Cognitive Services** resource in your Azure subscription.
 
 To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
 
-1. Download and extract the training images from https://aka.ms/animal-images. These images are provided in a zipped folder, which when extracted contains subfolders called **elephant**, **giraffe**, and **lion**.
+1. Download and extract the training images from [https://aka.ms/animal-images](https://aka.ms/animal-images). These images are provided in a zipped folder, which when extracted contains subfolders called **elephant**, **giraffe**, and **lion**.
 
 1. Open a new browser tab, and browse to the Custom Vision portal at [https://customvision.ai](https://customvision.ai?azure-portal=true). If prompted, sign in using the Microsoft account associated with your Azure subscription and agree to the terms of service.
 
