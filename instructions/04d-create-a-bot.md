@@ -112,7 +112,7 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 
-1. In the Azure portal, create a Web App Bot with the following settings (some of these will be pre-populated for you):
+1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
 
     - **Project Details**
         - **Subscription**: *Your Azure subscription*
@@ -125,8 +125,6 @@ The knowledge base provides a back-end service that client applications can use 
         - **Pricing tier**: Free (F0) (You may need to select *Change plan*)
     - **Microsoft App ID**
         - **Creation type**: *Select Create new User-assigned managed identity* 
->[!NOTE]
->You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action. 
 
 5. Select **Next: Web App >** to continue updating the settings. 
     - **App Service**
