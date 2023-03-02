@@ -104,7 +104,7 @@ Now that you've tagged the images in your project, you're ready to train a model
 
     In the pane on the right, under **Pedictions**, each detected object is listed with its tag and probability. Select each object to see it highlighted in the image.
 
-    The predicted objects may not all be correct - after all cyclists and pedestrians share many common features. The predictions that the model is most confident about have the highest probability values. Use the **Threshold Value** slider to eliminate objects with a low probability. You should be able to find a point at which only correct predictions are included (probably at around 85-90%).
+    The predicted objects may not all be correct - after all, cyclists and pedestrians share many common features. The predictions that the model is most confident about have the highest probability values. Use the **Threshold Value** slider to eliminate objects with a low probability. You should be able to find a point at which only correct predictions are included (probably at around 85-90%).
 
     ![Screenshot of performance metrics for a trained model.](media/create-object-detection-solution/test-detection.png)
 
