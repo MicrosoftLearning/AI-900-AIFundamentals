@@ -70,9 +70,9 @@ The compute cluster will take some time to be created. You can move onto the nex
         * **Name**: bike-rentals
         * **Description**: Bicycle rental data
         * **Dataset type**: Tabular
-    * **Data source**: From Web Files
+    * **Data source**: From web files
     * **Web URL**:
-        * **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true)
+        * **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals)
         * **Skip data validation**: *do not select*
     * **Settings**:
         * **File format**: Delimited
@@ -95,7 +95,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
+1. In [Azure Machine Learning Studio](https://ml.azure.com/automl/welcome), view the **Automated ML** page (under **Authoring**).
 
 1. Create an Automated ML job with the following settings:
     - **Select data asset**:
@@ -161,13 +161,13 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 ## Deploy a predictive service
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Automated ML** page, select your automated machine learning job.
+1. In [Azure Machine Learning Studio](https://ml.azure.com/automl/welcome), on the **Automated ML** page, select your automated machine learning job.
 
 1. On the **Overview** tab, select the algorithm name for the best model.
 
     ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. On the **Models** tab, select the **Deploy** button and use the **Deploy to web service** option to deploy the model with the following settings:
+1. On the **Models** tab, select the **Deploy** button and use the **Deploy to Web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
     - **Description**: Predict cycle rentals
     - **Compute type**: Azure Container Instance
@@ -175,7 +175,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Succeeded**, which may take some time. You may need to select **Refresh** periodically.
 
-1. In Azure Machine Learning studio, on the left hand menu, select **Endpoints**.
+1. In Azure Machine Learning Studio(https://ml.azure.com/endpoints), on the left hand menu, select **Endpoints**.
     ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/find-endpoints.png)
 
 ## Test the deployed service
@@ -226,7 +226,7 @@ You have just tested a service that is ready to be connected to a client applica
 
 The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also stop the compute instance until you need it again.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
+1. In [Azure Machine Learning Studio](https://ml.azure.com/endpoints), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and then select **Stop**.
 
 >[!NOTE]
