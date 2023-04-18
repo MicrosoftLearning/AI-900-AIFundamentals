@@ -19,7 +19,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "{'url' : '$img'}"
 
 write-host "Analyzing image...`n"
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/face/v1.0/detect?detectionModel=detection_01" `
           -Headers $headers `
           -Body $body | ConvertTo-Json -Depth 5

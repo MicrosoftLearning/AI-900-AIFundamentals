@@ -17,7 +17,7 @@ $body = "{'source': '$img'}"
 # Call the receipt analyze method with the header and body
 # Must call the Invoke-WebRequest to have acces to the header
 Write-Host "Sending receipt..."
-$response = Invoke-WebRequest -Method Post `
+$response = Invoke-WebRequest -Method "Post" `
           -Uri "$endpoint/formrecognizer/v2.1/prebuilt/receipt/analyze" `
           -Headers $headers `
           -Body $body

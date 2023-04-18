@@ -27,7 +27,7 @@ $data = @{
 } | ConvertTo-Json
 
 Write-Host("***Detecting Language***")
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/text/analytics/v3.1/languages" `
           -Headers $headers `
           -Body $data | ConvertTo-Json -Depth 6
@@ -51,7 +51,7 @@ $data = @{
 } | ConvertTo-Json
 
 write-host "`n`n***Finding Key Phrases***"
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/text/analytics/v3.1/keyPhrases" `
           -Headers $headers `
           -Body $data | ConvertTo-Json -Depth 6
@@ -77,7 +77,7 @@ $data = @{
 } | ConvertTo-Json
 
 write-host "`n`n***Analyzing Sentiment***"
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/text/analytics/v3.1/sentiment" `
           -Headers $headers `
           -Body $data | ConvertTo-Json -Depth 6
@@ -103,7 +103,7 @@ $data = @{
 } | ConvertTo-Json
 
 write-host "`n`n***Identifying known entities***"
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/text/analytics/v3.1/entities/linking" `
           -Headers $headers `
           -Body $data | ConvertTo-Json -Depth 6

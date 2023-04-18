@@ -19,7 +19,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "[{'text': '$text'}]" 
 
 write-host "Translating text..."
-$result = Invoke-Webrequest -Method Post `
+$result = Invoke-Webrequest -Method "Post" `
           -Uri "$endpoint/translate?api-version=3.0&from=en&to=fr&to=it&to=zh-Hans" `
           -Headers $headers `
           -Body $body 
@@ -38,7 +38,7 @@ $headers.Add( "Ocp-Apim-Subscription-Key", $key )
 $headers.Add( "Content-Type","audio/wav" )
 
 write-host "Translating audio..."
-$audio_result = Invoke-RestMethod -Method Post `
+$audio_result = Invoke-RestMethod -Method "Post" `
           -Uri "https://$location.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US" `
           -Headers $headers `
           -InFile $wav
@@ -55,7 +55,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "[{'text': '$original_audio_text'}]" 
 
 write-host "Translating text from audio to French..."
-$result = Invoke-Webrequest -Method Post `
+$result = Invoke-Webrequest -Method "Post" `
           -Uri "$endpoint/translate?api-version=3.0&from=en&to=fr" `
           -Headers $headers `
           -Body $body 

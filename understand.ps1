@@ -33,7 +33,7 @@ if ($args.count -gt 0){
     $body = $body | ConvertTo-Json
     
     Write-Host "Calling Language model..."
-    $response = Invoke-WebRequest -Method Post `
+    $response = Invoke-WebRequest -Method "Post" `
            -Uri $endpointUrl `
            -Headers $headers `
            -Body $body

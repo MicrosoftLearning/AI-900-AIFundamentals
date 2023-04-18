@@ -18,7 +18,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "{'url' : '$img'}"
 
 write-host "Analyzing image..."
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "$endpoint/vision/v3.2/analyze?visualFeatures=Categories,Description,Objects" `
           -Headers $headers `
           -Body $body | ConvertTo-Json -Depth 5

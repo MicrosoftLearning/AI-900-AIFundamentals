@@ -9,7 +9,7 @@ $json = (Get-Content $data -Raw) | ConvertFrom-Json
 $headers = @{}
 $headers.Add( "Ocp-Apim-Subscription-Key", $key )
 $headers.Add( "Content-Type","application/json" )
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri $endpoint/anomalydetector/v1.0/timeseries/entire/detect `
           -Headers $headers `
           -InFile $data

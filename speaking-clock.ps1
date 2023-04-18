@@ -11,7 +11,7 @@ $headers.Add( "Content-Type","audio/wav" )
 
 
 write-host "Analyzing audio..."
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri "https://$region.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US" `
           -Headers $headers `
           -InFile $wav
@@ -35,7 +35,7 @@ if ($analysis.DisplayText -eq "What time is it?"){
     $outputFile = "output.wav"
 
     write-host "Synthesizing speech..."
-    $result = Invoke-RestMethod -Method Post `
+    $result = Invoke-RestMethod -Method "Post" `
         -Uri "https://$region.tts.speech.microsoft.com/cognitiveservices/v1" `
         -Headers $headers `
         -Body $sml `

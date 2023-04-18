@@ -18,7 +18,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "{'url' : '$img'}"
 
 write-host "Analyzing Image...`n"
-$result = Invoke-Webrequest -Method Post `
+$result = Invoke-Webrequest -Method "Post" `
           -Uri "$endpoint/vision/v3.2/read/analyze?language=en" `
           -Headers $headers `
           -Body $body 

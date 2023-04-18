@@ -19,7 +19,7 @@ $headers.Add( "Content-Type","application/json" )
 $body = "{'url' : '$img'}"
 
 write-host "Analyzing image..."
-$result = Invoke-RestMethod -Method Post `
+$result = Invoke-RestMethod -Method "Post" `
           -Uri $predictionUrl `
           -Headers $headers `
           -Body $body | ConvertTo-Json -Depth 5
