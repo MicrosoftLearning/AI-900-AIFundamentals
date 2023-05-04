@@ -50,7 +50,7 @@ To train an object detection model, you need to create a Custom Vision project b
 
     - **Name**: Animal Identification
     - **Description**: Image classification for animals
-    - **Resource**: *The Custom Vision resource you created previously*
+    - **Resource**: *The Cognitive Services or Custom Vision resource you created previously*
     - **Project Types**: Classification
     - **Classification Types**: Multiclass (Single tag per image)
     - **Domains**: General \[A2]
@@ -91,7 +91,7 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: animals
-    - **Prediction Resource**: *The prediction resource you created previously*.
+    - **Prediction Resource**: *The Cognitive Services or Custom Vision prediction resource you created previously*.
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model.
 
@@ -139,7 +139,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 4. Don't worry too much about the details of the code. The important thing is that it starts with some code to specify the prediction URL and key for your Custom Vision model. You'll need to update these so that the rest of the code uses your model.
 
-    Get the *prediction URL* and *prediction key* from the dialog box you left open in the browser tab for your Custom Vision project. You need the versions to be used *if you have an image URL*.
+    Get the *prediction URL* and *prediction key* from the dialog box you left open in the browser tab for your Custom Vision project. **You need the versions to be used *if you have an image URL*.**
 
     Use these values to replace the **YOUR_PREDICTION_URL** and **YOUR_PREDICTION_KEY** place holders in the code file.
 
