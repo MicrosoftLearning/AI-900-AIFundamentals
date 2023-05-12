@@ -59,7 +59,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 
 The compute cluster will take some time to be created. You can move onto the next step while you wait.
 
-## Create a dataset
+## Create a data asset
 
 1. View the comma-separated data at [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) in your web browser.
 
