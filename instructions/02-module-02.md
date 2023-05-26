@@ -95,7 +95,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Authoring**).
 
 1. Create an Automated ML job with the following settings:
     - **Select data asset**:
