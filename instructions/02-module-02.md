@@ -51,7 +51,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: Do not enable
     - Select **Create**
 
 > **Note**
