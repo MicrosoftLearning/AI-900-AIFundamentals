@@ -286,7 +286,7 @@ The performance of this model isn't all that great, partly because we performed 
     - Remove the **Evaluate Model** module.
     - Insert an **Execute Python Script** module before the web service output to return only the patient ID, predicted label value, and probability.
 
-1. The pipeline does not automatically include a **Web Service Input** component for models created from custom data sets. Search for a **Web Service Input** component from the asset library and place it at the top of the pipeline. Connect the output of the **Web Service Input** component to the right-side input of the **Apply Transformation** component that is already on the canvas.
+1. The pipeline does not automatically include a **Web Service Input** component for models created from custom data sets. Search for a **Web Service Input** component from the asset library and place it at the top of the pipeline. Connect the output of the **Web Service Input** component to the **Select Columns in Dataset** component that is already on the canvas.
 
 1. The inference pipeline assumes that new data will match the schema of the original training data, so the **diabetes-data** dataset from the training pipeline is included. However, this input data includes the **Diabetic** label that the model predicts, which is not included in new patient data for which a diabetes prediction hasn't yet been made. Delete this module and replace it with an **Enter Data Manually** module, containing the following CSV data, which includes feature values without labels for three new patient observations:
 
@@ -297,7 +297,7 @@ The performance of this model isn't all that great, partly because we performed 
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-1. Connect the new **Enter Data Manually** module to the same **Dataset** input of the **Apply Transformation** module as the **Web Service Input**.
+1. Connect the new **Enter Data Manually** module to the same **Dataset** input of the **Select Columns in Dataset** module as the **Web Service Input**.
 
 1. Edit the **Select Columns in Dataset** module. Remove **Diabetic** from the *Selected Columns*. 
 
