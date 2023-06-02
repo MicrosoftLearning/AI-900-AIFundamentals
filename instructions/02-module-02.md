@@ -51,7 +51,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: Do not enable
     - Select **Create**
 
 > **Note**
@@ -95,7 +95,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Authoring**).
 
 1. Create an Automated ML job with the following settings:
     - **Select data asset**:
@@ -142,7 +142,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 1. On the **Overview** tab of the automated machine learning job, note the best model summary.
     ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
 
-    >[!NOTE]
+    > **Note**
     > You may see a message under the status "Warning: User specified exit score reached...". This is an expected message. Please continue to the next step.  
 1. Select the text under **Algorithm name** for the best model to view its details.
 
@@ -229,7 +229,7 @@ The web service you created is hosted in an *Azure Container Instance*. If you d
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and then select **Stop**.
 
->[!NOTE]
+> **Note**
 > Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
 >
 > To delete your workspace:
