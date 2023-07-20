@@ -20,7 +20,7 @@ $body = "{'url' : '$img'}"
 
 write-host "Analyzing image...`n"
 $result = Invoke-RestMethod -Method Post `
-          -Uri "$endpoint/face/v1.0/detect?detectionModel=detection_01" `
+          -Uri "$endpoint/face/v1.0/detect?detectionModel=detection_01&returnFaceId=false" `
           -Headers $headers `
           -Body $body | ConvertTo-Json -Depth 5
 
