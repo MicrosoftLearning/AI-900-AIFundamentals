@@ -55,32 +55,17 @@ lab:
 
 The compute cluster will take some time to be created. You can move onto the next step while you wait.
 
-## Create a pipeline in Designer
-
-To get started with Azure Machine Learning designer, first you must create a pipeline and add the dataset you want to work with.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
-
-1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
-
-1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously.
-
-1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date***) to **Diabetes Training**.
-
-1. Select the close icon on the top right of the **Settings** pane to close the pane, then select **Save**.
-
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/create-pipeline-help.png)
 
 ## Create a dataset
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. Select the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
+1. On the **Data** page, under the **Data assets** tab, select **+ Create**. Then configure a data asset with the following settings:
     * **Data type**:
         * **Name**: diabetes-data
         * **Description**: Diabetes data
         * **Dataset type**: Tabular
-    * **Data source**: From Web Files
+    * **Data source**: From web files
     * **Web URL**:
         * **Web URL**: https://aka.ms/diabetes-data
         * **Skip data validation**: *do not select*
@@ -99,17 +84,21 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes.
 
-### Load data to canvas
+## Create a pipeline in Designer and load data to canvas
 
-1. Return to your pipeline by selecting **Designer** on the left-hand menu. On the **Designer** page, select the **Diabetes Training** pipeline.
+To get started with Azure Machine Learning designer, first you must create a pipeline and add the dataset you want to work with.
+
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the left pane select the **Designer** item (under **Authoring**), and then select **+** to create a new pipeline.
+
+1. Change the draft name from **Pipeline-Created-on-*date*** to **Diabetes Training**.
 
 1. Then in the project, next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
     ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/designer-asset-library-data.png)
 
-1. Click on **Data**. Search for and place the **diabetes-data** dataset onto the canvas.
+1. Select **Data**. Search for and place the **diabetes-data** dataset onto the canvas.
 
-1. Right-click (Ctrl+click on a Mac) the **diabetes-data** dataset on the canvas, and click on **Preview data**.
+1. Right-click (Ctrl+click on a Mac) the **diabetes-data** dataset on the canvas, and select **Preview data**.
 
 1. Review the schema of the data in the *Profile* tab, noting that you can see the distributions of the various columns as histograms.
 
@@ -117,7 +106,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Scroll back up and review the other columns, which represent the *features* that will be used to predict the label. Note that most of these columns are numeric, but each feature is on its own scale. For example, **Age** values range from 21 to 77, while **DiabetesPedigree** values range from 0.078 to 2.3016. When training a machine learning model, it is sometimes possible for larger values to dominate the resulting predictive function, reducing the influence of features that on a smaller scale. Typically, data scientists mitigate this possible bias by *normalizing* the numeric columns so they're on the similar scales.
 
-1. Close the **diabetes-data result visualization** tab so that you can see the dataset on the canvas like this:
+1. Close the **DataOutput** tab so that you can see the dataset on the canvas like this:
 
     ![Screenshot of the diabetes-data dataset on the designer canvas.](media/create-classification-model/diabetes-data.png)
 
@@ -125,19 +114,19 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 Before you can train a model, you typically need to apply some pre-processing transformations to the data.
 
-1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
+1. In the **Asset library** pane on the left, select **Component**, which contains a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
     ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/designer-asset-library-components.png)
 
-1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
+1. Find the **Select Columns in Dataset** module and place it on the canvas below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
-1. Double click on the **Select Columns in Dataset** module to access a settings pane on the right. Select **Edit column**. Then in the **Select columns** window, select **By name** and **Add all** the columns. Then remove **PatientID** and click **Save**. 
+1. Double click on the **Select Columns in Dataset** module to access a settings pane on the right. Select **Edit column**. Then in the **Select columns** window, select **By name** and **Add all** the columns. Then remove **PatientID** and click **Save**.
 
-1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
+1. Find the **Normalize Data** module and place it on the canvas below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
 
     ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize.png)
 
-1. Double-click the **Normalize Data** module to view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. 
+1. Double-click the **Normalize Data** module to view its settings, noting that it requires you to specify the transformation method and the columns to be transformed.
 
 1. Set the *Transformation method* to **MinMax** and the *Use 0 for constant columns when checked* to **True**. Edit the columns to transform with **Edit columns**. Select columns **With Rules** and copy and paste the following list under include column names:  
 
@@ -146,7 +135,7 @@ Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsul
 ```
 ![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data.png)
 
-Click **Save** and close the selection box. 
+Click **Save** and close the selection box.
 
 The data transformation is normalizing the numeric columns to put them on the same scale, which should help prevent columns with large values from dominating model training. You'd usually apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
@@ -154,19 +143,23 @@ The data transformation is normalizing the numeric columns to put them on the sa
 
 To apply your data transformations, you need to run the pipeline as an experiment.
 
-1. Select **Submit**, and run the pipeline as a new experiment named **mslearn-diabetes-training** on your compute cluster.
+1. Select **Configure & Submit** at the top of the page to open the **Set up pipeline job** dialogue.
 
-1. Wait a few minutes for the run to finish.
+1. On the **Basics** page select **Create new** and set the name of the experiment to **mslearn-diabetes-training** then select **Next** .
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job.png)
+1. On the **Inputs & outputs** page select **Next** without making any changes.
 
-    Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
+1. On the **Runtime settings** page an error appears as you don´t have a default compute to run the pipeline. In the **Select compute type** drop-down select *Compute cluster* and in the **Select Azure ML compute cluster** drop-down select your recently created compute cluster.
+
+1. Select **Review + Submit** to review the pipeline job and then select **Submit** to run the training pipeline.
+
+1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **mslearn-diabetes-training** experiment and then the **Diabetes Training** job.
 
 ## View the transformed data
 
-1. When the run has completed, the dataset is now prepared for model training. Click on **Job detail**. You will be taken to a new tab.
+When the run has completed, the dataset is now prepared for model training.
 
-1. Right-click (Ctrl+click on a Mac) the **Normalize Data** module on the canvas, and click on **Preview data**. Select **Transformed dataset**.
+1. Right-click (Ctrl+click on a Mac) the **Normalize Data** module on the canvas, and select **Preview data**. Select **Transformed dataset**.
 
 1. View the data, noting that the numeric columns you selected have been normalized to a common scale.
 
@@ -184,9 +177,9 @@ In this exercise, you're going to work through steps to extend the **Diabetes Tr
 
 Follow the steps below, using the image above for reference as you add and configure the required modules.
 
-1. Open the **Diabetes Training** pipeline you created in the previous unit if it's not already open.
+1. Return to the **Designer** page and select the **Diabetes Training** pipeline.
 
-1. In the **Asset library** pane on the left, in **Component**, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
+1. In the **Asset library** pane on the left, in **Component**, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset: DataFrameDirectory* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
 
     >**Tip**
     > Use the search bar to quickly locate modules.
@@ -198,33 +191,33 @@ Follow the steps below, using the image above for reference as you add and confi
     * **Random seed**: 123
     * **Stratified split**: False
 
-1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
+1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1: DataFrameDirectory* (left) output of the **Split Data** module to the *Dataset: DataFrameDirectory* (right) input of the **Train Model** module.
 
 1. The model we're training will predict the **Diabetic** value, so select the **Train Model** module and modify its settings to set the **Label column** to **Diabetic**.
 
     The **Diabetic** label the model will predict is a class (0 or 1), so we need to train the model using a *classification* algorithm. Specifically, there are two possible classes, so we need a *binary classification* algorithm.
 
-1. In the **Asset library**, search for and place a **Two-Class Logistic Regression** module to the canvas, to the left of the **Split Data** module and above the **Train Model** module. Then connect its output to the **Untrained model** (left) input of the **Train Model** module.
+1. In the **Asset library**, search for and place a **Two-Class Logistic Regression** module to the canvas, to the left of the **Split Data** module and above the **Train Model** module. Then connect its output to the *Untrained model: UntrainedModelDirectory* (left) input of the **Train Model** module.
 
    To test the trained model, we need to use it to *score* the validation dataset we held back when we split the original data - in other words, predict labels for the features in the validation dataset.
 
-1. In the **Asset library**, search for and place a **Score Model** module to the canvas, below the **Train Model** module. Then connect the output of the **Train Model** module to the **Trained model** (left) input of the **Score Model** module; and connect the **Results dataset2** (right) output of the **Split Data** module to the **Dataset** (right) input of the **Score Model** module.
+1. In the **Asset library**, search for and place a **Score Model** module to the canvas, below the **Train Model** module. Then connect the output of the **Train Model** module to the *Trained model: ModelDirectory* (left) input of the **Score Model** module; and connect the *Results dataset2: DataFrameDirectory* (right) output of the **Split Data** module to the *Dataset: DataFrameDirectory* (right) input of the **Score Model** module.
 
 ## Run the training pipeline
 
 Now you're ready to run the training pipeline and train the model.
 
-1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
+1. Select **Configure & Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
 
 1. Wait for the experiment run to finish. This may take 5 minutes or more.
 
-1. When the experiment run has finished, select **Job detail**. You'll be directed to a new tab.
+1. Check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **mslearn-diabetes-training** experiment and then select the latest **Diabetes Training** job.
 
-1. On the new tab, right-click (Ctrl+click on a Mac) the **Score Model** module on the canvas, and click on **Preview data**. Select **Scored dataset** to view the results.
+1. On the new tab, right-click (Ctrl+click on a Mac) the **Score Model** module on the canvas, select **Preview data** and then select **Scored dataset** to view the results.
 
 1. Scroll to the right, and note that next to the **Diabetic** column (which contains the known true values of the label) there is a new column named **Scored Labels**, which contains the predicted label values, and a **Scored Probabilities** column containing a probability value between 0 and 1. This indicates the probability of a *positive* prediction, so probabilities greater than 0.5 result in a predicted label of ***1*** (diabetic), while probabilities between 0 and 0.5 result in a predicted label of ***0*** (not diabetic).
 
-1. Close the **Score Model result visualization** tab.
+1. Close the **Scored_dataset** tab.
 
 The model is predicting values for the **Diabetic** label, but how reliable are its predictions? To assess that, you need to evaluate the model.
 
@@ -232,21 +225,21 @@ The validation data you held back and used to score the model includes the known
 
 ## Add an Evaluate Model module
 
-1. Open the **Diabetes Training** pipeline you created.
+1. Return to **Designer** and open the **Diabetes Training** pipeline you created.
 
-1. In the **Asset library**, search for and place an **Evaluate Model** module to the canvas, under the **Score Model** module, and connect the output of the **Score Model** module to the **Scored dataset** (left) input of the **Evaluate Model** module.
+1. In the **Asset library**, search for and place an **Evaluate Model** module to the canvas, under the **Score Model** module, and connect the output of the **Score Model** module to the *Scored dataset: DataFrameDirectory* (left) input of the **Evaluate Model** module.
 
 1. Ensure your pipeline looks like this:
 
     ![Screenshot of the Evaluate Model module added to Score Model module.](media/create-classification-model/evaluate-pipeline.png)
 
-1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
+1. Select **Configure & Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
 
 1. Wait for the experiment run to finish.
 
-1. When the experiment run has finished, select **Job detail**. You'll be directed to a new tab.
+1. Check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **mslearn-diabetes-training** experiment and then select the latest **Diabetes Training** job.
 
-1. On the new tab, right-click (Ctrl+click on a Mac) the **Evaluate Model** module on the canvas, and click on **Preview data**. Select **Evaluation results** to view the performance metrics. These metrics can help data scientists assess how well the model predicts based on the validation data.
+1. On the new tab, right-click (Ctrl+click on a Mac) the **Evaluate Model** module on the canvas, select **Preview data** then select **Evaluation results** to view the performance metrics. These metrics can help data scientists assess how well the model predicts based on the validation data.
 
 1. Scroll down to view the *confusion matrix* for the model. Observe the predicted and actual value counts for each possible class. 
 
@@ -260,26 +253,24 @@ The validation data you held back and used to score the model includes the known
 
 1. Look above the Threshold slider at the **ROC curve** and **AUC** metric listed with the other metrics below. To get an idea of how this area represents the performance of the model, imagine a straight diagonal line from the bottom left to the top right of the ROC chart. This represents the expected performance if you just guessed or flipped a coin for each patient - you could expect to get around half of them right, and half of them wrong, so the area under the diagonal line represents an AUC of 0.5. If the AUC for your model is higher than this for a binary classification model, then the model performs better than a random guess.
 
-1. Close the **Evaluate Model result visualization** tab.
+1. Close the **Evaluation_results** tab.
 
 The performance of this model isn't all that great, partly because we performed only minimal feature engineering and pre-processing. You could try a different classification algorithm, such as **Two-Class Decision Forest**, and compare the results. You can connect the outputs of the **Split Data** module to multiple **Train Model** and **Score Model** modules, and you can connect a second **Score Model** module to the **Evaluate Model** module to see a side-by-side comparison. The point of the exercise is simply to introduce you to classification and the Azure Machine Learning designer interface, not to train a perfect model!
 
 ## Create an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-diabetes-training**, then select the **Diabetes Training** pipeline.
-
-1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
+1. Locate the menu above the canvas and select **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
     ![Screenshot of location of create inference pipeline.](media/create-classification-model/create-inference-pipeline.png)
 
-1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Diabetes Training-real time inference** will be opened.
+1. In the **Create inference pipeline** drop-down list, select **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Diabetes Training-real time inference** will be opened.
 
-1. Navigate to **Settings** on the upper right hand menu. Under **Draft details**, rename the new pipeline to **Predict Diabetes**, and then review the new pipeline. Some of the transformations and training steps are a part of this pipeline. The trained model will be used to score the new data. The pipeline also contains a web service output to return results. 
+1. Rename the new pipeline to **Predict Diabetes**, and then review the new pipeline. Some of the transformations and training steps are a part of this pipeline. The trained model will be used to score the new data. The pipeline also contains a web service output to return results.
 
     You're going to make the following changes to the inference pipeline:
 
     ![Screenshot of an inference pipeline with changes indicated.](media/create-classification-model/inference-changes.png)
-    
+
     - Add a **web service input** component for new data to be submitted.
     - Replace the **diabetes-data** dataset with an **Enter Data Manually** module that doesn't include the label column (**Diabetic**).
     - Edit the columns selected in the **Select Columns in Dataset** module.
@@ -299,7 +290,7 @@ The performance of this model isn't all that great, partly because we performed 
 
 1. Connect the new **Enter Data Manually** module to the same **Dataset** input of the **Select Columns in Dataset** module as the **Web Service Input**.
 
-1. Edit the **Select Columns in Dataset** module. Remove **Diabetic** from the *Selected Columns*. 
+1. Edit the **Select Columns in Dataset** module. Remove **Diabetic** from the *Selected Columns*.
 
 1. The inference pipeline includes the **Evaluate Model** module, which isn't useful when predicting from new data, so delete this module.
 
@@ -307,18 +298,18 @@ The performance of this model isn't all that great, partly because we performed 
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module, replacing all of the default python script with the following code (which selects only the **PatientID**, **Scored Labels** and **Scored Probabilities** columns and renames them appropriately):
 
-```Python
-import pandas as pd
-
-def azureml_main(dataframe1 = None, dataframe2 = None):
-
-    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
-    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                'Scored Probabilities':'Probability'},
-                        inplace=True)
-    return scored_results
-```
-
+    ```Python
+    import pandas as pd
+    
+    def azureml_main(dataframe1 = None, dataframe2 = None):
+    
+        scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                    'Scored Probabilities':'Probability'},
+                            inplace=True)
+        return scored_results
+    ```
+    
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
 
 1. Verify that your pipeline looks similar to the following image:
@@ -327,7 +318,9 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 1. Run the pipeline as a new experiment named **mslearn-diabetes-inference** on your compute cluster. The experiment may take a while to run.
 
-1. When the pipeline has completed, select **Job detail**. In the new tab, right click the **Execute Python Script** module. Select the **Preview data** and select **Result dataset** to see the predicted labels and probabilities for the three patient observations in the input data.
+1. Return to the  **Jobs** tab. From there, select the **mslearn-diabetes-inference** experiment and then select the **Predict Diabetes** job.
+
+1. When the pipeline has completed, select the **Execute Python Script** module. Select the **Preview data** and select **Result dataset** to see the predicted labels and probabilities for the three patient observations in the input data.
 
 Your inference pipeline predicts whether or not patients are at risk for diabetes based on their features. Now you're ready to publish the pipeline so that client applications can use it.
 
@@ -338,22 +331,16 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 ## Deploy a service
 
-1. View the **Predict Diabetes** inference pipeline you created in the previous unit.
-
-1. Select **Job detail** on the left hand pane. This will open up another window.
-
-    ![Screenshot of job details next to the completed job.](media/create-classification-model/completed-job-inference.png)
-
-1. In the new window, select **Deploy**.
+1. At the top of the **Predict Diabetes** job window, select **Deploy**.
 
     ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot.png)
 
-1. At the top right, select **Deploy**, and deploy a **new real-time endpoint**, using the following settings:
+1. In the **Set up real-time endpoint** select **Deploy new real-time endpoint** and use the following settings:
     -  **Name**: predict-diabetes
     -  **Description**: Classify diabetes
     - **Compute type**: Azure Container Instance
 
-1. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the designer interface.
+1. Select **Deploy** and wait for the web service to be deployed - this can take several minutes.
 
 ## Test the service
 
