@@ -61,26 +61,26 @@ The compute cluster will take some time to be created. You can move onto the nex
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. Select the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
 1. On the **Data** page, under the **Data assets** tab, select **+ Create**. Then configure a data asset with the following settings:
-    * **Data type**:
-        * **Name**: diabetes-data
-        * **Description**: Diabetes data
-        * **Dataset type**: Tabular
-    * **Data source**: From web files
-    * **Web URL**:
-        * **Web URL**: https://aka.ms/diabetes-data
-        * **Skip data validation**: *do not select*
-    * **Settings**:
-        * **File format**: Delimited
-        * **Delimiter**: Comma
-        * **Encoding**: UTF-8
-        * **Column headers**: Only first file has headers
-        * **Skip rows**: None
-        * **Dataset contains multi-line data**: *do not select*
-    * **Schema**:
-        * Include all columns other than **Path**
-        * Review the automatically detected types
-    * **Review**
-        * Select **Create**
+    - **Data type**:
+        - **Name**: diabetes-data
+        - **Description**: Diabetes data
+        - **Dataset type**: Tabular
+    - **Data source**: From web files
+    - **Web URL**:
+        - **Web URL**: https://aka.ms/diabetes-data
+        - **Skip data validation**: *do not select*
+    - **Settings**:
+        - **File format**: Delimited
+        - **Delimiter**: Comma
+        - **Encoding**: UTF-8
+        - **Column headers**: Only first file has headers
+        - **Skip rows**: None
+        - **Dataset contains multi-line data**: *do not select*
+    - **Schema**:
+        - Include all columns other than **Path**
+        - Review the automatically detected types
+    - **Review**
+        - Select **Create**
 
 1. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes.
 
@@ -185,11 +185,11 @@ Follow the steps below, using the image above for reference as you add and confi
     > Use the search bar to quickly locate modules.
 
 1. Select the **Split Data** module, and configure its settings as follows:
-    * **Splitting mode**: Split Rows
-    * **Fraction of rows in the first output dataset**: 0.7
-    * **Randomized split**: True
-    * **Random seed**: 123
-    * **Stratified split**: False
+    - **Splitting mode**: Split Rows
+    - **Fraction of rows in the first output dataset**: 0.7
+    - **Randomized split**: True
+    - **Random seed**: 123
+    - **Stratified split**: False
 
 1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
 
@@ -309,7 +309,7 @@ The performance of this model isn't all that great, partly because we performed 
                             inplace=True)
         return scored_results
     ```
-    
+
 1. Connect the output from the **Score Model** module to the *Dataset1* (left-most) input of the **Execute Python Script**, and connect the *Result dataset* (left) output of the **Execute Python Script** module to the **Web Service Output**.
 
 1. Verify that your pipeline looks similar to the following image:
@@ -336,8 +336,8 @@ After you've created and tested an inference pipeline for real-time inferencing,
     ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot.png)
 
 1. In the **Set up real-time endpoint** select **Deploy new real-time endpoint** and use the following settings:
-    -  **Name**: predict-diabetes
-    -  **Description**: Classify diabetes
+    - **Name**: predict-diabetes
+    - **Description**: Classify diabetes
     - **Compute type**: Azure Container Instance
 
 1. Select **Deploy** and wait for the web service to be deployed - this can take several minutes.
