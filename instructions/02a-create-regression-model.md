@@ -176,11 +176,11 @@ After you've used data transformations to prepare the data, you can use it to tr
     > Use the search bar to quickly locate modules. 
 
 1. Double click on the **Split Data** module, and configure its settings as follows:
-    * **Splitting mode**: Split Rows
-    * **Fraction of rows in the first output dataset**: 0.7
-    * **Randomized split**: True
-    * **Random seed**: 123
-    * **Stratified split**: False
+    - **Splitting mode**: Split Rows
+    - **Fraction of rows in the first output dataset**: 0.7
+    - **Randomized split**: True
+    - **Random seed**: 123
+    - **Stratified split**: False
 
 1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
 
@@ -314,7 +314,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 Your inference pipeline predicts prices for cars based on their features. Now you're ready to publish the pipeline so that client applications can use it.
 
-# Deploy model
+## Deploy model
 
 After you've created and tested an inference pipeline for real-time inferencing, you can publish it as a service for client applications to use.
 
@@ -328,8 +328,8 @@ After you've created and tested an inference pipeline for real-time inferencing,
     ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-regression-model/deploy-screenshot.png)
 
 1. In the configuration screen, select **Deploy a new real-time endpoint**, and use the following settings:
-    -  **Name**: predict-auto-price
-    -  **Description**: Auto price regression
+    - **Name**: predict-auto-price
+    - **Description**: Auto price regression
     - **Compute type**: Azure Container Instance
 
 1. Select **Deploy** and wait a few minutes for the web service to be deployed.
@@ -380,7 +380,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
     }
     ```
 
-1. Select **Test**. On the right hand of the screen, you should see the output **'predicted_price'**. The output is the predicted price for a vehicle with the particular input features specified in the data. 
+1. Select **Test**. On the right hand of the screen, you should see the output **'predicted_price'**. The output is the predicted price for a vehicle with the particular input features specified in the data.
 
     ![Screenshot of the Test pane.](media/create-regression-model/test-interface.png)
 
