@@ -179,7 +179,7 @@ Follow the steps below, using the image above for reference as you add and confi
 
 1. Return to the **Designer** page and select the **Diabetes Training** pipeline.
 
-1. In the **Asset library** pane on the left, in **Component**, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset: DataFrameDirectory* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
+1. In the **Asset library** pane on the left, in **Component**, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
 
     >**Tip**
     > Use the search bar to quickly locate modules.
@@ -191,17 +191,17 @@ Follow the steps below, using the image above for reference as you add and confi
     * **Random seed**: 123
     * **Stratified split**: False
 
-1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1: DataFrameDirectory* (left) output of the **Split Data** module to the *Dataset: DataFrameDirectory* (right) input of the **Train Model** module.
+1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
 
 1. The model we're training will predict the **Diabetic** value, so select the **Train Model** module and modify its settings to set the **Label column** to **Diabetic**.
 
     The **Diabetic** label the model will predict is a class (0 or 1), so we need to train the model using a *classification* algorithm. Specifically, there are two possible classes, so we need a *binary classification* algorithm.
 
-1. In the **Asset library**, search for and place a **Two-Class Logistic Regression** module to the canvas, to the left of the **Split Data** module and above the **Train Model** module. Then connect its output to the *Untrained model: UntrainedModelDirectory* (left) input of the **Train Model** module.
+1. In the **Asset library**, search for and place a **Two-Class Logistic Regression** module to the canvas, to the left of the **Split Data** module and above the **Train Model** module. Then connect its output to the *Untrained model* (left) input of the **Train Model** module.
 
    To test the trained model, we need to use it to *score* the validation dataset we held back when we split the original data - in other words, predict labels for the features in the validation dataset.
 
-1. In the **Asset library**, search for and place a **Score Model** module to the canvas, below the **Train Model** module. Then connect the output of the **Train Model** module to the *Trained model: ModelDirectory* (left) input of the **Score Model** module; and connect the *Results dataset2: DataFrameDirectory* (right) output of the **Split Data** module to the *Dataset: DataFrameDirectory* (right) input of the **Score Model** module.
+1. In the **Asset library**, search for and place a **Score Model** module to the canvas, below the **Train Model** module. Then connect the output of the **Train Model** module to the *Trained model* (left) input of the **Score Model** module; and connect the *Results dataset2* (right) output of the **Split Data** module to the *Dataset* (right) input of the **Score Model** module.
 
 ## Run the training pipeline
 
@@ -227,7 +227,7 @@ The validation data you held back and used to score the model includes the known
 
 1. Return to **Designer** and open the **Diabetes Training** pipeline you created.
 
-1. In the **Asset library**, search for and place an **Evaluate Model** module to the canvas, under the **Score Model** module, and connect the output of the **Score Model** module to the *Scored dataset: DataFrameDirectory* (left) input of the **Evaluate Model** module.
+1. In the **Asset library**, search for and place an **Evaluate Model** module to the canvas, under the **Score Model** module, and connect the output of the **Score Model** module to the *Scored dataset* (left) input of the **Evaluate Model** module.
 
 1. Ensure your pipeline looks like this:
 
@@ -310,7 +310,7 @@ The performance of this model isn't all that great, partly because we performed 
         return scored_results
     ```
     
-1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
+1. Connect the output from the **Score Model** module to the *Dataset1* (left-most) input of the **Execute Python Script**, and connect the *Result dataset* (left) output of the **Execute Python Script** module to the **Web Service Output**.
 
 1. Verify that your pipeline looks similar to the following image:
 
