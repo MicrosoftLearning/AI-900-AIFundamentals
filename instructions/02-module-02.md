@@ -65,7 +65,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
+1. On the **Data** page, under the **Data assets** tab, select **+ Create**. Then configure a data asset with the following settings:
     * **Data type**:
         * **Name**: bike-rentals
         * **Description**: Bicycle rental data
@@ -131,9 +131,7 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **Validation type**: Auto
         - **Test data asset (preview)**: No test data asset required
 
-1. When you finish submitting the automated machine learning job details, it starts automatically. Wait for the status to change from *Preparing* to *Running*.
-
-1. When the status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page automatically refreshes periodically, but you can also select **Refresh**. It might take 10 minutes or so before models start to appear, as the cluster nodes must be initialized before training can begin.
+1. When you finish submitting the automated machine learning job details, it starts automatically.
 
 1. Wait for the job to finish. It might take a while — now might be a good time for a coffee break!
 
@@ -167,26 +165,24 @@ Follow the next steps to run a job that uses automated machine learning to train
 
     ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. On the **Models** tab, select the **Deploy** button and use the **Deploy to web service** option to deploy the model with the following settings:
+1. On the **Models** tab, select the **Deploy** button and use the **Web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
     - **Description**: Predict cycle rentals
     - **Compute type**: Azure Container Instance
     - **Enable authentication**: Selected
 
-1. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Succeeded**, which may take some time. You may need to select **Refresh** periodically.
+1. Wait for the deployment to start - this may take a few seconds.
 
-1. In Azure Machine Learning studio, on the left hand menu, select **Endpoints**.
-    ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/find-endpoints.png)
+1. In Azure Machine Learning studio, on the left hand menu, select **Endpoints** and open the **predict-rentals** real-time endpoint.
+1. Wait for the **Deployment state** to change to **Healthy** - this may take a few minutes.
 
 ## Test the deployed service
 
 Now you can test your deployed service.
 
-1. On the **Endpoints** page, open the **predict-rentals** real-time endpoint.
+1. On the **predict-rentals** real-time endpoint page wiev the **Test** tab.
 
-1. When the **predict-rentals** endpoint opens, view the **Test** tab.
-
-1. In the **Input data to test real-time endpoint** pane, replace the template JSON with the following input data:
+1. In the **Input data to test endpoint** pane, replace the template JSON with the following input data:
 
     ```JSON
     {
