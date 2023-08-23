@@ -57,31 +57,21 @@ In this exercise, you will train a regression model that predicts the price of a
 
 The compute cluster will take some time to be created. You can move onto the next step while you wait.
 
-## Create a pipeline in Designer 
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
-
-1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
-
-1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously.
-
-1. In **Settings**, under **Draft details**, change the draft name (**Pipeline-Created-on-*date***) to **Auto Price Training**.
-
-1. Select the *close* icon on the top right of the **Settings** pane to close the pane. 
-
-![Screenshot of the Machine Learning Studio Settings pane.](media/create-regression-model/create-pipeline-help.png)
-
-## Add and explore a dataset
+## Create a pipeline in Designer and add a dataset
 
 Azure Machine Learning includes a sample dataset that you can use for your regression model.
+
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
+
+1. Change the draft name (**Pipeline-Created-on-*date***) to **Auto Price Training**.
 
 1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. There is a search bar to locate assets on the pane and two buttons, **Data** and **Component**.
 
     ![Screenshot of location of designer asset library, search bar, and component icon.](media/create-regression-model/designer-asset-library-components.png)
 
-1. Click on **Component**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
+1. Select **Component**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
 
-1. Right-click (Ctrl+click on a Mac) the **Automobile price data (Raw)** dataset on the canvas, and click on **Preview data**.
+1. Right-click (Ctrl+click on a Mac) the **Automobile price data (Raw)** dataset on the canvas, and select **Preview data**.
 
 1. Review the *Dataset output* schema of the data, noting that you can see the distributions of the various columns as histograms.
 
@@ -89,7 +79,7 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. Scroll back to the left and select the **normalized-losses** column header. Then review the statistics for this column. Note there are quite a few missing values in this column. Missing values  limit the column's usefulness for predicting the **price** label so you might want to exclude it from training.
 
-1. Close the **Automobile price data (Raw) result visualization** window so that you can see the dataset on the canvas like this:
+1. Close the **DataOutput** window so that you can see the dataset on the canvas like this:
 
     ![Screenshot of the Automobile price data dataset on the designer canvas.](media/create-regression-model/dataset.png)
 
@@ -97,7 +87,7 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 You typically apply data transformations to prepare the data for modeling. In the case of the automobile price data, you add transformations to address the issues you identified when you explored the data.
 
-1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
+1. In the **Asset library** pane on the left, select **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
 1. Search for a **Select Columns in Dataset** module and place it to the canvas, below the **Automobile price data (Raw)** module. Then connect the output at the bottom of the **Automobile price data (Raw)** module to the input at the top of the **Select Columns in Dataset** module, like this:
 
@@ -107,9 +97,9 @@ You typically apply data transformations to prepare the data for modeling. In th
 
     ![Screenshot of all columns other than normalized_losses.](media/create-regression-model/select-columns.png)
 
-1. Click on the **Save** button.
+1. Select **Save** and close the proprietes window.
 
-In the rest of this exercise, you go through steps to create a pipeline that looks like this:
+In the rest of this exercise, you´ll go through steps to create a pipeline that should looks like this:
 
 ![Screenshot of the Automobile price data dataset with Normalize Data module.](media/create-regression-model/data-transforms.png)
 
@@ -117,7 +107,7 @@ Follow the remaining steps, use the image for reference as you add and configure
 
 1. In the **Asset library**, search for a **Clean Missing Data** module and place it under the **Select Columns in Dataset** module on the canvas. Then connect the output from the **Select Columns in Dataset** module to the input of the **Clean Missing Data** module.
 
-1. Double click the **Clean Missing Data** module, and in the pane on the right, click **Edit column**. Then in the **Columns to be cleaned** window, select **With rules**, in the **Include** list select **Column names**, in the box of column names enter **bore**, **stroke**, and **horsepower** like this:
+1. Double click the **Clean Missing Data** module, and in the pane on the right, select **Edit column**. Then in the **Columns to be cleaned** window, select **With rules**, in the **Include** list select **Column names**, in the box of column names enter **bore**, **stroke**, and **horsepower** like this:
 
     ![Screenshot of how bore, stroke, and horsepower columns are selected.](media/create-regression-model/clean-missing-values.png)
 
@@ -160,17 +150,17 @@ To apply your data transformations, you must run the pipeline.
 
     ![Screenshot of dataset with data transformation modules.](media/create-regression-model/data-transforms.png)
 
-1. Select **Submit**, and create a new experiment named **mslearn-auto-training** on your compute cluster.
+1. Select **Configure & Submit** at the top of the page to open the **Set up pipeline job** dialogue.
 
-1. Wait for the run to finish, which might take 5 minutes or more.
+1. On the **Basics** page select **Create new** and set the name of the experiment to **mslearn-auto-training** then select **Next** .
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-regression-model/completed-job.png)
+1. On the **Inputs & outputs** page select **Next** without making any changes.
 
-    Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**. 
+1. On the **Runtime settings** page an error appears as you don´t have a default compute to run the pipeline. In the **Select compute type** drop-down select *Compute cluster* and in the **Select Azure ML compute cluster** drop-down select your recently created compute cluster.
 
-1. When the run has completed, click on **Job detail**. A new tab will open, and you will see the components that have completed with check marks like this:
+1. Select **Next** to review the pipeline job and then select **Submit** to run the training pipeline.
 
-    ![Screenshot of dataset with modules in completed job state.](media/create-regression-model/normalize-complete.png)
+1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **Auto Price Training** job.
 
 The dataset is now prepared for model training. Close the Job detail tab to return to the pipeline.
 
@@ -186,11 +176,11 @@ After you've used data transformations to prepare the data, you can use it to tr
     > Use the search bar to quickly locate modules. 
 
 1. Double click on the **Split Data** module, and configure its settings as follows:
-    * **Splitting mode**: Split Rows
-    * **Fraction of rows in the first output dataset**: 0.7
-    * **Randomized split**: True
-    * **Random seed**: 123
-    * **Stratified split**: False
+    - **Splitting mode**: Split Rows
+    - **Fraction of rows in the first output dataset**: 0.7
+    - **Randomized split**: True
+    - **Random seed**: 123
+    - **Stratified split**: False
 
 1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
 
@@ -215,21 +205,21 @@ After you've used data transformations to prepare the data, you can use it to tr
 
 Now you're ready to run the training pipeline and train the model.
 
-1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-auto-training**.
+1. Select **Configure & Submit**, and run the pipeline using the existing experiment named **mslearn-auto-training**.
 
-1. The experiment run will take 5 minutes or more to complete. When the experiment run has completed, click on **Job details**. You will be taken to a new tab.
+1. The experiment run will take 5 minutes or more to complete. Return to the **Jobs** page and select the latest **Auto Price Training** job run.
 
-1. In the new window, right click on the **Score Model** module and select **Preview data** and then **Scored dataset** to view the results.
+1. When the experiment run has completed, right click on the **Score Model** module and select **Preview data** and then **Scored dataset** to view the results.
 
 1. Scroll to the right, and note that next to the **price** column (which contains the known true values of the label) there is a new column named **Scored Labels**, which contains the predicted label values.
 
-1. Close the **Score Model result visualization** tab.
+1. Close the **scored_dataset** tab.
 
 The model is predicting values for the **price** label, but how reliable are its predictions? To assess that, you need to evaluate the model.
 
 ## Evaluate model
 
-One way to evaluate a regression model is to compare the predicted labels to the actual labels in the validation dataset to held back during training. Another way is to compare the performance of multiple models.
+One way to evaluate a regression model is to compare the predicted labels to the actual labels in the validation dataset that was held back during training. Another way is to compare the performance of multiple models.
 
 1. Open the **Auto Price Training** pipeline you created.
 
@@ -239,11 +229,11 @@ One way to evaluate a regression model is to compare the predicted labels to the
 
     ![Screenshot of adding the Evaluate Model module to Score Model module.](media/create-regression-model/evaluate.png)
 
-1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-auto-training**.
+1. Select **Configure & Submit**, and run the pipeline using the existing experiment named **mslearn-auto-training**.
 
-1. Wait for the experiment run to complete.
+1. The experiment run will take a couple of minutes to complete. Return to the **Jobs** page and select the latest **Auto Price Training** job run.
 
-    ![Screenshot of a complete experiment run.](media/create-regression-model/completed-job.png)
+1. When the experiment run has completed, right click on the **Evaluate Model** module and select **Preview data** and then **Evaluation results**.
 
 1. When the experiment run has completed, select **Job detail**, which will open another tab. Find and right click on the **Evaluate Model** module. Select **Preview data** and then **Evaluation results**.
 
@@ -261,27 +251,22 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 ## Create and run an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **mslearn-auto-training** pipeline. 
-
-    ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/create-regression-model/jobs-tab.png)
-
-1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
+1. Locate the menu above the canvas and select **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
     ![Screenshot of location of create inference pipeline.](media/create-regression-model/create-inference-pipeline.png)
 
-1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Auto Price Training-real time inference** will be opened.
-
-    *If the pipeline doesn't include **Web Service Input** and **Web Service Output** modules, go back to the **Designer** page and then reopen the **Auto Price Training-real time inference** pipeline.*
+1. In the **Create inference pipeline** drop-down list, select **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Auto Price Training-real time inference** will be opened.
 
 1. Rename the new pipeline to **Predict Auto Price**, and then review the new pipeline. It contains a web service input for new data to be submitted, and a web service output to return results. Some of the transformations and training steps are a part of this pipeline. The trained model will be used to score the new data.
 
-    You're going to make the following changes to the inference pipeline in the next steps #5-9:
+    You're going to make the following changes to the inference pipeline in the next steps:
 
     ![Screenshot of an inference pipeline with changes indicated.](media/create-regression-model/inference-changes.png)
 
    Use the image for reference as you modify the pipeline in the next steps.
 
-1. The inference pipeline assumes that new data will match the schema of the original training data, so the **Automobile price data (Raw)** dataset from the training pipeline is included. However, this input data includes the **price** label that the model predicts, which is unintuitive to include in new car data for which a price prediction hasn't yet been made. Delete this module and replace it with an **Enter Data Manually** module from the **Data Input and Output** section, containing the following CSV data, which includes feature values without labels for three cars (copy and paste the entire block of text):
+1. The inference pipeline assumes that new data will match the schema of the original training data, so the **Automobile price data (Raw)** dataset from the training pipeline is included. However, this input data includes the **price** label that the model predicts, which is unintuitive to include in new car data for which a price prediction hasn't yet been made. Delete this module and replace it with an **Enter Data Manually** module from the **Data Input and Output** section.
+1. Edit the **Enter Data Manually** module and enter the following CSV data, which includes feature values without labels for three cars (copy and paste the entire block of text):
 
     ```CSV
     symboling,normalized-losses,make,fuel-type,aspiration,num-of-doors,body-style,drive-wheels,engine-location,wheel-base,length,width,height,curb-weight,engine-type,num-of-cylinders,engine-size,fuel-system,bore,stroke,compression-ratio,horsepower,peak-rpm,city-mpg,highway-mpg
@@ -290,7 +275,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
     1,NaN,alfa-romero,gas,std,two,hatchback,rwd,front,94.5,171.2,65.5,52.4,2823,ohcv,six,152,mpfi,2.68,3.47,9,154,5000,19,26
     ```
 
-1. Connect the new **Enter Data Manually** module to the same **dataset** input of the **Select Columns in Dataset** module as the **Web Service Input**.
+1. Connect the new **Enter Data Manually** module to the same **Dataset** input of the **Select Columns in Dataset** module as the **Web Service Input**.
 
 1. Now that you've changed the schema of the incoming data to exclude the **price** field, you need to remove any explicit uses of this field in the remaining modules. Select the **Select Columns in Dataset** module and then in the settings pane, edit the columns to remove the **price** field.
 
@@ -300,18 +285,20 @@ When you've identified a model with evaluation metrics that meet your needs, you
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module from the **Python Language** section, replacing all of the default python script with the following code (which selects only the **Scored Labels** column and renames it to **predicted_price**):
 
-```Python
-import pandas as pd
+    ```Python
+    import pandas as pd
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+    def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['Scored Labels']]
-    scored_results.rename(columns={'Scored Labels':'predicted_price'},
+        scored_results = dataframe1[['Scored Labels']]
+        scored_results.rename(columns={'Scored Labels':'predicted_price'},
                         inplace=True)
-    return scored_results
-```
+     return scored_results
+    ```
 
-1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
+1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**.
+
+1. Connect the **Result dataset** (left) output of the **Execute Python Script** module to the **Web Service Output** module.
 
 1. Verify that your pipeline looks similar to the following image:
 
@@ -319,9 +306,11 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 1. Submit the pipeline as a new experiment named **mslearn-auto-inference** on your compute cluster. The experiment may take a while to run.
 
-1. When the pipeline has completed, select **Job detail**. In the new tab, right click on the **Execute Python Script** module. Select **Preview data** and then **Result dataset** to see the predicted prices for the three cars in the input data.
+1. Return to the **Jobs** page and select the latest **Auto Price Training** job run(the one related to the *mslearn-auto-inference experiment*).
 
-1. Close the visualization tab.
+1. When the pipeline has completed, right click on the **Execute Python Script** module. Select **Preview data** and then **Result dataset** to see the predicted prices for the three cars in the input data.
+
+1. Close the **Result_Dataset** tab.
 
 Your inference pipeline predicts prices for cars based on their features. Now you're ready to publish the pipeline so that client applications can use it.
 
@@ -334,22 +323,16 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 ## Deploy a service
 
-1. View the **Predict Auto Price** inference pipeline you created in the previous unit.
-
-1. Select **Job detail** on the left hand pane, which will open a new tab.
-
-    ![Screenshot of job details next to the completed job. ](media/create-regression-model/completed-job-inference.png)
-
-1. In the new tab, select **Deploy**.
+1. In the **Predict Auto Price** job run page, select **Deploy** from the top menu bar.
 
     ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-regression-model/deploy-screenshot.png)
 
-1. In the configuration screen, select **Deploy a new real-time endpoint**, using the following settings:
-    -  **Name**: predict-auto-price
-    -  **Description**: Auto price regression
+1. In the configuration screen, select **Deploy a new real-time endpoint**, and use the following settings:
+    - **Name**: predict-auto-price
+    - **Description**: Auto price regression
     - **Compute type**: Azure Container Instance
 
-1. Wait a few minutes for the web service to be deployed. The deployment status is shown at the top left of the designer interface.
+1. Select **Deploy** and wait a few minutes for the web service to be deployed.
 
 ## Test the service
 
@@ -357,7 +340,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
     ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-regression-model/endpoints-lab.png)
 
-1. When the **predict-auto-price** endpoint opens, select the **Test** tab. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section:  
+1. When the **predict-auto-price** endpoint opens, select the **Test** tab. We will use it to test our model with new data. Delete the current data under **Input data to test endpoint**. Copy and paste the below data into the data section:  
 
     ```json
     {
@@ -397,7 +380,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
     }
     ```
 
-1. Select **Test**. On the right hand of the screen, you should see the output **'predicted_price'**. The output is the predicted price for a vehicle with the particular input features specified in the data. 
+1. Select **Test**. On the right hand of the screen, you should see the output **'predicted_price'**. The output is the predicted price for a vehicle with the particular input features specified in the data.
 
     ![Screenshot of the Test pane.](media/create-regression-model/test-interface.png)
 
