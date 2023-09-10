@@ -35,30 +35,6 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 > **Note**
 > This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
-## Create compute
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
-
-1. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
-    - **Virtual machine tier**: Dedicated
-    - **Virtual machine type**: CPU
-    - **Virtual machine size**:
-        - Choose **Select from all options**
-        - Search for and select **Standard_DS11_v2**
-    - Select **Next**
-    - **Compute name**: *enter a unique name*.
-    - **Minimum number of nodes**: 0
-    - **Maximum number of nodes**: 2
-    - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Do not enable
-    - Select **Create**
-
-> **Note**
-> Compute instances and clusters are based on standard Azure virtual machine images. For this module, the *Standard_DS11_v2* image is recommended to achieve the optimal balance of cost and performance. If your subscription has a quota that does not include this image, choose an alternative image; but bear in mind that a larger image may incur higher cost and a smaller image may not be sufficient to complete the tasks. Alternatively, ask your Azure administrator to extend your quota.
-
-The compute cluster will take some time to be created. You can move onto the next step while you wait.
-
 ## Create a data asset
 
 1. View the comma-separated data at [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) in your web browser.
@@ -91,6 +67,16 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 > **Citation**: *This data is derived from [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) and is used in accordance with the published data [license agreement](https://www.capitalbikeshare.com/data-license-agreement)*.
 
+## Enable Serverless Compute
+
+1. In Azure Machine Learning Studio, click on **manage preview features** (the loud speaker icon).
+
+![A screenshot of the manage preview features button on the menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
+
+1. Enable the "Guided experience for submitting training jobs with serverless compute" feature.
+
+![A screenshot of the enable serverless compute feature.](../instructions/media/use-automated-machine-learning/enable-serverless-compute.png)
+
 ## Run an automated machine learning job
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
@@ -118,19 +104,12 @@ Follow the next steps to run a job that uses automated machine learning to train
         - **Allowed models**: *Select only **RandomForest** and **LightGBM** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
 
         ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)
-        - **Exit criterion**:
-            - **Training job time (hours)**: 0.5 — *ends the job after a maximum of 30 minutes.*
-            - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
-        - **Concurrency**: *do not change*
-    - **Featurization settings:**
-        - **Enable featurization**: Selected — *automatically preprocess the features before training.*
-
-    Click **Next** to go to the next selection pane.
-
-    - **Select the validation and test type**
-        - **Validation type**: Auto
-        - **Test data asset (preview)**: No test data asset required
-
+Notice under *View additional configuration settings* is a *Limits* section. Expand the section to configure the settings:
+        - **Timeout (minutes)**: 30 — *ends the job after a maximum of 30 minutes.*
+        - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
+        - Click **Next**
+        - **Compute**: no changes needed here
+        - Click **Next**
 1. When you finish submitting the automated machine learning job details, it starts automatically.
 
 1. Wait for the job to finish. It might take a while — now might be a good time for a coffee break!
@@ -223,7 +202,6 @@ You have just tested a service that is ready to be connected to a client applica
 The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also delete the compute cluster.
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
-2. On the **Compute** page, on the **Compute clusters** tab, select your compute instance and then select **Delete**.
 
 > **Note**
 > Deleting your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
