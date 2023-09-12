@@ -293,6 +293,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
                         inplace=True)
      return scored_results
     ```
+>**Note**: Copy and pasting may introduce spaces into the Python script that should not be there. Double check that there is not a space before *import* or *def* or *return*. Make sure there is one tab indent before *scored_results* and *scored_results.rename()*.
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**.
 
