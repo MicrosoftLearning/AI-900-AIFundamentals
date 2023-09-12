@@ -160,15 +160,15 @@ To apply your data transformations, you must run the pipeline.
 
 1. Select **Next** to review the pipeline job and then select **Submit** to run the training pipeline.
 
-1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **Auto Price Training** job.
+1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **Auto Price Training** job. From here, you can see when the job is complete. Once the job is complete, the dataset is now prepared for model training.
 
-The dataset is now prepared for model training. Close the Job detail tab to return to the pipeline.
+1. Go to the left-hand menu. Under **Authoring** select **Designer**. Then select your *Auto Price Training* pipeline from the list of **Pipelines**.
 
 ## Create training pipeline
 
 After you've used data transformations to prepare the data, you can use it to train a machine learning model. Work through the following steps to extend the **Auto Price Training** pipeline.
 
-1. Return to the **Auto Price Training** pipeline you created in the previous unit if it's not already open.
+1. Make sure the left-hand menu has **Designer** selected and that you have returned to the **Auto Price Training** pipeline.
 
 1. In the **Asset library** pane on the left, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
 
