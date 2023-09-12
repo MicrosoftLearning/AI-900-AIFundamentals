@@ -233,8 +233,6 @@ One way to evaluate a regression model is to compare the predicted labels to the
 
 1. The experiment run will take a couple of minutes to complete. Return to the **Jobs** page and select the latest **Auto Price Training** job run.
 
-1. When the experiment run has completed, right click on the **Evaluate Model** module and select **Preview data** and then **Evaluation results**.
-
 1. When the experiment run has completed, select **Job detail**, which will open another tab. Find and right click on the **Evaluate Model** module. Select **Preview data** and then **Evaluation results**.
 
     ![Screenshot of location of evaluate model module.](media/create-regression-model/evaluate-model-help-1.png)
