@@ -140,9 +140,8 @@ When the automated machine learning job has completed, you can review the best m
 1. Select the text under **Algorithm name** for the best model to view its details.
 
 1. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
-    ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/review-run-3.png)
 
-    Review the charts which show the performance of the model. The first chart shows the *residuals*, the differences between predicted and actual values, as a histogram, the second chart compares the predicted values against the true values.
+    Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
 
 ## Deploy and test the model
 
@@ -152,7 +151,7 @@ When the automated machine learning job has completed, you can review the best m
     - **Compute type**: Azure Container Instance
     - **Enable authentication**: *Selected*
 
-1. Wait for the deployment to start - this may take a few seconds. The **Deploy status** will be indicated as *Running*.
+1. Wait for the deployment to start - this may take a few seconds. The **Deploy status** for the **predict-rentals** endpoint will be indicated in the main part of the page as *Running*.
 1. Wait for the **Deploy status** to change to *Succeeded*. This may take 5-10 minutes.
 
 ## Test the deployed service
@@ -191,9 +190,18 @@ Now you can test your deployed service.
 
 1. Click the **Test** button.
 
-1. Review the test results, which include a predicted number of rentals based on the input features. The test pane took the input data and used the model you trained to return the predicted number of rentals.
+1. Review the test results, which include a predicted number of rentals based on the input features - similar to this:
 
-    ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test.png)
+    ```JSON
+    {
+      "Results": [
+        444.27799000000000
+      ]
+    }
+    ```
+
+    The test pane took the input data and used the model you trained to return the predicted number of rentals.
+
 
 Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*.
 
