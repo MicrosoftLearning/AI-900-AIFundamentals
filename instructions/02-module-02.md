@@ -59,14 +59,14 @@ Automated machine learning enables you to try multiple algorithms and parameters
 
 1. Create a new Automated ML job with the following settings, using **Next** as required to progress through the user interface:
 
-    #### Basic settings
+    **Basic settings**:
 
     - **Job name**: mslearn-bike-automl
     - **New experiment name**: mslearn-bike-rental
     - **Description**: Automated machine learning for bike rental prediction
     - **Tags**: *none*
 
-    #### Task type & data
+   **Task type & data**:
 
     - **Select task type**: Regression
     - **Select dataset**: Create a new dataset with the following settings:
@@ -92,7 +92,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
 
         Select the **bike-rentals** dataset after you've created it.
 
-    #### Task settings
+    **Task settings**:
 
     - **Task type**: Regression
     - **Dataset**: bike-rentals
@@ -115,7 +115,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
         - **Percentage of validation data**: 10
             - **Test dataset**: None
             - 
-    #### Compute
+    **Compute**:
 
     - **Select compute type**: Serverless
     - **Virtual machine type**: CPU
