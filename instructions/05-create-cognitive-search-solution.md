@@ -77,9 +77,12 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 
 1. Click **Review** and then click **Create**. Wait for deployment to complete, and then go to the deployed resource.
 
+1. In the Azure Storage account you created, in the left-hand menu pane, select **Configuration** (under **Setetings**).
+1. Change the setting for *Allow Blob anonymous access* to **Enabled** and then select **Save**.
+
 ## Upload Documents to Azure Storage
 
-1. In the Azure Storage account you created, in the left-hand menu pane, select **Containers**.
+1. In the left-hand menu pane, select **Containers**.
 
     ![Screenshot that shows the storage blob overview page.](media/create-cognitive-search-solution/storage-blob-1.png)
 
@@ -158,14 +161,12 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
     > If a warning asking for a **Storage Account Connection String** appears.
     >
     > ![Screenshot that shows the Storage account connection screen warning with 'Choose an existing connection' selected.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
-
+    >
     > 1. Select **Choose an existing connection**. Choose the storage account you created earlier.
-
-    > 1. Click on **+ Container** to create a new container called **knowledge-store** with the privacy level set to private, and select **Create**.
-
+    > 1. Click on **+ Container** to create a new container called **knowledge-store** with the privacy level set to **Private**, and select **Create**.
     > 1. Select the **knowledge-store** container, and then click **Select** at the bottom of the screen.
 
-1. Select **Azure blob projects: Document**. A setting for *Container name* with the *knowledge-store* container auto-populated displays. Don't change the container name.
+1. Select **Azure blob projections: Document**. A setting for *Container name* with the *knowledge-store* container auto-populated displays. Don't change the container name.
 
 1. Select **Next: Customize target index**. Change the **Index name** to **coffee-index**.
 
