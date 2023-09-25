@@ -119,7 +119,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
 
     - **Select compute type**: Serverless
     - **Virtual machine type**: CPU
-    - **Virtual machine tier**: Low priority
+    - **Virtual machine tier**: Dedicated
     - **Virtual machine size**: Standard_DS3_V2
     - **Number of instances**: 1
 
@@ -202,12 +202,11 @@ Now you can test your deployed service.
 
     The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
-
 Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*.
 
 ## Clean-up
 
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also delete the compute cluster.
+The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
 
