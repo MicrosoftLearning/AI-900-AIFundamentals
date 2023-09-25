@@ -14,7 +14,7 @@ For example, suppose the fictitious retailer *Northwind Traders* has decided to 
 
 In this lab, you'll use a simple command-line application to see the Computer Vision service in action. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Create an *Azure AI services* resource
 
 You can use the Computer Vision service by creating either a **Computer Vision** resource or an **Azure AI services** resource.
 
