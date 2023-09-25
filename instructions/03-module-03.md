@@ -32,7 +32,7 @@ If you haven't already done so, create an **Azure AI services** resource in your
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
