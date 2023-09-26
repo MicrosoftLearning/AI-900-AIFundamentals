@@ -160,15 +160,15 @@ To apply your data transformations, you must run the pipeline.
 
 1. Select **Next** to review the pipeline job and then select **Submit** to run the training pipeline.
 
-1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **Auto Price Training** job.
+1. Wait a few minutes for the run to finish. You can check the status of the job by selecting **Jobs** under the **Assets**. From there, select the **Auto Price Training** job. From here, you can see when the job is complete. Once the job is complete, the dataset is now prepared for model training.
 
-The dataset is now prepared for model training. Close the Job detail tab to return to the pipeline.
+1. Go to the left-hand menu. Under **Authoring** select **Designer**. Then select your *Auto Price Training* pipeline from the list of **Pipelines**.
 
 ## Create training pipeline
 
 After you've used data transformations to prepare the data, you can use it to train a machine learning model. Work through the following steps to extend the **Auto Price Training** pipeline.
 
-1. Return to the **Auto Price Training** pipeline you created in the previous unit if it's not already open.
+1. Make sure the left-hand menu has **Designer** selected and that you have returned to the **Auto Price Training** pipeline.
 
 1. In the **Asset library** pane on the left, search for and place a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
 
@@ -233,8 +233,6 @@ One way to evaluate a regression model is to compare the predicted labels to the
 
 1. The experiment run will take a couple of minutes to complete. Return to the **Jobs** page and select the latest **Auto Price Training** job run.
 
-1. When the experiment run has completed, right click on the **Evaluate Model** module and select **Preview data** and then **Evaluation results**.
-
 1. When the experiment run has completed, select **Job detail**, which will open another tab. Find and right click on the **Evaluate Model** module. Select **Preview data** and then **Evaluation results**.
 
     ![Screenshot of location of evaluate model module.](media/create-regression-model/evaluate-model-help-1.png)
@@ -295,6 +293,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
                         inplace=True)
      return scored_results
     ```
+>**Note**: Copy and pasting may introduce spaces into the Python script that should not be there. Double check that there is not a space before *import* or *def* or *return*. Make sure there is one tab indent before *scored_results* and *scored_results.rename()*.
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**.
 

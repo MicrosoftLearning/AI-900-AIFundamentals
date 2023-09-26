@@ -14,15 +14,15 @@ For example, suppose the fictitious retailer *Northwind Traders* has decided to 
 
 In this lab, you'll use a simple command-line application to see the Computer Vision service in action. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Create an *Azure AI services* resource
 
-You can use the Computer Vision service by creating either a **Computer Vision** resource or a **Cognitive Services** resource.
+You can use the Computer Vision service by creating either a **Computer Vision** resource or an **Azure AI services** resource.
 
-If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
+If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. Click the **&#65291;Create a resource** button and search for *Cognitive Services*. Select **create** a **Cognitive Services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
@@ -32,7 +32,7 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
