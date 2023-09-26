@@ -8,7 +8,7 @@ lab:
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-The *Computer Vision* cognitive service uses pre-trained machine learning models to analyze images and extract information about them.
+The *Computer Vision* service uses pre-trained machine learning models to analyze images and extract information about them.
 
 For example, suppose the fictitious retailer *Northwind Traders* has decided to implement a "smart store", in which AI services monitor the store to identify customers requiring assistance, and direct employees to help them. By using the Computer Vision service, images taken by cameras throughout the store can be analyzed to provide meaningful descriptions of what they depict.
 
@@ -83,7 +83,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     ![The editor containing code to analyze an image](media/analyze-images-computer-vision-service/analyze-image-code.png)
 
-1. Don't worry too much about the code, the important thing is that it needs the endpoint URL and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
+1. Don't worry too much about the code, the important thing is that it needs the endpoint URL and either of the keys for your Azure AI services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
