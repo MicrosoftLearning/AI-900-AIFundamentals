@@ -10,7 +10,7 @@ In this lab exercise you will create a multi-service Azure AI Services resource 
 - **Resource group**: Select or create a suitable resource group.
 - **Region**: Choose any available region.
 - **Name**: Enter a unique name.
-- **Pricing tier**: FO 
+- **Pricing tier**: F0 
 2.	Review and create the resource and wait for deployment to complete. 
 
 ## Associate the resource to the Content Safety Studio 
