@@ -17,7 +17,7 @@ In this lab exercise you will create a multi-service Azure AI Services resource 
 In a separate browser tab, open the Content Safety Studio and sign in. The Getting started screen is displayed.
 
 1.	Click the Settings cog on the top right menu.
-2.	Select the Cognitive Service resource you just created, and then click Use resource.
+2.	Select the Azure AI service resource you just created, and then click Use resource.
 3.	View the endpoint and key for your resource, scrolling if necessary. If you check in the Azure Portal, you will see that this is the endpoint and key for your resource showing that you have successfully associated your resource with the Content Safety studio.
 4.	Click Content Safety Studio to return to the home page. Under Moderation text content, click Try it out.
 5.	Under run a simple test, click Safe Content. Notice that text is displayed in the box below. 
@@ -28,4 +28,4 @@ In a separate browser tab, open the Content Safety Studio and sign in. The Getti
 
 You can run tests on all the samples provided, then inspect the results.
 
-After you have finished, delete the Cognitive Services resource in the Azure Portal. 
+After you have finished, delete the Azure AI services resource in the Azure Portal. 
