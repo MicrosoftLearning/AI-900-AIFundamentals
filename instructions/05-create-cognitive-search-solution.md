@@ -24,10 +24,10 @@ In this lab you'll:
 The solution you'll create for Fourth Coffee requires the following resources in your Azure subscription:
 
 - An **Azure Cognitive Search** resource, which will manage indexing and querying.
-- A **Cognitive Services** resource, which provides AI services for skills that your search solution can use to enrich the data in the data source with AI-generated insights.
+- An **Azure AI services** resource, which provides AI services for skills that your search solution can use to enrich the data in the data source with AI-generated insights.
 
     > **Note**
-    > Your Azure Cognitive Search and Cognitive Services resources must be in the same location!
+    > Your Azure Cognitive Search and Azure AI services resources must be in the same location!
 
 - A **Storage account** with blob containers, which will store raw documents and other collections of tables, objects, or files.
 
@@ -47,11 +47,11 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
 1. After deployment completes, select **Go to resource**. On the Azure Cognitive Search overview page, you can add indexes, import data, and search created indexes.
 
-### Create a Cognitive Services resource
+### Create an Azure AI services resource
 
-You'll need to provision a **Cognitive Services** resource that's in the same location as your Azure Cognitive Search resource. Your search solution will use this resource to enrich the data in the datastore with AI-generated insights.
+You'll need to provision an **Azure AI services** resource that's in the same location as your Azure Cognitive Search resource. Your search solution will use this resource to enrich the data in the datastore with AI-generated insights.
 
-1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. Return to the home page of the Azure portal. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *The same resource group as your Azure Cognitive Search resource*.
     - **Region**: *The same location as your Azure Cognitive Search resource*.
@@ -69,7 +69,7 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 
 1. Search for *storage account*, and create a **Storage account** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *The same resource group as your Azure Cognitive Search and Cognitive Services resources*.
+    - **Resource group**: *The same resource group as your Azure Cognitive Search and Azure AI services resources*.
     - **Storage account name**: *A unique name*.
     - **Location**: *Choose any available location*.
     - **Performance**: Standard
@@ -128,7 +128,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
 1. Select **Next: Add cognitive skills (Optional)**.
 
-1. In the **Attach Cognitive Services** section, select your Cognitive Services resource.  
+1. In the **Attach Cognitive Services** section, select your Azure AI services resource.  
 
 1. In the **Add enrichments** section:
     - Change the **Skillset name** to **coffee-skillset**.

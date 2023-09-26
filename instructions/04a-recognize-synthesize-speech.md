@@ -8,21 +8,21 @@ lab:
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-To build software that can interpret audible speech and respond appropriately, you can use the **Speech** cognitive service, which provides a simple way to transcribe spoken language into text and vice-versa.
+To build software that can interpret audible speech and respond appropriately, you can use the **Azure AI Speech** service, which provides a simple way to transcribe spoken language into text and vice-versa.
 
 For example, suppose you want to create a smart device that can respond verbally to spoken questions, such as "What time is it?" The response should be the local time.
 
 To test the capabilities of the Speech service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Create an *Azure AI services* resource
 
-You can use the Speech service by creating either a **Speech** resource or a **Cognitive Services** resource.
+You can use the Speech service by creating either a **Speech** resource or an **Azure AI services** resource.
 
-If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
+If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
@@ -32,9 +32,9 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. Review and create the resource.
 
-### Get the Key and Location for your Cognitive Services resource
+### Get the Key and Location for your Azure AI services resource
 
-1. Wait for deployment to complete. Then go to your Cognitive Services resource, and on the **Overview** page, click the link to manage the keys for the service. You will need the endpoint and keys to connect to your Cognitive Services resource from client applications.
+1. Wait for deployment to complete. Then go to your Azure AI services resource, and on the **Overview** page, click the link to manage the keys for the service. You will need the endpoint and keys to connect to your Azure AI services resource from client applications.
 
 1. View the **Keys and Endpoint** page for your resource. You will need the **location/region** and **key** to connect from client applications.
 
@@ -86,7 +86,7 @@ Now that you have a custom model, you can run a simple client application that u
 
     ![The editor containing code to use the Speech service](media/recognize-synthesize-speech/speaking-clock-code.png)
 
-1. Don't worry too much about the details of the code, the important thing is that it needs the region/location and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_LOCATION**  placeholder values respectively.
+1. Don't worry too much about the details of the code, the important thing is that it needs the region/location and either of the keys for your Azure AI services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_LOCATION**  placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.

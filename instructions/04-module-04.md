@@ -10,21 +10,21 @@ lab:
 
 Natural Language Processing (NLP) is a branch of artificial intelligence (AI) that deals with written and spoken language. You can use NLP to build solutions that extracting semantic meaning from text or speech, or that formulate meaningful responses in natural language.
 
-Microsoft Azure *Cognitive Services* includes the text analytics capabilities in the *Language* service, which provides some out-of-the-box NLP capabilities, including the identification of key phrases in text, and the classification of text based on sentiment.
+Microsoft *Azure AI services* includes the text analytics capabilities in the *Language* service, which provides some out-of-the-box NLP capabilities, including the identification of key phrases in text, and the classification of text based on sentiment.
 
 For example, suppose the fictional *Margie's Travel* organization encourages customers to submit reviews for hotel stays. You could use the Language service to summarize the reviews by extracting key phrases, determine which reviews are positive and which are negative, or analyze the review text for mentions of known entities such as locations or people.
 
 To test the capabilities of the Language service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Create an *Azure AI services* resource
 
-You can use the Language service by creating either a **Language** resource or a **Cognitive Services** resource.
+You can use the Language service by creating either a **Language** resource or an **Azure AI services** resource.
 
-If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
+If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
@@ -34,9 +34,9 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. Review and create the resource.
 
-### Get the key and endpoint for your Cognitive Services resource
+### Get the key and endpoint for your Azure AI services resource
 
-1. Wait for deployment to complete. Then go to your Cognitive Services resource, and on the **Overview** page, select the link to manage the keys for the service. You will need the endpoint and keys to connect to your Cognitive Services resource from client applications.
+1. Wait for deployment to complete. Then go to your Azure AI services resource, and on the **Overview** page, select the link to manage the keys for the service. You will need the endpoint and keys to connect to your Azure AI services resource from client applications.
 
 1. View the **Keys and Endpoint** page for your resource. You will need the **key** and **endpoint** to connect from client applications.
 
@@ -89,12 +89,12 @@ Now that you have a custom model, you can run a simple client application that u
 
     ![The editor containing code to use the Language service](media/analyze-text-language-service/analyze-text-code.png)
 
-1. Don't worry too much about the details of the code. In the Azure portal, navigate to your Cognitive Services resource. Then select the **Keys and Endpoints** page on the left hand pane. Copy the key and endpoint from the page and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
+1. Don't worry too much about the details of the code. In the Azure portal, navigate to your Azure AI services resource. Then select the **Keys and Endpoints** page on the left hand pane. Copy the key and endpoint from the page and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
 
-    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Find the key and endpoint tab in your Azure AI services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
 
     After replacing the key and endpoint values, the first lines of code should look similar to this:
 
@@ -105,7 +105,7 @@ Now that you have a custom model, you can run a simple client application that u
 
 1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 
-    The sample client application will use Cognitive Services' Language service to detect language, extract key phrases, determine sentiment, and extract known entities for reviews.
+    The sample client application will use Azure AI Services' Language service to detect language, extract key phrases, determine sentiment, and extract known entities for reviews.
 
 1. In the Cloud Shell, enter the following command to run the code:
 

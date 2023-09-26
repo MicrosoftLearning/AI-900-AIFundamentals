@@ -5,9 +5,9 @@ lab:
 
 # Explore image classification​
 
-The *Computer Vision* cognitive service provides useful pre-built models for working with images, but you'll often need to train your own model for computer vision. For example, suppose a wildlife conservation organization organization wants to track sightings of animals by using motion-sensitive cameras. The images captured by the cameras could then be used to verify the presence of particular species in a particular area and assist with conservation efforts for endangered species. To accomplish this, the organization would benefit from an *image classification* model that is trained to identify different species of animal in the captured photographs.
+The *Azure AI Vision* service provides useful pre-built models for working with images, but you'll often need to train your own model for computer vision. For example, suppose a wildlife conservation organization organization wants to track sightings of animals by using motion-sensitive cameras. The images captured by the cameras could then be used to verify the presence of particular species in a particular area and assist with conservation efforts for endangered species. To accomplish this, the organization would benefit from an *image classification* model that is trained to identify different species of animal in the captured photographs.
 
-In Azure, you can use the ***Custom Vision*** cognitive service to train an image classification model based on existing images. There are two elements to creating an image classification solution. First, you must train a model to recognize different classes using existing images. Then, when the model is trained you must publish it as a service that can be consumed by applications.
+In Azure, you can use the ***Custom Vision*** service to train an image classification model based on existing images. There are two elements to creating an image classification solution. First, you must train a model to recognize different classes using existing images. Then, when the model is trained you must publish it as a service that can be consumed by applications.
 
 To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or mobile apps.
 
@@ -15,18 +15,18 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-## Create a *Cognitive Services* resource
+## Create an *Azure AI services* resource
 
-You can use the Custom Vision service by creating either a **Custom Vision** resource or a **Cognitive Services** resource.
+You can use the Custom Vision service by creating either a **Custom Vision** resource or an **Azure AI services** resource.
 
 >**Note**
->Not every resource is available in every region. Whether you create a Custom Vision or Cognitive Services resource, only resources created in [certain regions](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) can be used to access Custom Vision services. For simplicity, a region is pre-selected for you in the configuration instructions below.
+>Not every resource is available in every region. Whether you create a Custom Vision or an Azure AI services resource, only resources created in [certain regions](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) can be used to access Custom Vision services. For simplicity, a region is pre-selected for you in the configuration instructions below.
 
-Create a **Cognitive Services** resource in your Azure subscription.
+Create an **Azure AI services** resource in your Azure subscription.
 
 1. Open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US
@@ -36,7 +36,7 @@ Create a **Cognitive Services** resource in your Azure subscription.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
 
 ## Create a Custom Vision project
 
@@ -50,7 +50,7 @@ To train an object detection model, you need to create a Custom Vision project b
 
     - **Name**: Animal Identification
     - **Description**: Image classification for animals
-    - **Resource**: *The Cognitive Services or Custom Vision resource you created previously*
+    - **Resource**: *The Azure AI services or Custom Vision resource you created previously*
     - **Project Types**: Classification
     - **Classification Types**: Multiclass (Single tag per image)
     - **Domains**: General \[A2]
@@ -91,7 +91,7 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: animals
-    - **Prediction Resource**: *The Cognitive Services or Custom Vision prediction resource you created previously*.
+    - **Prediction Resource**: *The Azure AI services or Custom Vision prediction resource you created previously*.
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model.
 
@@ -194,6 +194,4 @@ Now you can use the sample client application to classify images based on the an
 
 Hopefully, your image classification model correctly classified all three images.
 
-## Learn more
 
-This exercise shows only some of the capabilities of the Custom Vision service. To learn more about what you can do with this service, see the [Custom Vision page](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).
