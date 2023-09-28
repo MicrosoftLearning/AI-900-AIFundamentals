@@ -1,3 +1,8 @@
+---
+lab:
+    title: 'Explore Content Safety Studio'
+---
+
 The Content Safety Studio enables you to explore how text and image content can be moderated. You can run tests on sample text or images and get a severity score ranging from safe to high for each category. You can quickly find out how the Content Safety AI service works, and what it is capable of. 
 
 In this lab exercise you will create a multi-service Azure AI Services resource in the Azure portal and inspect its endpoint and keys. You will then use the Content Safety Studio to explore the functionality of the Content Safety AI service. 
