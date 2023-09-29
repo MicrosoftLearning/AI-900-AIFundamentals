@@ -5,6 +5,41 @@ lab:
 
 # Explore Azure AI services
 
+> **Important**
+> This lab will be deprecated in the next few weeks and replaced by an update. Currently it is not possible to complete the lab.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
