@@ -21,6 +21,8 @@ In this lab exercise you will create a multi-service Azure AI Services resource 
 ## Associate the resource to the Content Safety Studio 
 In a separate browser tab, open the Content Safety Studio and sign in. The Getting started screen is displayed.
 
+![Screenshot of the content safety studio landing page.](./media/content-safety/content-safety-getting-started.png)
+
 1.	Click the Settings cog on the top right menu.
 2.	Select the Azure AI service resource you just created, and then click Use resource.
 3.	View the endpoint and key for your resource, scrolling if necessary. If you check in the Azure Portal, you will see that this is the endpoint and key for your resource showing that you have successfully associated your resource with the Content Safety studio.
