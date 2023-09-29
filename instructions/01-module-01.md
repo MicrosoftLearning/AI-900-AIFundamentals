@@ -6,7 +6,7 @@ lab:
 # Explore Azure AI services
 
 > **Important**
-> This lab will be deprecated in the next few weeks and replaced by an update. Currently it is not possible to complete the lab.
+> **This lab will be deprecated in the next few weeks and replaced by an update. Currently it is not possible to complete the lab.**
 
 
 
