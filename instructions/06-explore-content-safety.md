@@ -7,6 +7,9 @@ The Content Safety Studio enables you to explore how text and image content can 
 
 In this lab exercise you will create a multi-service Azure AI Services resource in the Azure portal and inspect its endpoint and keys. You will then use the Content Safety Studio to explore the functionality of the Content Safety AI service. 
 
+> **Note**
+> The goal of this exercise is to get a general sense of how Azure AI services are provisioned and used. Content Safety is used as an example, but you are not expected to gain a comprehensive knowledge of content safety in this exercise!
+
 ## Create an AI Services resource
 
 1.  In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
