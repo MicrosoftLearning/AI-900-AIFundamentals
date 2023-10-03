@@ -41,7 +41,7 @@ Before using the studio, you need to associate an Azure AI services resource wit
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Free F0 or Standard S0
+    - **Pricing tier**: Free F0
 
 1. Select **Review + Create** and review the configuration. Then select **Create**. The screen will indicate when the deployment is complete. 
 
