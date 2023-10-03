@@ -23,7 +23,7 @@ The Content Safety Studio enables you to explore how text and image content can 
 
 ## Associate a resource with the studio 
 
-Before using the studio, you need to associate an Azure AI services resource with the studio. Depending on the studio, you may find you need a specific single-service resource, or can use a general multi-service resource. 
+Before using the studio, you need to associate an Azure AI services resource with the studio. Depending on the studio, you may find you need a specific single-service resource, or can use a general multi-service resource. In the case of the Content Safety Studio, you can use the service by creating a single-service *Content Safety* resource or *Azure AI services* general multi-service resource. In the steps below, we will create a single-service Content Safety resource. 
 
 1. On the top right of the screen, click on the **Settings** icon. 
 
