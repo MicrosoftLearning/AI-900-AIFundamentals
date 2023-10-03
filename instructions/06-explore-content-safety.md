@@ -64,7 +64,7 @@ Before using the studio, you need to associate an Azure AI services resource wit
 
 You can run tests on all the samples provided, then inspect the results.
 
-## Check out keys and endpoints
+## Check out the keys and endpoint
 
 These capabilities you tested can be programmed into all sorts of applications. The keys and endpoint used for application development can be found both in the Content Safety Studio and the Azure Portal. 
 
