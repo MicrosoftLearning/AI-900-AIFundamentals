@@ -51,6 +51,7 @@ Write-Host ("Receipt Type: ", $($analysisFields.ReceiptType.valueString))
 Write-Host ("Merchant Address: ", $($analysisFields.MerchantAddress.text))
 Write-Host ("Merchant Phone: ", $($analysisFields.MerchantPhoneNumber.text))
 Write-Host ("Transaction Date: ", $($analysisFields.TransactionDate.valueDate))
+Write-Host ("Transaction Time: ", $($analysisFields.TransactionTime.text))
 Write-Host ("Receipt Items: ")
 
 # Access the individual items from the analysis
