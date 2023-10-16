@@ -77,7 +77,7 @@ You'll need to provision an **Azure AI services** resource that's in the same lo
 
 1. Click **Review** and then click **Create**. Wait for deployment to complete, and then go to the deployed resource.
 
-1. In the Azure Storage account you created, in the left-hand menu pane, select **Configuration** (under **Setetings**).
+1. In the Azure Storage account you created, in the left-hand menu pane, select **Configuration** (under **Settings**).
 1. Change the setting for *Allow Blob anonymous access* to **Enabled** and then select **Save**.
 
 ## Upload Documents to Azure Storage
