@@ -1,16 +1,15 @@
 ---
 lab:
-    title: 'Use a Conversational Language Understanding model in the Language Studio '
+    title: 'Use a Conversational Language Understanding model in the Language Studio'
 ---
 
-# Explore language understanding
+# Use a Conversational Language Understanding model in the Language Studio
+
+Increasingly, we expect computers to be able to use AI to understand natural language commands, either spoken or typed. For example, you might want a home automation system to control devices in your home by using voice commands such as “switch on the light” or “put the fan on.” AI-powered devices can understand these commands and take appropriate action.
+In this exercise, you will use Language Studio to create and test a project that sends instructions to devices such as lights or fans. You’ll use the capabilities of the Conversational Language Understanding service to configure your project. 
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
-Increasingly, we expect computers to be able to use AI in order to understand spoken or typed commands in natural language. For example, you might want to implement a home automation system that enables you to control devices in your home by using voice commands such as "switch on the light" or "put the fan on", and have an AI-powered device understand the command and take appropriate action.
-
-To test the capabilities of the Conversational Language Understanding service, we'll use a command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
 ## Create a *Language service* resource
 
@@ -171,97 +170,9 @@ To use your trained model in a client application, you must deploy it as an endp
     - *put the light on*
     - *put the fan off*
 
-## Run Cloud Shell
-
-Now let's try out your deployed model. To do so, we'll use a command-line application that runs in the Cloud Shell on Azure. 
-
-1. Leaving the browser tab with Language Studio open, switch back to browser tab containing the Azure portal.
-
-1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. Clicking the button opens a Cloud Shell pane at the bottom of the portal.
-
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/conversational-language-understanding/powershell-portal-guide-1.png)
-
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
-
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. 
-
-    ![Create storage by clicking confirm.](media/conversational-language-understanding/powershell-portal-guide-2.png)
-
-1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
-
-    ![How to find the left hand drop down menu to switch to PowerShell](media/conversational-language-understanding/powershell-portal-guide-3.png) 
-
-1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
-
-    ![Wait for PowerShell to start.](media/conversational-language-understanding/powershell-prompt.png) 
-
-## Configure and run a client application
-
-Now let's open and edit a pre-written script, which will run the client application.
-
-1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
-
-    ```PowerShell
-    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-    ```
-
-    >**Note**
-    >If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
-
-1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in this folder and work with them. Type the following commands into the shell:
-
-     ```PowerShell
-    cd ai-900
-    code .
-    ```
-
-    Notice how the script opens up an editor like the one in the image below: 
-
-    ![The code editor.](media/conversational-language-understanding/powershell-portal-guide-4.png)
-
-1. In the **Files** pane on the left, select the **understand.ps1** file in the **ai-900** folder. This file contains some code that uses your Conversational Language Understanding model. 
-
-    ![The code for the language understanding lab with box around credentials you need to modify and save before running the program.](media/conversational-language-understanding/understand-code.png)
-
-    Don't worry too much about the details of the code. The important thing is that you'll use the instructions below to modify the file to specify the language model you trained. 
-
-1. Switch back to the browser tab containing **Language Studio**. Then in Language Studio, open the **Deploying a model** page and select your model. Then click the **Get prediction URL** button. The two pieces of information you need are in this dialog box:
-    - The endpoint for your model - you can copy the endpoint from the **Prediction URL** box.
-    - The key for your model - the key is in the **Sample request** as the value for the **Ocp-Apim-Subscription-Key** parameter, and looks similar to ***0ab1c23de4f56gh7i8901234jkl567m8***.
-
-1. Copy the endpoint value, then switch back to the browser tab containing the Cloud Shell and paste it into the code editor, replacing **YOUR_ENDPOINT** (within the quotation marks). The repeat that process for the key, replacing **YOUR_KEY**.
-
-1. Next, replace **YOUR_PROJECT_NAME** with the name of your project, and replace **YOUR_DEPLOYMENT_NAME** with the name of your deployed model. The first lines of code should look similar to what you see below:
-
-    ```PowerShell
-    $endpointUrl="https://some-name.cognitiveservices.azure.com/language/..."
-    $key = "0ab1c23de4f56gh7i8901234jkl567m8"
-    $projectName = "name"
-    $deploymentName = "name"
-    ```
-
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
-
-1. In the PowerShell pane, enter the following command to run the code:
-
-    ```PowerShell
-    ./understand.ps1 "Turn on the light"
-    ```
-
-1. Review the results. The app should have predicted that the intended action is to switch on the light.
-
-1. Now try another command:
-
-    ```PowerShell
-    ./understand.ps1 "Switch the fan off"
-    ```
-
-1. Review the results from this command. The app should have predicted that the intended action is to switch off the fan.
-
-1. Experiment with a few more commands; including commands that the model was not trained to support, such as "Hello" or "switch on the oven". The app should generally understand commands for which its language model is defined, and fail gracefully for other input.
-
->**Note**
->Each time you will need to start with **./understand.ps1** followed by the phrase. Include quotation marks around your phrase.
+You have now successfully configured a conversational language project, and defined entities, intents, and utterances. You have seen how to train and deploy a model in the Language Studio. And you have tried it out with both utterances you defined, and some that you did not explicitly define but the model was able to determine. 
+NOTE: Conversational language understanding provides the intelligence to interpret the intention of the input; it doesn't perform any actions such as turning on the light or the fan.
+If you don’t intend to do more exercises, delete any resources you no longer need. This avoids accruing any unnecessary costs. In the Azure portal, find and delete the Language resource you created for this exercise.
 
 ## Learn more
 

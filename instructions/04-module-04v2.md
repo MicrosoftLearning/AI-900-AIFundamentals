@@ -3,18 +3,20 @@ lab:
     title: 'Extract form data in the Document Intelligence Studio​'
 ---
 
-# Explore Document Intelligence
+# Extract form data in the Document Intelligence Studio
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-In the artificial intelligence (AI) field of computer vision, optical character recognition (OCR) is commonly used to read printed or handwritten documents. Often, the text is simply extracted from the documents into a format that can be used for further processing or analysis.
+One of the services of Azure AI Document Intelligence is being able to analyze specific types of documents.  A common use of artificial intelligence (AI) is optical character recognition (OCR) for reading printed or handwritten documents. However, OCR extracts text in an unstructured format which is difficult to store in a database or analyze.
 
-A more advanced OCR scenario is the extraction of information from forms, such as purchase orders or invoices, with a semantic understanding of what the fields in the form represent. The **Form Recognizer** service is specifically designed for this kind of AI problem.
+The Document Intelligence service can extract information from forms such as receipts or invoices.  It not only extracts information, but also identifies field names for the data. For example, it can identify a merchant’s name and address on a receipt. The prebuilt models in Document Intelligence are trained to recognize data for each type of document.
+ 
+Azure AI Document Intelligence uses prebuilt machine learning models trained to extract text from images of invoices, receipts, and more. While other computer vision models can capture text, Document Intelligence also captures the structure of the text, such as key/value pairs and information in tables. This way, instead of having to manually type in entries from a form into a database, you can automatically capture the relationships between text from the original file.
 
-Form Recognizer uses machine learning models trained to extract text from images of invoices, receipts, and more. While other computer vision models can capture text, Form Recognizer also captures the structure of the text, such as key/value pairs and information in tables. This way, instead of having to manually type in entries from a form into a database, you can automatically capture the relationships between text from the original file. 
+In this exercise you’ll use Document Intelligence Studio to try out the capabilities of the AI Document Intelligence service, without writing any code. 
 
-To test the capabilities of the Form Recognizer service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
+!NOTE: Azure AI Document Intelligence is the new name for Azure Form Recognizer. You may still see Azure Form Recognizer in the Azure portal or Document Intelligence Studio while the name change is being completed.
 
 ## Create an *Azure AI services* resource
 
@@ -36,80 +38,40 @@ If you haven't already done so, create an **Azure AI services** resource in your
 
 1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
 
-## Run Cloud Shell
+## Create an Azure AI Document Intelligence resource
+You can use the AI Document Intelligence service by using either an AI Document Intelligence resource or an Azure AI services resource. In this exercise, you will create an Azure AI Document Intelligence resource, if you don’t already have one.
+1.	In another browser tab, open the Document Intelligence Studio, signing in with your Microsoft account.
+2.	Select Settings and select the Resource tab. Select Create a new resource. 
 
-To test the capabilities of the Form Recognizer service, we'll use a simple command-line application that runs in the Cloud Shell on Azure. 
+ 
 
-1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal. 
-
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/analyze-receipts/powershell-portal-guide-1.png)
-
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
-
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
-
-    ![Create storage by clicking confirm.](media/analyze-receipts/powershell-portal-guide-2.png)
-
-1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
-
-    ![How to find the left hand drop down menu to switch to PowerShell](media/analyze-receipts/powershell-portal-guide-3.png) 
-
-1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
-
-    ![Wait for PowerShell to start.](media/analyze-receipts/powershell-prompt.png) 
-
-## Configure and run a client application
-
-Now that you have a custom model, you can run a simple client application that uses the Form Recognizer service.
-
-1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
-
-    ```PowerShell
-    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-    ```
-
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
-
-1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
-
-    ```PowerShell
-    code .
-    ```
-
-    Notice how this opens up an editor like the one in the image below: 
-
-    ![The code editor.](media/analyze-receipts/powershell-portal-guide-4.png)
-
-1. In the **Files** pane on the left, expand **ai-900** and select **form-recognizer.ps1**. This file contains some code that uses the Form Recognizer service to analyze the fields in a receipt, as shown here:
-
-    ![The editor containing code to analyze fields in a receipt.](media/analyze-receipts/recognize-receipt-code.png)
-
-1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Azure AI services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
-
-    > **Tip**
-    > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
-
-    After pasting the key and endpoint values, the first two lines of code should look similar to this:
-
-    ```PowerShell
-    $key="1a2b3c4d5e6f7g8h9i0j...."    
-    $endpoint="https..."
-    ```
-
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your resource to analyze fields from a receipt. In this case, you'll use the Form Recognizer's built-in model to analyze a receipt for the fictional Northwind Traders retail company.
-
-    The sample client application will analyze the following image:
+3.	On the Create resource dialog box, enter the following:
+o	Subscription: Your Azure subscription.
+o	Resource group: Select or create a resource group with a unique name.
+o	New resource name: Enter a unique name.
+o	Location: Select a region.
+o	Pricing tier: Free FO (if available, otherwise select Standard SO).
+4.	Select Continue and then Finish. Wait for the resource to be deployed.
+!Note : If your resource is not yet displayed, you may need to Refresh the page.
+Keep Document Intelligence Studio open.
+Analyze a receipt in Document Intelligence Studio
+You are now ready to analyze a receipt for the fictitious Northwind Traders retail company.
+1.	Select the image below, then right click and select Save as Picture. Navigate to a folder on your computer and then select Save. Make a note of the image and folder names.
 
     ![This is an image of a receipt.](media/analyze-receipts/receipt.jpg)
 
-1. In the PowerShell pane, enter the following commands to run the code to read the text:
+2.	Select Form Recognizer Studio to return to the Get Started with Document Intelligence Studio page, and under Receipts select Try it out.
+3.	In the Prebuilt drop-down list, make sure that Receipts is selected.
+4.	Select Browse for files and navigate to the folder where you saved the picture. Select the picture of the receipt and then Open. The image appears on the left side of the screen.
+5.	On the right, select Run analysis.
+6.	When the analysis has run, the results are returned. Notice that the service has recognized specific data fields such as the merchant’s name, the address, phone number, and the transaction date and time, as well as the line items, subtotal, tax, and total amounts. Next to each field is a percentage probability that the field is correct.
 
-    ```PowerShell
-    cd ai-900
-    ./form-recognizer.ps1
-    ```
+In this exercise you have used the Document Intelligence Studio to create a Document Intelligence resource. You then used the service to analyze a receipt. From the results that were returned, you saw how Document Intelligence was able to identify specific fields, enabling data from everyday documents to be more easily processed. Before you close Document Intelligence Studio, why not try some of the sample receipts, including those in different languages?
 
-1. Review the returned results. See that Form Recognizer is able to interpret the data in the form, correctly identifying the merchant address and phone number, and the transaction date and time, as well as the line items, subtotal, tax, and total amounts.
+## Clean up
+If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
+1.	Open the Azure portal and select the resource group that contains the AI Document Intelligence resource you created. 
+2.	Select the Document Intelligence resource and select Delete and then Yes to confirm. The resource is then deleted.
 
 ## Learn more
 
