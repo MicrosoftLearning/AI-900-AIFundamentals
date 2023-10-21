@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore question answering'
+    title: 'Use a Question Answering model in the Language Studio'
 ---
 
 # Explore question answering

@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore generative AI with Bing Copilot'
+    title: 'Use Bing Copilot to generate content'
 ---
 
 In this exercise you will explore generative AI with Bing Copilot. 

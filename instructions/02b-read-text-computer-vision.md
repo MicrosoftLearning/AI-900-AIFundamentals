@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore optical character recognition​'
+    title: 'Read text in the Vision Studio​'
 ---
 
 # Explore optical character recognition

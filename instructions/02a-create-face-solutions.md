@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore face recognition​'
+    title: 'Detect faces in the Vision Studio​'
 ---
 
 # Explore face recognition

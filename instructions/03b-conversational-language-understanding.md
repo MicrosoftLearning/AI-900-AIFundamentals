@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore language understanding'
+    title: 'Use a Conversational Language Understanding model in the Language Studio '
 ---
 
 # Explore language understanding

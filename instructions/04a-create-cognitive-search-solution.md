@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore knowledge mining'
+    title: 'Explore an Azure Cognitive Search index (UI)'
 ---
 
 # Explore knowledge mining

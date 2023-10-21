@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore Document Intelligence​'
+    title: 'Extract form data in the Document Intelligence Studio​'
 ---
 
 # Explore Document Intelligence

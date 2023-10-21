@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore text analytics'
+    title: 'Analyze text with the Language Studio'
 ---
 
 # Explore text analytics

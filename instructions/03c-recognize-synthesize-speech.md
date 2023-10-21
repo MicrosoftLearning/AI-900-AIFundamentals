@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore speech'
+    title: 'Explore the Speech Studio'
 ---
 
 # Explore speech
