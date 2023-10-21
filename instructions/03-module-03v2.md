@@ -3,173 +3,85 @@ lab:
     title: 'Analyze text with the Language Studio'
 ---
 
-# Explore text analytics
+# Analyze text with the Language Studio
+
+In this exercise you will explore the capabilities of Azure AI Language by analyzing some example hotel reviews. You’ll use Language Studio to understand whether the reviews are mostly positive or negative.
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-Natural Language Processing (NLP) is a branch of artificial intelligence (AI) that deals with written and spoken language. You can use NLP to build solutions that extracting semantic meaning from text or speech, or that formulate meaningful responses in natural language.
+Natural Language Processing (NLP) is a branch of artificial intelligence (AI) that deals with written and spoken language. You can use NLP to build solutions that extract semantic meaning from text or speech, or that formulate meaningful responses in natural language.
 
-Microsoft *Azure AI services* includes the text analytics capabilities in the *Language* service, which provides some out-of-the-box NLP capabilities, including the identification of key phrases in text, and the classification of text based on sentiment.
+For example, suppose the fictitious travel agent Margie’s Travel encourages customers to submit reviews for hotel stays. You could use the Language service to identify key phrases, determine which reviews are positive and which are negative, or analyze the review text for mentions of known entities such as locations or people.
 
-For example, suppose the fictional *Margie's Travel* organization encourages customers to submit reviews for hotel stays. You could use the Language service to summarize the reviews by extracting key phrases, determine which reviews are positive and which are negative, or analyze the review text for mentions of known entities such as locations or people.
+Azure AI Language Service includes text analysis and NLP capabilities. These include the identification of key phrases in text, and the classification of text based on sentiment.
 
-To test the capabilities of the Language service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
+> **Note**: The Azure AI services resource also includes the AI Language service. You can use either type of resource but in this exercise you will use Azure AI Language.
 
-## Create an *Azure AI services* resource
+
+## Create a *Language* resource
 
 You can use the Language service by creating either a **Language** resource or an **Azure AI services** resource.
 
-If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
+1.	In another browser tab, open Language Studio. 
+2.	You are prompted to select an Azure resource. Either select an existing Language resource in your subscription, or select Create a new Language resource by entering the following:
+o	Subscription: Your Azure subscription.
+o	Resource group: Select or create a resource group with a unique name.
+o	Region: Choose any available region.
+o	Name: Enter a unique name.
+o	Pricing tier: FO
+o	Managed identity: Off
+o	I confirm that I have reviewed and acknowledge the terms in the Responsible AI Notice: Selected.
+3.	Select Done and wait for the Language resource to be created. The Select an Azure resource prompt is displayed again.
+4.	In resource name, select the Language resource you have created, and select Done.
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
+## Enable the **Language** resource
 
-1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Standard S0
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
+1.	Select Language Studio Settings, then Resources.
+ 
+2.	Select the Language resource you created earlier and under Managed identity, select Not Enabled then wait until the label changes to Enabled.
+3.	Select Language Studio to return to the Welcome page.
 
-1. Review and create the resource.
+## Analyze reviews in Language Studio
 
-### Get the key and endpoint for your Azure AI services resource
+1.	Select Classify text, and under Analyze sentiment and mine opinions, select Try it out.
 
-1. Wait for deployment to complete. Then go to your Azure AI services resource, and on the **Overview** page, select the link to manage the keys for the service. You will need the endpoint and keys to connect to your Azure AI services resource from client applications.
+2.	Under Select text language, select English. 
 
-1. View the **Keys and Endpoint** page for your resource. You will need the **key** and **endpoint** to connect from client applications.
+3.	Under Select your Azure resource, select your Language resource.
 
-## Run Cloud Shell
-
-To test the text analytics capabilities of the Language service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
-
-1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
-
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/analyze-text-language-service/powershell-portal-guide-1.png)
-
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
-
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
-
-    ![Create storage by clicking confirm.](media/analyze-text-language-service/powershell-portal-guide-2.png)
-
-1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
-
-    ![How to find the left hand drop down menu to switch to PowerShell](media/analyze-text-language-service/powershell-portal-guide-3.png)
-
-1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
-
-    ![Wait for PowerShell to start.](media/analyze-text-language-service/powershell-prompt.png)
-
-## Configure and run a client application
-
-Now that you have a custom model, you can run a simple client application that uses the Language service.
-
-1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
-
-    ```PowerShell
-    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-    ```
-
-    >**Tip**
-    > If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
-
-1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
-
-     ```PowerShell
-    code .
-    ```
-
-    Notice how this opens up an editor like the one in the image below:
-
-    ![The code editor.](media/analyze-text-language-service/powershell-portal-guide-4.png)
-
-1. In the **Files** pane on the left, expand **ai-900** and select **analyze-text.ps1**. This file contains some code that uses the Language service:
-
-    ![The editor containing code to use the Language service](media/analyze-text-language-service/analyze-text-code.png)
-
-1. Don't worry too much about the details of the code. In the Azure portal, navigate to your Azure AI services resource. Then select the **Keys and Endpoints** page on the left hand pane. Copy the key and endpoint from the page and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
-
-    > **Tip**
-    > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
-
-    ![Find the key and endpoint tab in your Azure AI services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
-
-    After replacing the key and endpoint values, the first lines of code should look similar to this:
-
-    ```PowerShell
-    $key="1a2b3c4d5e6f7g8h9i0j...."
-    $endpoint="https..."
-    ```
-
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
-
-    The sample client application will use Azure AI Services' Language service to detect language, extract key phrases, determine sentiment, and extract known entities for reviews.
-
-1. In the Cloud Shell, enter the following command to run the code:
-
-    ```PowerShell
-    cd ai-900
-    ./analyze-text.ps1 review1.txt
-    ```
-
-    You will be reviewing this text:
-
-    >Good Hotel and staff
-    The Royal Hotel, London, UK
-    3/2/2018
-    Clean rooms, good service, great location near Buckingham Palace and Westminster Abbey, and so on. We thoroughly enjoyed our stay. The courtyard is very peaceful and we went to a restaurant which is part of the same group and is Indian ( West coast so plenty of fish) with a Michelin Star. We had the taster menu which was fabulous. The rooms were very well appointed with a kitchen, lounge, bedroom and enormous bathroom. Thoroughly recommended.
-
-1. Review the output.
-
-1. In the PowerShell pane, enter the following command to run the code:
-
-    ```PowerShell
-    ./analyze-text.ps1 review2.txt
-    ```
-
-    You will be reviewing this text:
+4.	Under Enter your own text, upload a file, or use one of our sample texts, copy and paste the following review:
 
     >Tired hotel with poor service
     The Royal Hotel, London, United Kingdom
     5/6/2018
     This is an old hotel (has been around since 1950's) and the room furnishings are average - becoming a bit old now and require changing. The internet didn't work and had to come to one of their office rooms to check in for my flight home. The website says it's close to the British Museum, but it's too far to walk.
 
-1. Review the output.
+5.	Check the box to acknowledge that the demo will incur usage and may incur costs, and then select Run. 
 
-1. In the PowerShell pane, enter the following command to run the code:
+6.	Review the output. Notice that the document is analyzed for sentiment, as well as each sentence. Select Sentence 1 to show the sentiment analysis for that sentence. Select Sentence 1 again to close. Notice that the sentiment displayed has a confidence level.
 
-    ```PowerShell
-    ./analyze-text.ps1 review3.txt
-    ```
+7.	Scroll up to select Clear text box, and copy and paste the following review:
+ 
+    >Good Hotel and staff
+    The Royal Hotel, London, UK
+    3/2/2018
+    Clean rooms, good service, great location near Buckingham Palace and Westminster Abbey, and so on. We thoroughly enjoyed our stay. The courtyard is very peaceful and we went to a restaurant which is part of the same group and is Indian ( West coast so plenty of fish) with a Michelin Star. We had the taster menu which was fabulous. The rooms were very well appointed with a kitchen, lounge, bedroom and enormous bathroom. Thoroughly recommended.
 
-    You will be reviewing this text:
+8.	Select Run. Review the output and review the sentiment and confidence level.
 
-    >Good location and helpful staff, but on a busy road.
-    The Lombard Hotel, San Francisco, USA
-    8/16/2018
-    We stayed here in August after reading reviews. We were very pleased with location, just behind Chestnut Street, a cosmopolitan and trendy area with plenty of restaurants to choose from. The
-    Marina district was lovely to wander through, very interesting houses. Make sure to walk to the San Francisco Museum of Fine Arts and the Marina to get a good view of Golden Gate bridge and the city. On a bus route and easy to get into centre. Rooms were clean with plenty of room and staff were friendly and helpful. The only down side was the noise from Lombard Street so ask to have a room furthest away from traffic noise.
-
-1. Review the output.
-
-1. In the PowerShell pane, enter the following command to run the code:
-
-    ```PowerShell
-    ./analyze-text.ps1 review4.txt
-    ```
-
-    You will be reviewing this text:
+9.	Select Clear text box again, and copy and paste the following review:
 
     >Very noisy and rooms are tiny
     The Lombard Hotel, San Francisco, USA
     9/5/2018
     Hotel is located on Lombard street which is a very busy SIX lane street directly off the Golden Gate Bridge. Traffic from early morning until late at night especially on weekends. Noise would not be so bad if rooms were better insulated but they are not. Had to put cotton balls in my ears to be able to sleep--was too tired to enjoy the city the next day. Rooms are TINY. I picked the room because it had two queen size beds--but the room barely had space to fit them. With family of four in the room it was tight. With all that said, rooms are clean and they've made an effort to update them. The hotel is in Marina district with lots of good places to eat, within walking distance to Presidio. May be good hotel for young stay-up-late adults on a budget
 
-1. Review the output.
+10. Select Run and review the sentiment together with the confidence level. Have a look at the text and compare the text to the sentiment analysis that the service returned.
+In this exercise you used Language Studio to either create a new Language resource or use an existing Language resource. You enabled the resource in Settings before trying out the Sentiment and opinion mining service. You then tested the service with three pieces of text.
+If you don’t intend to do more exercises, you can delete any resources you no longer need. This avoids accruing any unnecessary costs. In the Azure portal, find and delete the AI Language resource you created for this exercise.
 
 ## Learn more
 
-This simple app shows only some of the capabilities of the Language service. To learn more about what you can do with this service, see the [Language service page](https://azure.microsoft.com/services/cognitive-services/language-service/).
+To learn more about what you can do with this service, see the [Language service page](https://azure.microsoft.com/services/cognitive-services/language-service/).
 

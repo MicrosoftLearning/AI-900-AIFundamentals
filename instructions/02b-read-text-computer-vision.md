@@ -3,20 +3,14 @@ lab:
     title: 'Read text in the Vision Studio​'
 ---
 
-# Explore optical character recognition
+# Read text in the Vision Studio
+
+In this exercise you’ll use Azure AI service to explore the optical character recognition capabilities of Azure AI Vision. You’ll use Vision Studio to experiment with extracting text from images, without needing to write any code.
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-A common computer vision challenge is to detect and interpret text in an image. This kind of processing is often referred to as *optical character recognition* (OCR). Microsoft's Read API provides access to OCR capabilities. 
-
-To test the capabilities of the Read API, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
-
-## Use the Azure AI Vision service to Read Text in an Image
-
-The **Azure AI Vision** service provides support for OCR tasks, including:
-
-- A **Read** API that is optimized for larger documents. This API is used asynchronously, and can be used for both printed and handwritten text.
+A common computer vision challenge is to detect and interpret text embedded within an image. This is known as optical character recognition (OCR). In this exercise you’ll use an AI services resource, which includes AI Vision services. You’ll then use Vision Studio to try out the OCR service with different types of images.
 
 ## Create an *Azure AI services* resource
 
@@ -36,101 +30,39 @@ If you haven't already done so, create an **Azure AI services** resource in your
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
+## Extract text from images in the Vision Studio
 
-## Run Cloud Shell
+1. In another browser tab, open [**Vision Studio**](https://portal.vision.cognitive.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
+1. Select Settings and then, on the Select a resource to work with page, select the resource you just created.  
 
-1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal. 
+> **Note** : if your resource is not showing you may need to Refresh the page. 
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/read-text-computer-vision/powershell-portal-guide-1.png)
+1. Select the AI services resource that you created earlier, then select Select as default resource. Save and close Settings. 
 
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+1. Select https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/vision/ocr-images.zip and save the file to a folder on your computer. Unzip the files and make a note of the folder name.
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
+1. On the Get started with Vision page select Optical character recognition. 
 
-    ![Create storage by clicking confirm.](media/read-text-computer-vision/powershell-portal-guide-2.png)
+1. Under Extract text from images, select Try it out.
 
-1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+1. On the Extract text from images page, under Try it out, check the box next to I acknowledge that this demo will incur usage to my Azure account. 
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/read-text-computer-vision/powershell-portal-guide-3.png) 
+1. Select Browse for a file and navigate to the folder on your computer where you saved the files from GitHub. Select advert.jpg and select Open.
 
-1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
-
-    ![Wait for PowerShell to start.](media/read-text-computer-vision/powershell-prompt.png) 
-
-## Configure and run a client application
-
-Now that you have a custom model, you can run a simple client application that uses the OCR service.
-
-1. In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
-
-    ```PowerShell
-    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-    ```
-
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
-
-1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
-
-    ```PowerShell
-    code .
-    ```
-
-    Notice how this opens up an editor like the one in the image below: 
-
-    ![The code editor.](media/read-text-computer-vision/powershell-portal-guide-4.png)
-
-1. In the **Files** pane on the left, expand **ai-900** and select **ocr.ps1**. This file contains some code that uses the Computer Vision service to detect and analyze text in an image, as shown here:
-
-    ![The editor containing code to analyze text in images.](media/read-text-computer-vision/ocr-code.png)
-
-1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Azure AI services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
-
-    > **Tip**
-    > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
-
-    After pasting the key and endpoint values, the first two lines of code should look similar to this:
-
-    ```PowerShell
-    $key="1a2b3c4d5e6f7g8h9i0j...."    
-    $endpoint="https..."
-    ```
-
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your Azure AI services resource to extract text from an image.
-
-    Let's use the **Read** API. In this case, you have an advertising image for the fictional Northwind Traders retail company that includes some text.
-
-    The sample client application will analyze the following image:
-
-    ![An image of an advertisement for Northwind Traders grocery store.](media/read-text-computer-vision/advert.jpg)
-
-1. In the PowerShell pane, enter the following commands to run the code to read the text:
-
-    ```PowerShell
-    cd ai-900
-    ./ocr.ps1 advert.jpg
-    ```
-
-1. Review the details found in the image. The text found in the image is organized into a hierarchical structure of regions, lines, and words, and the code reads these to retrieve the results.
-
-    Note that the location of text is indicated by the top- left coordinates, and the width and height of a *bounding box*, as shown here:
+1. Now review what is returned:
+1. In Detected attributes, any text found in the image is organized into a hierarchical structure of regions, lines, and words.
+1. On the image, the location of text is indicated by the top-left coordinates, and the width and height of a bounding box, as shown here:
 
     ![An image of the text in the image outlined](media/read-text-computer-vision/lab-05-bounding-boxes.png)
 
-1. Now let's try another image:
+1. You can now try another image. Select Browse for a file and navigate to the folder where you saved the files from GitHub. Select letter.jpg.
 
     ![An image of a typed letter.](media/read-text-computer-vision/letter.jpg)
 
-    To analyze the second image, enter the following command:
+1. Review the results of the second image. It should return the text and bounding boxes of the text. If you have time, try **note.jpg** and **receipt.jpg**.
 
-    ```PowerShell
-    ./ocr.ps1 letter.jpg
-    ```
-
-1. Review the results of the analysis for the second image. It should also return the text and bounding boxes of the text.
 
 ## Learn more
 
-This simple app shows only some of the OCR capabilities of the Computer Vision service. To learn more about what you can do with this service, see the [OCR page](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr).
+To learn more about what you can do with this service, see the [Azure AI Vision page on](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr).

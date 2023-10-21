@@ -7,7 +7,7 @@ lab:
 
 In this exercise, you'll use the automated machine learning feature in Azure Machine Learning to train and evaluate a machine learning model. You'll then deploy and test the trained model.
 
-This exercise should take approximately **30** minutes to complete.
+This exercise should take approximately **40** minutes to complete.
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free) in which you have administrative access.
