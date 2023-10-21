@@ -3,7 +3,7 @@ lab:
     title: 'Explore an Azure Cognitive Search index (UI)'
 ---
 
-# Explore knowledge mining
+# Explore an Azure Cognitive Search index (UI)
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
