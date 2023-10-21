@@ -3,12 +3,19 @@ lab:
     title: 'Use a Question Answering model in the Language Studio'
 ---
 
-# Explore question answering
+# Use a Question Answering model in the Language Studio
+
+In this exercise you will use Language Studio to create and train a knowledge base of question and answers that will be used by a customer services bot. Content for the knowledge base will come from an existing FAQ page from the web site of Margie’s Travel, a fictitious travel agency. You will then use Language Studio to see how it would work when used by customers.
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-For customer support scenarios, it's common to create a bot that can interpret and answer frequently asked questions through a website chat window, email, or voice interface. Underlying the bot interface is a knowledge base of questions and appropriate answers that the bot can search for suitable responses.
+When implementing a bot, the first step is to create a knowledge base of question and answer pairs. This is used together with built-in natural language processing capabilities so that the bot can interpret questions and find the most appropriate answer for the user.
+
+## Create a knowledge base
+Azure AI Language includes the Understand questions and conversational language service. This includes Custom question answering which you will use to create the knowledge base for Margie’s Travel.
+
+Knowledge bases can be created either by entering question and answer pairs manually, or from an existing document or web page. Margie’s Travel wants to use their existing FAQ document. 
 
 ## Create a custom question answering knowledge base
 
@@ -36,6 +43,8 @@ The Language service's custom question answering feature enables you to quickly 
     > If you have already provisioned a free-tier **Azure Cognitive Search** resource, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
 
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
+
+## Create a new project
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
 

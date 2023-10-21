@@ -17,7 +17,7 @@ Before using Vision Studio to try out the capabilities of Image Analysis 4.0, yo
 
 1. Navigate to the [Azure portal](https://portal.azure.com/) in a web browser, then select **Create a resource**.
 
-    ![Screenshot of the Azure portal with red box around the create a resource button.](../media/05-azure-portal-create-resource.png)
+    ![Screenshot of the Azure portal with red box around the create a resource button.](../media/analyze-images-vision/05-azure-portal-create-resource.png)
 
 2. Search for and select **Resource Group** in the Marketplace, then select **Create**. Configure the resource group with the following settings:
     - **Subscription**: *Your Azure subscription*
@@ -39,7 +39,7 @@ Before using Vision Studio to try out the capabilities of Image Analysis 4.0, yo
 
     Select **Review + Create**, then select **Create**. 
     
-    ![Screenshot of the configuration screen to create a Cognitive Services resource.](../media/05-cognitive-services-configuration.png)
+    ![Screenshot of the configuration screen to create a Cognitive Services resource.](../media/analyze-images-vision/05-cognitive-services-configuration.png)
 
     **Note**: Image Analysis 4.0 features are currently available in a limited number of Azure regions. Specifying `East US` ensures access to the 4.0 features from Vision Studio.
 
@@ -55,17 +55,17 @@ Configure the resource with the following settings:
 
     Select **Review** and **Create**.  
 
-    ![Screenshot of the configuration screen to create a Storage Account.](../media/05-storage-account-creation.png)
+    ![Screenshot of the configuration screen to create a Storage Account.](../media/analyze-images-vision/05-storage-account-creation.png)
 
     Once the resource is deployed, select **Go to Resource**.
 
 5. On your storage account resource page, navigate to the left-hand pane. Under **Data Storage**, select **Containers**.
 
-    ![Screenshot of the Data Storage menu header with a red box around the Containers link.](../media/05-container-navigation.png)
+    ![Screenshot of the Data Storage menu header with a red box around the Containers link.](../media/analyze-images-vision/05-container-navigation.png)
 
 6. Create a new container by selecting **+ Container**. 
     
-    ![Screenshot of the create a container button on the Containers page.](../media/05-new-container.png)
+    ![Screenshot of the create a container button on the Containers page.](../media/analyze-images-vision/05-new-container.png)
     
     Configure the container with these settings:
     - **Name**: photo-album
@@ -95,7 +95,7 @@ Before moving on to trying out the Image Analysis 4.0 features from Vision Studi
 
 2. On the Storage Account page, scroll down in the left-hand navigation menu and select **Resource sharing (CORS)** under **Settings**.
 
-    ![The Resource Sharing (CORS) menu items is highlighted under the Settings header.](../media/05-azure-portal-storage-account-cors.png)
+    ![The Resource Sharing (CORS) menu items is highlighted under the Settings header.](../media/analyze-images-vision/05-azure-portal-storage-account-cors.png)
 
 3. On the **Resource Sharing (CORS)** page, enter the following on the **Blob service** tab:
 
@@ -103,7 +103,7 @@ Before moving on to trying out the Image Analysis 4.0 features from Vision Studi
     - **Allowed methods**: Select the **GET** checkbox to allow an authenticated request from a different domain.
     - **Max age**: Enter **9999**.
 
-    ![The Azure Storage Account CORS rule configuration is displayed on the Resource Sharing (CORS) page.](../media/05-azure-portal-storage-account-cors-rule.png)
+    ![The Azure Storage Account CORS rule configuration is displayed on the Resource Sharing (CORS) page.](../media/analyze-images-vision/05-azure-portal-storage-account-cors-rule.png)
 
 4. Select **Save** on the **Resource sharing (CORS)** toolbar.
 
@@ -123,21 +123,21 @@ Some of the images you download need to be added to the Azure Storage account yo
 
 2. Select the 'photo-album' container on the **Containers** page.
 
-    ![On the Azure Storage Account page, Containers is highlighted and selected in the left-hand navigation menu, and the photo-album container is highlighted in the containers list.](../media/05-azure-portal-storage-account-containers-photo-album.png)
+    ![On the Azure Storage Account page, Containers is highlighted and selected in the left-hand navigation menu, and the photo-album container is highlighted in the containers list.](../media/analyze-images-vision/05-azure-portal-storage-account-containers-photo-album.png)
 
 3. On the **photo-album** page, select **Upload** from the toolbar.
 
-    ![The Upload button on the storage container toolbar is highlighted.](../media/05-azure-portal-storage-account-containers-upload.png)
+    ![The Upload button on the storage container toolbar is highlighted.](../media/analyze-images-vision/05-azure-portal-storage-account-containers-upload.png)
 
 4. On the **Upload blob** dialog, select **Browse for files**, navigate to the `photo-album` folder in the `images` folder you downloaded to your local machine, select all the files in the folder, and then select **Open** to add the files to the upload process.
 
-    ![On the Upload blob dialog, Browser for files is highlighted and the Upload button is highlighted.](../media/05-azure-portal-storage-account-upload-photo-album.png)
+    ![On the Upload blob dialog, Browser for files is highlighted and the Upload button is highlighted.](../media/analyze-images-vision/05-azure-portal-storage-account-upload-photo-album.png)
 
 5. Select **Upload** to upload all files into the `photo-album` container.
 
     When the upload completes, you should receive a message that 109 blobs were successfully uploaded.
 
-    ![A dialog with the message the 109 blobs were successfully uploaded is displayed.](../media/05-azure-portal-storage-account-upload-photo-album-success.png)
+    ![A dialog with the message the 109 blobs were successfully uploaded is displayed.](../media/analyze-images-vision/05-azure-portal-storage-account-upload-photo-album-success.png)
 
 6. Repeat steps 3 through 5 above, this time selecting the `training-images` container and retrieving all of the images from the `training-images` folder in your download location.
 
@@ -159,11 +159,11 @@ In this task, you will connect the Cognitive Services resource you provisioned a
 
 3. On the Vision Studio home page, select **View all resources** under the **Getting started with Vision** heading.
 
-    ![The View all resource link is highlighted under Getting started with Vision in Vision Studio.](../media/05-vision-studio-view-all-resources.png)
+    ![The View all resource link is highlighted under Getting started with Vision in Vision Studio.](../media/analyze-images-vision/05-vision-studio-view-all-resources.png)
 
 4. On the **Select a resource to work with** page, hover your mouse cursor over the `cog-ms-learn-vision-SUFFIX` resource you created above in the list and then check the box to the left of the resource name, then select **Select as default resource**.
 
-    ![The Select a resource to work with dialog is displayed with the cog-ms-learn-vision-SUFFIX Cognitive Services resource highlighted and checked. The Select as default resource button is highlighted.](../media/05-vision-studio-select-default-resource.png)
+    ![The Select a resource to work with dialog is displayed with the cog-ms-learn-vision-SUFFIX Cognitive Services resource highlighted and checked. The Select as default resource button is highlighted.](../media/analyze-images-vision/05-vision-studio-select-default-resource.png)
 
 ## Generate captions for an image
 
@@ -173,17 +173,17 @@ You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/)
 
 2. On the **Getting started with Vision** landing page, select the **Image analysis** tab and then select the **Add captions to images** tile.
 
-    ![On the Vision Studio home page, the Image analysis tab is selected and highlighted. The Add captions to images tile is highlighted.](../media/05-vision-studio-image-analysis-add-captions-to-images.png)
+    ![On the Vision Studio home page, the Image analysis tab is selected and highlighted. The Add captions to images tile is highlighted.](../media/analyze-images-vision/05-vision-studio-image-analysis-add-captions-to-images.png)
 
 3. Under the **Try It Out** subheading, acknowledge the resource usage policy by reading and checking the box.  
 
 4. Open the folder containing the images you downloaded and unzipped and locate the file named `city-street.jpg` within the `try-it-out` folder.
 
-    ![An image of a city street, with a man walking a dog.](../media/05-city-street.jpg)
+    ![An image of a city street, with a man walking a dog.](../media/analyze-images-vision/05-city-street.jpg)
 
 5. Drag the `city-street.jpg` image from the `try-it-out` folder into the **Drag and drop files here** box, or browse to the location you downloaded the file and select it.
 
-    ![The box for dragging and dropping files is displayed.](../media/05-vision-studio-try-it-out-drag-and-drop-file.png)
+    ![The box for dragging and dropping files is displayed.](../media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
 
 6. Observe the generated caption text, visible in the **Detected attributes** panel to the right of the image.
 
@@ -192,17 +192,17 @@ You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/)
 
 8. Next, use the same image to perform **Dense captioning**. Return to the **Vision Studio** home page, and as you did before, select the **Image analysis** tab, then select the **Dense captioning** tile.
 
-    ![The Dense captioning tile is displayed.](../media/05-vision-studio-image-analysis-dense-captioning.png)
+    ![The Dense captioning tile is displayed.](../media/analyze-images-vision/05-vision-studio-image-analysis-dense-captioning.png)
 
     The **Dense Captions** feature of Image Analysis 4.0 differs from the **Caption** capability in that it provides multiple human-readable captions for an image, one describing the image's content and others, each covering the essential objects detected in the picture. Each detected object includes a bounding box, which defines the pixel coordinates within the image associated with the object.
 
 9. Drag the `city-street.jpg` image from the `try-it-out` folder into the **Drag and drop files here** box, or browse to the location you downloaded the file and select it.
 
-    ![The box for dragging and dropping files is displayed.](../media/05-vision-studio-try-it-out-drag-and-drop-file.png)
+    ![The box for dragging and dropping files is displayed.](../media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
 
 10. Hover over one of the captions in the **Detected** attributes list and observe what happens within the image.
 
-    ![The city-street.jpg image and its captions are displayed. The third caption, "A yellow car on the street," is highlighted, and the associated bounding box in the image is highlighted with the caption displayed.](../media/05-vision-studio-dense-captioning-bounding-boxes.png)
+    ![The city-street.jpg image and its captions are displayed. The third caption, "A yellow car on the street," is highlighted, and the associated bounding box in the image is highlighted with the caption displayed.](../media/analyze-images-vision/05-vision-studio-dense-captioning-bounding-boxes.png)
 
     Move your mouse cursor over the other captions in the list, and notice how the bounding box shifts in the image to highlight the portion of the image used to generate the caption.
 
@@ -214,7 +214,7 @@ The next feature you will try is the **Extract Tags** functionality of Image Ana
 
 1. Return to the home page of Vision Studio, then select the **Extract common tags from images** tile under the **Image analysis** tab.
 
-    ![The Extract common tags from images tile is displayed.](../media/05-vision-studio-image-analysis-extract-common-tags.png)
+    ![The Extract common tags from images tile is displayed.](../media/analyze-images-vision/05-vision-studio-image-analysis-extract-common-tags.png)
 
 2. In the **Choose the model you want to try out**, leave **Pretrained Vision model** selected. In the **Choose your language**, select **English** or a language of your preference.
 
@@ -222,13 +222,13 @@ The next feature you will try is the **Extract Tags** functionality of Image Ana
 
 4. Drag the `shopping.jpg` file into the **Drag and drop a file here** box, or select **Browse for a file** and retrieve the `shopping.jpg` file from the location you saved it to your local computer.
 
-    ![The box for dragging and dropping files is displayed.](../media/05-vision-studio-try-it-out-drag-and-drop-file.png)
+    ![The box for dragging and dropping files is displayed.](../media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
 
 5. Review the list of tags extracted from the image and the confidence score for each in the detected attributes panel.
 
     | Image | Tags  |
     | :---: | :---: |
-    | ![A person shopping in a grocery store.](../media/05-shopping.jpg) | ![Tags generated for the image of a person shopping in a grocery stor .](../media/05-image-tags.png)
+    | ![A person shopping in a grocery store.](../media/analyze-images-vision/05-shopping.jpg) | ![Tags generated for the image of a person shopping in a grocery stor .](../media/analyze-images-vision/05-image-tags.png)
 
     Notice in the list of tags that it includes not only objects, but actions, such as `shopping`, `selling`, and `standing`.
 
@@ -238,7 +238,7 @@ In this task, you use the **Object detection** feature of Image Analysis. Object
 
 1. Return to the home page of Vision Studio, then select the **Detect common objects in images** tile under the **Image analysis** tab.
 
-    ![The Detect common objects in images tile is displayed.](../media/05-vision-studio-image-analysis-detect-common-objects.png)
+    ![The Detect common objects in images tile is displayed.](../media/analyze-images-vision/05-vision-studio-image-analysis-detect-common-objects.png)
 
 2. In the **Choose the model you want to try out**, leave **Pretrained Vision model** selected.
 
@@ -246,7 +246,7 @@ In this task, you use the **Object detection** feature of Image Analysis. Object
 
 4. Drag the `road-scene.jpg` file into the **Drag and drop a file here** box, or select **Browse for a file** and retrieve the `road-scene.jpg` file from the location you saved it to your local computer.
 
-    ![The box for dragging and dropping files is displayed.](../media/05-vision-studio-try-it-out-drag-and-drop-file.png)
+    ![The box for dragging and dropping files is displayed.](../media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
 
 5. In the **Detected attributes** box, observe the list of detected objects and their confidence scores.
 
