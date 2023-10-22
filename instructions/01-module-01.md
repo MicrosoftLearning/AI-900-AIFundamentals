@@ -3,7 +3,7 @@ lab:
     title: 'Explore Azure AI services'
 ---
 
-## Explore Azure AI services with the Content Safety Studio
+# Explore Azure AI services with the Content Safety Studio
 
 Azure AI services help users create AI applications with out-of-the-box and pre-built and customizable APIs and models. In this exercise you will take a look at one of the services, Azure AI Content Safety, in the Content Safety Studio. 
 
