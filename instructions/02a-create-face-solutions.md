@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Detect faces in the Vision Studio​'
+    title: 'Detect faces in Vision Studio​'
 ---
 
-# Detect faces in the Vision Studio
+# Detect faces in Vision Studio
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
