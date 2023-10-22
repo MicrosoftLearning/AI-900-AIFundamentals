@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Read text in the Vision Studio​'
+    title: 'Read text in Vision Studio​'
 ---
 
-# Read text in the Vision Studio
+# Read text in Vision Studio
 
 In this exercise you’ll use Azure AI service to explore the optical character recognition capabilities of Azure AI Vision. You’ll use Vision Studio to experiment with extracting text from images, without needing to write any code.
 
