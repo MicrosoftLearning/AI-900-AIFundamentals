@@ -3,7 +3,7 @@ lab:
     title: 'Analyze images in Vision Studio'
 ---
 
-# Analyze images in Vision Studio
+# Analyze images in Vision Studio 
 
 **Azure AI Vision** includes numerous capabilities for understanding image content and context and extracting information from images. Azure AI Vision Studio allows you to try out many of the capabilities of image analysis. 
 
