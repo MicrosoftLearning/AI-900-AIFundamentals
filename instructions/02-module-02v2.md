@@ -5,23 +5,22 @@ lab:
 
 ## Analyze images in the Vision Studio
 
-Azure AI Vision includes numerous capabilities for understanding image content and context and extracting information from images. Azure AI Vision Studio allows you to try out many of the capabilities of Image Analysis 4.0 quickly and easily in a web browser. 
+**Azure AI Vision** includes numerous capabilities for understanding image content and context and extracting information from images. Azure AI Vision Studio allows you to try out many of the capabilities of image analysis. In this exercise, you will use Vision Studio to analyze images using the built-in try-it-out experiences.
 
-In this exercise, you will use Vision Studio to analyze images using the built-in try-it-out experiences. 
+Suppose the fictitious retailer *Northwind Traders* has decided to implement a "smart store", in which AI services monitor the store to identify customers requiring assistance, and direct employees to help them. By using Azure AI Vision, images taken by cameras throughout the store can be analyzed to provide meaningful descriptions of what they depict. 
 
-## Provision Azure resources
+> **Note**
+> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-Before using Vision Studio to try out the capabilities of Image Analysis 4.0, you must prepare your Azure environment by creating a few resources required to complete the exercises in this module. You will use the Azure portal to provision and configure the following resources:
+## Create an *Azure AI services* resource
 
-- A resource group
-- An Azure Cognitive Service account
-- An Azure Storage account
+You can use the Azure AI Face service by creating either a **Computer Vision** resource or an **Azure AI services** resource.
 
-1. Navigate to the [Azure portal](https://portal.azure.com/) in a web browser, then select **Create a resource**.
+If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
 
-    ![Screenshot of the Azure portal with red box around the create a resource button.](./media/analyze-images-vision/05-azure-portal-create-resource.png)
+1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-2. Search for and select **Resource Group** in the Marketplace, then select **Create**. Configure the resource group with the following settings:
+1. Search for and select **Resource Group** in the Marketplace, then select **Create**. Configure the resource group with the following settings:
     - **Subscription**: *Your Azure subscription*
     - **Resource Group**: rg-ms-learn-vision
     - **Region**: (US) East US
@@ -45,13 +44,13 @@ Before using Vision Studio to try out the capabilities of Image Analysis 4.0, yo
 
     Once the resource is deployed, select **Go to Resource**.
 
-## Connect your Cognitive Services resource to Vision Studio
+## Connect your Azure AI service resource to Vision Studio
 
-In this task, you will connect the Cognitive Services resource you provisioned above to Vision Studio so it can be used for trying out the various Image Analysis 4.0 features.
+Next, connect the Azure AI service resource you provisioned above to Vision Studio so it can be used for trying out image analysis.
 
-1. In a web browser, navigate to [Vision Studio](https://portal.vision.cognitive.azure.com/).
+1. In a web browser, navigate to [Vision Studio](https://portal.vision.cognitive.azure.com?azure-portal=true).
 
-2. Sign in with your account and making sure you are using the same directory as the one where you have created the `cog-ms-learn-vision-SUFFIX` Cognitive Services resource.
+2. Sign in with your account and making sure you are using the same directory as the one where you have created the `cog-ms-learn-vision-SUFFIX` Azure AI service resource.
 
 3. On the Vision Studio home page, select **View all resources** under the **Getting started with Vision** heading.
 
@@ -63,7 +62,7 @@ In this task, you will connect the Cognitive Services resource you provisioned a
 
 ## Generate captions for an image
 
-You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/) to examine Image Analysis 4.0 capabilities. In this task, you look at the image captioning functionality of Azure Computer Vision. Image captions are available through the **Caption** and **Dense Captions** features in Image Analysis 4.0.
+You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/) to look at the image captioning functionality of Azure AI Vision. Image captions are available through the **Caption** and **Dense Captions** features.
 
 1. In a web browser, navigate to [Vision Studio](https://portal.vision.cognitive.azure.com/).
 
@@ -73,11 +72,11 @@ You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/)
 
 3. Under the **Try It Out** subheading, acknowledge the resource usage policy by reading and checking the box.  
 
-4. Open the folder containing the images you downloaded and unzipped and locate the file named `city-street.jpg` within the `try-it-out` folder.
+4. Unzip the folder containing the images and locate the file named `city-street.jpg`.
 
     ![An image of a city street, with a man walking a dog.](./media/analyze-images-vision/05-city-street.jpg)
 
-5. Drag the `city-street.jpg` image from the `try-it-out` folder into the **Drag and drop files here** box, or browse to the location you downloaded the file and select it.
+5. Drag the `city-street.jpg` image into the **Drag and drop files here** box, or browse to the location you downloaded the file and select it.
 
     ![The box for dragging and dropping files is displayed.](./media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
 
@@ -85,24 +84,17 @@ You are ready to use [Vision Studio](https://portal.vision.cognitive.azure.com/)
 
     The **Caption** functionality provides a single, human-readable English sentence describing the image's content.
 
-
 8. Next, use the same image to perform **Dense captioning**. Return to the **Vision Studio** home page, and as you did before, select the **Image analysis** tab, then select the **Dense captioning** tile.
 
     ![The Dense captioning tile is displayed.](./media/analyze-images-vision/05-vision-studio-image-analysis-dense-captioning.png)
 
-    The **Dense Captions** feature of Image Analysis 4.0 differs from the **Caption** capability in that it provides multiple human-readable captions for an image, one describing the image's content and others, each covering the essential objects detected in the picture. Each detected object includes a bounding box, which defines the pixel coordinates within the image associated with the object.
-
-9. Drag the `city-street.jpg` image from the `try-it-out` folder into the **Drag and drop files here** box, or browse to the location you downloaded the file and select it.
-
-    ![The box for dragging and dropping files is displayed.](./media/analyze-images-vision/05-vision-studio-try-it-out-drag-and-drop-file.png)
+    The **Dense Captions** feature differs from the **Caption** capability in that it provides multiple human-readable captions for an image, one describing the image's content and others, each covering the essential objects detected in the picture. Each detected object includes a bounding box, which defines the pixel coordinates within the image associated with the object.
 
 10. Hover over one of the captions in the **Detected** attributes list and observe what happens within the image.
 
     ![The city-street.jpg image and its captions are displayed. The third caption, "A yellow car on the street," is highlighted, and the associated bounding box in the image is highlighted with the caption displayed.](./media/analyze-images-vision/05-vision-studio-dense-captioning-bounding-boxes.png)
 
     Move your mouse cursor over the other captions in the list, and notice how the bounding box shifts in the image to highlight the portion of the image used to generate the caption.
-
-
 
 ## Tagging images
 
@@ -153,42 +145,18 @@ In this task, you use the **Object detection** feature of Image Analysis. Object
     The threshold slider specifies that only objects identified with a confidence score or probability greater than the threshold should be displayed.
 
 
+## Learn more
 
-Congratulations! You have successfully used Vision Studio.
+To learn more about what you can do with this service, see the [Computer Vision page](https://azure.microsoft.com/products/ai-services?activetab=pivot:visiontab).
+
+
 
 
 # Explore Computer Vision
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
+Use your Computer Vision service to analyze the following image, taken by a camera in the Northwind Traders store:
 
-The *Computer Vision* service uses pre-trained machine learning models to analyze images and extract information about them.
-
-For example, suppose the fictitious retailer *Northwind Traders* has decided to implement a "smart store", in which AI services monitor the store to identify customers requiring assistance, and direct employees to help them. By using the Computer Vision service, images taken by cameras throughout the store can be analyzed to provide meaningful descriptions of what they depict.
-
-In this lab, you'll use a simple command-line application to see the Computer Vision service in action. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
-
-## Create an *Azure AI services* resource
-
-You can use the Computer Vision service by creating either a **Computer Vision** resource or an **Azure AI services** resource.
-
-If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
-
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-
-1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Standard S0
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
-
-1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
-
-1. View the **Keys and Endpoint** page for your Azure AI services resource. You will need the endpoint and keys to connect from client applications.
-
-
+![An image of a parent using a cellphone camera to take a picture of a child in in a store](media/analyze-images-computer-vision-service/store-camera-1.jpg)
 
 1. Review the results of the image analysis, which include:
     - A suggested caption that describes the image.
