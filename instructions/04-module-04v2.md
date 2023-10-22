@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Extract form data in the Document Intelligence Studio​'
+    title: 'Extract form data in Document Intelligence Studio​'
 ---
 
-# Extract form data in the Document Intelligence Studio
+# Extract form data in Document Intelligence Studio
 
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
