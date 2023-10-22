@@ -156,7 +156,7 @@ To learn more about what you can do with this service, see the [Computer Vision 
 
 Use your Computer Vision service to analyze the following image, taken by a camera in the Northwind Traders store:
 
-![An image of a parent using a cellphone camera to take a picture of a child in in a store](media/analyze-images-computer-vision-service/store-camera-1.jpg)
+![An image of a parent using a cellphone camera to take a picture of a child in in a store](./media/analyze-images-computer-vision-service/store-camera-1.jpg)
 
 1. Review the results of the image analysis, which include:
     - A suggested caption that describes the image.
@@ -165,7 +165,7 @@ Use your Computer Vision service to analyze the following image, taken by a came
 
 1. Now let's try another image:
 
-    ![An image of person with a shopping basket in a supermarket](media/analyze-images-computer-vision-service/store-camera-2.jpg)
+    ![An image of person with a shopping basket in a supermarket](./media/analyze-images-computer-vision-service/store-camera-2.jpg)
 
     To analyze the second image, enter the following command:
 
@@ -177,7 +177,7 @@ Use your Computer Vision service to analyze the following image, taken by a came
 
 1. Let's try one more:
 
-    ![An image of person with a shopping cart](media/analyze-images-computer-vision-service/store-camera-3.jpg)
+    ![An image of person with a shopping cart](./media/analyze-images-computer-vision-service/store-camera-3.jpg)
 
     To analyze the third image, enter the following command:
 
