@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Use a Conversational Language Understanding model in the Language Studio'
+    title: 'Use Conversational Language Understanding with Language Studio'
 ---
 
-# Use a Conversational Language Understanding model in the Language Studio
+# Use Conversational Language Understanding with Language Studio
 
 Increasingly, we expect computers to be able to use AI to understand natural language commands, either spoken or typed. For example, you might want a home automation system to control devices in your home by using voice commands such as “switch on the light” or “put the fan on.” AI-powered devices can understand these commands and take appropriate action.
 In this exercise, you will use Language Studio to create and test a project that sends instructions to devices such as lights or fans. You’ll use the capabilities of the Conversational Language Understanding service to configure your project. 
