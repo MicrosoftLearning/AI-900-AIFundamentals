@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Analyze text in Language Studio'
+    title: 'Analyze text with Language Studio'
 ---
 
-# Analyze text in Language Studio
+# Analyze text with Language Studio
 
 In this exercise you will explore the capabilities of Azure AI Language by analyzing some example hotel reviews. You’ll use Language Studio to understand whether the reviews are mostly positive or negative.
 
