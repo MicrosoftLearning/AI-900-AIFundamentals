@@ -1,9 +1,9 @@
 ---
 lab:
-    title: 'Explore Automated Machine Learning in Azure ML'
+    title: 'Use Azure Machine Learning to train a model'
 ---
 
-# Explore Automated Machine Learning in Azure ML
+# Use Azure Machine Learning to train a model
 
 In this exercise, you'll use the automated machine learning feature in Azure Machine Learning to train and evaluate a machine learning model. You'll then deploy and test the trained model.
 
