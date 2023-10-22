@@ -3,12 +3,10 @@ lab:
     title: 'Use Bing Copilot to generate content'
 ---
 
+# Explore generative AI with Bing
 In this exercise you will explore generative AI with Bing Copilot. 
 
-## Before you start
-You need a personal Microsoft account. If you do not have one, go to [signup.live.com](https://signup.live.com/signup?azure-portal=true) to sign up.
-
-# Explore generative AI with Bing
+>**Note**: You need a personal Microsoft account. If you do not have one, go to [signup.live.com](https://signup.live.com/signup?azure-portal=true) to sign up.
 
 1. Open [Bing.com](https://www.bing.com?azure-portal=true) and sign in with your personal Microsoft account.
 
