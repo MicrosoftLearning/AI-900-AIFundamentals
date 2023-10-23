@@ -39,7 +39,7 @@ You can use the Azure AI Face service by creating either a **Face** resource or 
 
 1. Select the AI services resource that you created earlier, then select **Select as default resource**. Save and close Settings. 
 
-1. Select https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/vision/training-images.zip and save the file to a folder on your computer. Unzip the files and make a note of the folder name.
+1. Select https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/vision/detect-faces.zip and save the file to a folder on your computer. Unzip the files and make a note of the folder name.
 
 1. Select **Vision Studio** to return to the Get Started with Vision page, and then select **Face** to display the Detect Faces in an image panel. Select **Try it out**.
 
