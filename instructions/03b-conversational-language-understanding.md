@@ -25,10 +25,10 @@ If you haven't already done so, create a **Language service** resource in your A
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: East US 2
     - **Name**: *Enter a unique name*.
-    - **Pricing tier**: S (1K Calls per minute)
-    - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: Selected.
+    - **Pricing tier**: *S (1K Calls per minute)*
+    - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: *Selected.*
 
-1. Review and create the resource, and wait for deployment to complete.
+1. **Review and create** the resource, and wait for deployment to complete.
 
 ### Create a Conversational Language Understanding App
 
@@ -52,8 +52,8 @@ To implement natural language understanding with Conversational Language Underst
 
 1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and click **Next**:
     - **Name**: *Create a unique name*
-    - **Description**: Simple home automation
-    - **Utterances primary language**: English
+    - **Description**: *Simple home automation*
+    - **Utterances primary language**: *English*
     - **Enable multiple languages in project**: *Do not select*
 
     ![Enter details for the project.](media/conversational-language-understanding/create-project.png)
@@ -171,8 +171,11 @@ To use your trained model in a client application, you must deploy it as an endp
     - *put the fan off*
 
 You have now successfully configured a conversational language project, and defined entities, intents, and utterances. You have seen how to train and deploy a model in the Language Studio. And you have tried it out with both utterances you defined, and some that you did not explicitly define but the model was able to determine. 
-NOTE: Conversational language understanding provides the intelligence to interpret the intention of the input; it doesn't perform any actions such as turning on the light or the fan.
-If you don’t intend to do more exercises, delete any resources you no longer need. This avoids accruing any unnecessary costs. In the Azure portal, find and delete the Language resource you created for this exercise.
+>**NOTE**
+>Conversational language understanding provides the intelligence to interpret the intention of the input; it doesn't perform any actions such as turning on the light or the fan.
+
+## Clean up
+If you don’t intend to do more exercises, delete any resources you no longer need. This avoids accruing any unnecessary costs. In the Azure portal, find and **delete** the Language resource you created for this exercise.
 
 ## Learn more
 
