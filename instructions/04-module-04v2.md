@@ -31,7 +31,9 @@ You can use the AI Document Intelligence service by using either an AI Document 
     -	**Pricing tier**: *Free FO (if available, otherwise select Standard SO)*.
 1.	Select **Continue** and then **Finish**. Wait for the resource to be deployed.
 
-!Note If your resource is not yet displayed, you may need to **Refresh** the page.
+>**Note**
+> If your resource is not yet displayed, you may need to **Refresh** the page.
+
 Keep Document Intelligence Studio open.
 
 # Analyze a receipt in Document Intelligence Studio
@@ -54,4 +56,4 @@ If you don’t intend to do more exercises, delete any resources that you no lon
 1.	Select the *Document Intelligence resource* and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
 ## Learn more
-This exercise demonstrated only some of the capabilities of the AI Document Intelligence service. To learn more about what you can do with this service, see the [Document Intelligence](https://learn.microsoft.com/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0)page.
+This exercise demonstrated only some of the capabilities of the AI Document Intelligence service. To learn more about what you can do with this service, see the [Document Intelligence](https://learn.microsoft.com/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0) page.
