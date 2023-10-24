@@ -69,7 +69,7 @@ The Language service's custom question answering feature enables you to quickly 
 1. You will be taken to the **Manage sources** page. Click **&#65291;Add source** and select **URLs**.
 1. In the **Add URLs** box, click **+ Add url**. Type in the following and select **Add all**:
     - **URL name**: MargiesKB
-    - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/qna/margies_faq.docx`
+    - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/natural-language/question-answering/margies_faq.docx`
     - **Classify file structure**: *Auto-detect* 
 
 ## Edit the knowledge base
@@ -127,7 +127,6 @@ The knowledge base provides a back-end service that client applications can use 
         > **Note**
         > To navigate to your Language resource key, open [https://portal.azure.com](https://portal.azure.com?azure-portal=true). On the home page, click on *Resource Groups* and locate the resource group you created your Language resource in. Select your Language resource and navigate to its left-hand menu. Then select *Keys and Endpoint*. Copy one of the keys. 
 
-    -  
         - **Language project name**: MargiesTravel
         - **Language service endpoint hostname**: *Pre-populated with your language service endpoint*
     - **Language service details**
