@@ -13,7 +13,7 @@ In this exercise you will use Language Studio to create and train a knowledge ba
 When implementing a bot, the first step is to create a knowledge base of question and answer pairs. This is used together with built-in natural language processing capabilities so that the bot can interpret questions and find the most appropriate answer for the user.
 
 ## Create a knowledge base
-Azure AI Language includes the Understand questions and conversational language service. This includes Custom question answering which you will use to create the knowledge base for Margie’s Travel.
+Azure AI Language includes the *Understand questions and conversational language* service. This includes *Custom question answering* which you will use to create the knowledge base for Margie’s Travel.
 
 Knowledge bases can be created either by entering question and answer pairs manually, or from an existing document or web page. Margie’s Travel wants to use their existing FAQ document. 
 
@@ -47,22 +47,17 @@ The Language service's custom question answering feature enables you to quickly 
 ## Create a new project
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
-
 1. If prompted to choose a Language resource, select the following settings:
     - **Azure directory**: The Azure directory containing your subscription.
     - **Azure subscription**: Your Azure subscription.
     - **Language resource**: The Language resource you created previously.
-
 1. If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
     1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
     2. On the **Settings** page, view the **Resources** tab.
     3. Select the language resource you just created, and click **Switch resource**.
     4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
-
 1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
-
 1. On the **Choose language setting for resource *your resource*** page, select **I want to select the language when I create a project in this resource** and click **Next**.
-
 1. On the **Enter basic information** page, enter the following details and click **Next**:
     - **Language resource**: *choose your language resource*.  
     - **Azure search resource**: *choose your Azure search resource*.
@@ -70,11 +65,8 @@ The Language service's custom question answering feature enables you to quickly 
     - **Description**: A simple knowledge base
     - **Source language**: English
     - **Default answer when no answer is returned**: No answer found
-
 1. On the **Review and finish** page, click **Create project**.
-
 1. You will be taken to the **Manage sources** page. Click **&#65291;Add source** and select **URLs**.
-
 1. In the **Add URLs** box, click **+ Add url**. Type in the following and select **Add all**:
     - **URL name**: MargiesKB
     - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/qna/margies_faq.docx`
@@ -85,42 +77,30 @@ The Language service's custom question answering feature enables you to quickly 
 Your knowledge base is based on the details in the FAQ document and some pre-defined responses. You can add custom question-and-answer pairs to supplement these.
 
 1. Click **Edit knowledge base** on the left hand panel. Then click **+ Add question pair**.
-
 1. In the **Questions** box, type `Hello`, then click **Submit changes**.
-
 1. Click **+ Add alternate phrase** and type `Hi`, then click **Submit changes**.
-
 1. In the **Answer and prompts** box, type `Hello`. Keep the **Source**: Editorial.
-
 1. Click **Submit**. Then at the top of the page click **Save changes**. You may need to change the size of your window to see the button.
 
 ## Train and test the knowledge base
 
 Now that you have a knowledge base, you can test it.
-
 1. At the top of the page, click **Test** to test your knowledge base.
-
 1. In the test pane, at the bottom enter the message *Hi*. The response **Hello** should be returned.
-
 1. In the test pane, at the bottom enter the message *I want to book a flight*. An appropriate response from the FAQ should be returned.
 
     > **Note**
     > The response includes a *short answer* as well as a more verbose *answer passage* - the answer passage shows the full text in the FAQ document for the closest matched question, while the short answer is intelligently extracted from the passage. You can control whether the short answer is from the response by using the **Display short answer** checkbox at the top of the test pane.
 
 1. Try another question, such as *How can I cancel a reservation?*
-
 1. When you're done testing the knowledge base, click **Test** to close the test pane.
 
 ## Create a bot for the knowledge base
-
 The knowledge base provides a back-end service that client applications can use to answer questions through some sort of user interface. Commonly, these client applications are bots. To make the knowledge base available to a bot, you must publish it as a service that can be accessed over HTTP. You can then use the Azure Bot Service to create and host a bot that uses the knowledge base to answer user questions.
 
 1. At the left of the Language Studio page, click **Deploy knowledge base**.
-
 1. At the top of the page, click **Deploy**. A dialogue box will ask if you want to deploy the project. Select **Deploy**.
-
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
-
 1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
 
     - **Project Details**
@@ -156,11 +136,8 @@ The knowledge base provides a back-end service that client applications can use 
         - **Account Name**: *Pre-populated with your resource name*
 
 1. Select **Review + Create**.
-
 1. Wait for your bot to be created (the notification icon at the top right, which looks like a bell, will be animated while you wait). Then in the notification that deployment has completed, click **Go to resource** (or alternatively, on the home page, click **Resource groups**, open the resource group where you created the web app bot, and click it.)
-
 1. In the left-hand pane of your bot look for **Settings**, click on **Test in Web Chat**, and wait until the bot displays the message **Hello and Welcome** (it may take a few seconds to initialize).
-
 1. Use the test chat interface to ensure your bot answers questions from your knowledge base as expected. For example, try submitting *I need to cancel my hotel*.
 
 Experiment with the bot. You'll probably find that it can answer questions from the FAQ quite accurately, but it will have limited ability to interpret questions that it has not been trained with. You can always use the Language Studio to edit the knowledge base to improve it, and republish it.
