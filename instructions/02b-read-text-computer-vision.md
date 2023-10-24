@@ -36,7 +36,7 @@ If you haven't already done so, create an **Azure AI services** resource in your
 > If your resource is not showing you may need to **Refresh** the page.
 
 1. Select the AI services resource that you created earlier, then select **Select as default resource**. **Save** and close Settings.
-1. Select https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/vision/ocr-images.zip and save the file to a folder on your computer. Unzip the files and make a note of the folder name.
+1. Download the `ocr-images` folder https://aka.ms/ocr-images. Unzip the files.
 1. On the *Get started with Vision* page select **Optical character recognition**. 
 1. Under *Extract text from images*, select **Try it out**.
 1. On the Extract text from images page, under Try it out, check the box next to I acknowledge that this demo will incur usage to my Azure account. 
