@@ -57,10 +57,9 @@ You can use the Azure AI Face service by creating either a **Face** resource or 
 In this exercise you have explored how Azure AI services can detect faces in images. You have seen that AI services can detect faces despite being blurred or partially obscured. If you have time, feel free to try the sample images or some of your own images.
 
 ## Clean up
-
 If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
-1. Open the [Azure portal](https://portal.azure.com) and select the resource group that contains the AI services resource you created. 
-1. Select the *AI services resource*, select **Delete**, and then **Yes** to confirm. The resource is then deleted. 
+1.	Open the [Azure portal](https://portal.azure.com) and select the resource group that contains the resource you created. 
+1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
 ## Learn more
 
