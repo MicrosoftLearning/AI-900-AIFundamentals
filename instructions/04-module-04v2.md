@@ -52,8 +52,9 @@ In this exercise you have used the Document Intelligence Studio to create a Docu
 
 ## Clean up
 If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
-1.	Open the [Azure portal](https://portal.azure.com) and select the resource group that contains the AI Document Intelligence resource you created. 
-1.	Select the *Document Intelligence resource* and select **Delete** and then **Yes** to confirm. The resource is then deleted.
+1.	Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created. 
+1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
+
 
 ## Learn more
 This exercise demonstrated only some of the capabilities of the AI Document Intelligence service. To learn more about what you can do with this service, see the [Document Intelligence](https://learn.microsoft.com/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0) page.
