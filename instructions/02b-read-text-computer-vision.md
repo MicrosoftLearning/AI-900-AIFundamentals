@@ -12,12 +12,13 @@ In this exercise you’ll use Azure AI service to explore the optical character 
 A common computer vision challenge is to detect and interpret text embedded within an image. This is known as optical character recognition (OCR). In this exercise you’ll use an AI services resource, which includes AI Vision services. You’ll then use Vision Studio to try out the OCR service with different types of images.
 
 ## Create an *Azure AI services* resource
+
 You can use the Azure AI Vision service by creating either a **Computer Vision** resource or an **Azure AI services** resource.
 If you haven't already done so, create an **Azure AI services** resource in your Azure subscription.
 
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** plan. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
+1. Click the **&#65291;Create a resource** button and search for *Azure AI services*. Select **create** an **Azure AI services** resource. You will be taken to a page to create an Azure AI services resource. Configure it with the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
@@ -32,12 +33,14 @@ If you haven't already done so, create an **Azure AI services** resource in your
 1. In another browser tab, open [**Vision Studio**](https://portal.vision.cognitive.azure.com?azure-portal=true), signing in with your Microsoft account.
 1. Select **Settings** and then, on the Select a resource to work with page, select the resource you just created.
 
+![Settings](media/read-text-computer-vision/settings-toggle.png)
+
 > **Note**
 > If your resource is not showing you may need to **Refresh** the page.
 
 1. Select the AI services resource that you created earlier, then select **Select as default resource**. **Save** and close Settings.
 1. Download the `ocr-images` folder https://aka.ms/ocr-images. Unzip the files.
-1. On the *Get started with Vision* page select **Optical character recognition**. 
+1. On the *Get started with Vision* page select **Optical character recognition**.
 1. Under *Extract text from images*, select **Try it out**.
 1. On the Extract text from images page, under Try it out, check the box next to I acknowledge that this demo will incur usage to my Azure account. 
 1. Select **Browse for a file** and navigate to the folder on your computer where you saved the files from GitHub. Select **advert.jpg** and select **Open**.
@@ -52,10 +55,11 @@ If you haven't already done so, create an **Azure AI services** resource in your
 1. Review the results of the second image. It should return the text and bounding boxes of the text. If you have time, try **note.jpg** and **receipt.jpg**.
 
 ## Clean up
-If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
-1.	Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created. 
-1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
+If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
+
+1. Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created.
+1. Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
 ## Learn more
 
