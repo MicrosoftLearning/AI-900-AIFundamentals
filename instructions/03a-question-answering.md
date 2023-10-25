@@ -57,6 +57,9 @@ The Language service's custom question answering feature enables you to quickly 
     3. Select the language resource you just created, and click **Switch resource**.
     4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
 1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
+
+ ![Custom question answering](media/create-a-bot/create-custom-question-answering.png)
+
 1. On the **Choose language setting for resource *your resource*** page, select **I want to select the language when I create a project in this resource** and click **Next**.
 1. On the **Enter basic information** page, enter the following details and click **Next**:
     - **Language resource**: *choose your language resource*.  
