@@ -72,7 +72,7 @@ The Language service's custom question answering feature enables you to quickly 
     - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/natural-language/question-answering/margies_faq.docx`
     - **Classify file structure**: *Auto-detect* 
 
- ![Add URL](media/conversational-language-understanding/add-url.png)
+ ![Add URL](media/create-a-bot/add-url.png)
 
 ## Edit the knowledge base
 
@@ -105,7 +105,7 @@ The knowledge base provides a back-end service that client applications can use 
 1. At the left of the Language Studio page, click **Deploy knowledge base**.
 1. At the top of the page, click **Deploy**. A dialogue box will ask if you want to deploy the project. Select **Deploy**.
 
- ![Deploy knowledge base.](media/conversational-language-understanding/deploy-knowledge-base.png)
+ ![Deploy knowledge base.](media/create-a-bot/deploy-knowledge-base.png)
 
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
