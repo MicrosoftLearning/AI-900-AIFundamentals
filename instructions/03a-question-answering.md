@@ -15,7 +15,7 @@ When implementing a bot, the first step is to create a knowledge base of questio
 ## Create a knowledge base
 Azure AI Language includes the *Understand questions and conversational language* service. This includes *Custom question answering* which you will use to create the knowledge base for Margie’s Travel.
 
-Knowledge bases can be created either by entering question and answer pairs manually, or from an existing document or web page. Margie’s Travel wants to use their existing FAQ document. 
+Knowledge bases can be created either by entering question and answer pairs manually, or from an existing document or web page. Margie’s Travel wants to use their existing FAQ document.
 
 ## Create a custom question answering knowledge base
 
@@ -72,6 +72,8 @@ The Language service's custom question answering feature enables you to quickly 
     - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/natural-language/question-answering/margies_faq.docx`
     - **Classify file structure**: *Auto-detect* 
 
+ ![Add URL](media/conversational-language-understanding/add-url.png)
+
 ## Edit the knowledge base
 
 Your knowledge base is based on the details in the FAQ document and some pre-defined responses. You can add custom question-and-answer pairs to supplement these.
@@ -85,6 +87,7 @@ Your knowledge base is based on the details in the FAQ document and some pre-def
 ## Train and test the knowledge base
 
 Now that you have a knowledge base, you can test it.
+
 1. At the top of the page, click **Test** to test your knowledge base.
 1. In the test pane, at the bottom enter the message *Hi*. The response **Hello** should be returned.
 1. In the test pane, at the bottom enter the message *I want to book a flight*. An appropriate response from the FAQ should be returned.
@@ -96,10 +99,14 @@ Now that you have a knowledge base, you can test it.
 1. When you're done testing the knowledge base, click **Test** to close the test pane.
 
 ## Create a bot for the knowledge base
+
 The knowledge base provides a back-end service that client applications can use to answer questions through some sort of user interface. Commonly, these client applications are bots. To make the knowledge base available to a bot, you must publish it as a service that can be accessed over HTTP. You can then use the Azure Bot Service to create and host a bot that uses the knowledge base to answer user questions.
 
 1. At the left of the Language Studio page, click **Deploy knowledge base**.
 1. At the top of the page, click **Deploy**. A dialogue box will ask if you want to deploy the project. Select **Deploy**.
+
+ ![Deploy knowledge base.](media/conversational-language-understanding/deploy-knowledge-base.png)
+
 1. After the service has been deployed, click **Create a bot**. This opens the Azure portal in a new browser tab so you can create a Web App Bot in your Azure subscription.
 1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
 
