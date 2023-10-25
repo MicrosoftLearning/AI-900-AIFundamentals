@@ -33,11 +33,11 @@ If you haven't already done so, create an **Azure AI services** resource in your
 1. In another browser tab, open [**Vision Studio**](https://portal.vision.cognitive.azure.com?azure-portal=true), signing in with your Microsoft account.
 1. Select **Settings** and then, on the Select a resource to work with page, select the resource you just created.
 
-![Settings](media/read-text-computer-vision/settings-toggle.png)
+    ![Settings](media/read-text-computer-vision/settings-toggle.png)
 
-> **Note**
-> If your resource is not showing you may need to **Refresh** the page.
-
+    > **Note**
+    > If your resource is not showing you may need to **Refresh** the page.
+    
 1. Select the AI services resource that you created earlier, then select **Select as default resource**. **Save** and close Settings.
 1. Download the `ocr-images` folder https://aka.ms/ocr-images. Unzip the files.
 1. On the *Get started with Vision* page select **Optical character recognition**.
