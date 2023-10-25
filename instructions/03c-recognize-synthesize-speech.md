@@ -36,6 +36,9 @@ In this exercise, you will create an AI Speech resource, unless you already have
     ![Getting started with Speech](media/recognize-synthesize-speech/try-out-speech-to-text.png)
 
 1. Under *Choose audio files*, select **Browse files** and navigate to the folder where you saved the file. Select **WhatAICanDo.m4a** and then **Open**.
+
+    ![Browse files](media/recognize-synthesize-speech/browse-files-speech.png)
+
 1. The Speech service transcribes and displays the text in real time. If you have audio on your computer, you can listen to the recording as the text is being transcribed.
 1. Review the output, which should have successfully recognized and transcribed the audio into text.
 
