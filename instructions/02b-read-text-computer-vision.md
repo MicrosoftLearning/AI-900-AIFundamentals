@@ -7,7 +7,7 @@ lab:
 
 In this exercise you’ll use Azure AI service to explore the optical character recognition capabilities of Azure AI Vision. You’ll use Vision Studio to experiment with extracting text from images, without having to write any code.
 > **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
+> To complete exercise lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
 A common computer vision challenge is to detect and interpret text embedded within an image. This is known as optical character recognition (OCR). In this exercise you’ll use an AI services resource, which includes AI Vision services. You’ll then use Vision Studio to try out the OCR service with different types of images.
 
@@ -53,8 +53,9 @@ If you haven't already done so, create an **Azure AI services** resource in your
 
 ## Clean up
 If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
-1.	Open the [Azure portal](https://azure.com) and select the resource group that contains the resource you created. 
-1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted. 
+1.	Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created. 
+1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
+
 
 ## Learn more
 
