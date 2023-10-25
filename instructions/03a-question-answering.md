@@ -8,7 +8,7 @@ lab:
 In this exercise you will use Language Studio to create and train a knowledge base of question and answers that will be used by a customer services bot. Content for the knowledge base will come from an existing FAQ page from the web site of Margie’s Travel, a fictitious travel agency. You will then use Language Studio to see how it would work when used by customers.
 
 > **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
+> To complete this exercise, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
 When implementing a bot, the first step is to create a knowledge base of question and answer pairs. This is used together with built-in natural language processing capabilities so that the bot can interpret questions and find the most appropriate answer for the user.
 
@@ -140,6 +140,11 @@ The knowledge base provides a back-end service that client applications can use 
 1. Use the test chat interface to ensure your bot answers questions from your knowledge base as expected. For example, try submitting *I need to cancel my hotel*.
 
 Experiment with the bot. You'll probably find that it can answer questions from the FAQ quite accurately, but it will have limited ability to interpret questions that it has not been trained with. You can always use the Language Studio to edit the knowledge base to improve it, and republish it.
+
+## Clean up
+If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
+1.	Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created. 
+1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
 ## Learn more
 
