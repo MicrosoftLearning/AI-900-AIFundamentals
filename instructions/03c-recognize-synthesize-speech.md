@@ -33,7 +33,7 @@ In this exercise, you will create an AI Speech resource, unless you already have
 1. Select https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/data/speech/speech.zip) and save the file to a folder on your computer. Unzip the files and make a note of the folder name.
 1. On the Get started with Speech page, under *Speech* find *Real-time speech to text*. Select **Try out Real-time speech to text**.
 
-    ![Getting started with Speech](media/recognize-synthesize-speech/try-out-speech-to-test.png)
+    ![Getting started with Speech](media/recognize-synthesize-speech/try-out-speech-to-text.png)
 
 1. Under *Choose audio files*, select **Browse files** and navigate to the folder where you saved the file. Select **WhatAICanDo.m4a** and then **Open**.
 1. The Speech service transcribes and displays the text in real time. If you have audio on your computer, you can listen to the recording as the text is being transcribed.
