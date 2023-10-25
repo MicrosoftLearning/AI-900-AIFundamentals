@@ -8,7 +8,7 @@ lab:
 In this exercise you will explore the capabilities of Azure AI Language by analyzing some example hotel reviews. You’ll use Language Studio to understand whether the reviews are mostly positive or negative.
 
 > **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
+> To complete this exercises, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
 Natural Language Processing (NLP) is a branch of artificial intelligence (AI) that deals with written and spoken language. You can use NLP to build solutions that extract semantic meaning from text or speech, or that formulate meaningful responses in natural language.
 
@@ -78,7 +78,9 @@ You can use the Language service by creating either a **Language** resource or a
 In this exercise you used Language Studio to either create a new Language resource or use an existing Language resource. You enabled the resource in Settings before trying out the Sentiment and opinion mining service. You then tested the service with three pieces of text.
 
 ## Clean up
-If you don’t intend to do more exercises, you can delete any resources you no longer need. This avoids accruing any unnecessary costs. In the Azure portal, find and delete the AI Language resource you created for this exercise.
+If you don’t intend to do more exercises, delete any resources that you no longer need. This avoids accruing any unnecessary costs.
+1.	Open the [Azure portal]( https://portal.azure.com) and select the resource group that contains the resource you created. 
+1.	Select the resource and select **Delete** and then **Yes** to confirm. The resource is then deleted.
 
 ## Learn more
 
