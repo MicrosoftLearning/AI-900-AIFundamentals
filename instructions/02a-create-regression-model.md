@@ -283,16 +283,16 @@ When you've identified a model with evaluation metrics that meet your needs, you
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module from the **Python Language** section, replacing all of the default python script with the following code (which selects only the **Scored Labels** column and renames it to **predicted_price**):
 
-    ```Python
-    import pandas as pd
+```Python
+import pandas as pd
 
-    def azureml_main(dataframe1 = None, dataframe2 = None):
+def azureml_main(dataframe1 = None, dataframe2 = None):
 
-        scored_results = dataframe1[['Scored Labels']]
-        scored_results.rename(columns={'Scored Labels':'predicted_price'},
-                        inplace=True)
-     return scored_results
-    ```
+    scored_results = dataframe1[['Scored Labels']]
+    scored_results.rename(columns={'Scored Labels':'predicted_price'},
+                    inplace=True)
+ return scored_results
+```
 >**Note**: Copy and pasting may introduce spaces into the Python script that should not be there. Double check that there is not a space before *import* or *def* or *return*. Make sure there is one tab indent before *scored_results* and *scored_results.rename()*.
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**.
