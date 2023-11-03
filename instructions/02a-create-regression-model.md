@@ -291,7 +291,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     scored_results = dataframe1[['Scored Labels']]
     scored_results.rename(columns={'Scored Labels':'predicted_price'},
                     inplace=True)
-    return scored_results
+return scored_results
 ```
 >**Note**: Copy and pasting may introduce spaces into the Python script that should not be there. Double check that there is not a space before *import* or *def* or *return*. Make sure there is one tab indent before *scored_results* and *scored_results.rename()*.
 
